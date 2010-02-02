@@ -1,0 +1,37 @@
+--- 
+precinct_list: 
+- voting_places: 
+  - ballot_counters: 2
+    ident: vplace-xxx
+  ident: prec-0
+  display_name: Alton
+  district_list: 
+  - ident: prec-0
+    display_name: Alton
+type: jurisdiction_slate
+jurisdiction_display_name: middleworld
+display_name: General Election
+contest_list: 
+- ident: cont-xx
+  display_name: President and Vice-President of the United States
+  candidates: 
+  - party_ident: party-0
+    ident: cand-0
+    display_name: John McCain and Sarah Palin
+  - party_ident: party-1
+    ident: cand-1
+    display_name: Barack Obama and "Joe" Biden
+  - party_ident: party-2
+    ident: cand-2
+    display_name: Ralph Nader and "Matt" Gonzalez
+  district_ident: prec-0
+- ident: cont-xx
+  display_name: Governor
+  candidates: 
+  - party_ident: party-3
+    ident: cand-3
+    display_name: Joseph D. Kenney
+  - party_ident: party-3
+    ident: cand-4
+    display_name: John Lynch
+  district_ident: prec-0
