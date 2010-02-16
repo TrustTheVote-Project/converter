@@ -1,0 +1,164 @@
+--- 
+precinct_list: 
+- voting_places: 
+  - ballot_counters: 2
+    ident: vplace-xxx
+  ident: prec-1
+  display_name: Sandown
+  district_list: 
+  - ident: prec-1
+    display_name: Sandown
+type: jurisdiction_slate
+jurisdiction_display_name: middleworld
+display_name: General Election
+contest_list: 
+- ident: cont-xx
+  display_name: President and Vice-President of the United States
+  candidates: 
+  - party_ident: party-5
+    ident: cand-783
+    display_name: John McCain and Sarah Palin
+  - party_ident: party-5
+    ident: cand-783
+    display_name: Barack Obama and "Joe" Biden
+  - party_ident: party-5
+    ident: cand-783
+    display_name: Ralph Nader and "Matt" Gonzalez
+  - party_ident: party-5
+    ident: cand-783
+    display_name: George Phillies and Christopher Bennett
+  - party_ident: party-5
+    ident: cand-783
+    display_name: "\"Bob\" Barr and Wayne A. Root"
+  district_ident: prec-1
+- ident: cont-xx
+  display_name: Governor
+  candidates: 
+  - party_ident: party-5
+    ident: cand-783
+    display_name: Joseph D. Kenney
+  - party_ident: party-5
+    ident: cand-783
+    display_name: John Lynch
+  - party_ident: party-5
+    ident: cand-783
+    display_name: Susan M. Newell
+  district_ident: prec-1
+- ident: cont-xx
+  display_name: United States Senator
+  candidates: 
+  - party_ident: party-5
+    ident: cand-783
+    display_name: John E. Sununu
+  - party_ident: party-5
+    ident: cand-783
+    display_name: Jeanne Shaheen
+  - party_ident: party-5
+    ident: cand-783
+    display_name: "\"Ken\" Blevens"
+  district_ident: prec-1
+- ident: cont-xx
+  display_name: Representative in Congress
+  candidates: 
+  - party_ident: party-5
+    ident: cand-783
+    display_name: Jeb Bradley
+  - party_ident: party-5
+    ident: cand-783
+    display_name: Carol Shea-Porter
+  - party_ident: party-5
+    ident: cand-783
+    display_name: Robert Kingsbury
+  district_ident: prec-1
+- ident: cont-xx
+  display_name: Executive Councilor
+  candidates: 
+  - party_ident: party-5
+    ident: cand-783
+    display_name: Russell Prescott
+  - party_ident: party-5
+    ident: cand-783
+    display_name: Beverly A. Hollingworth
+  district_ident: prec-1
+- ident: cont-xx
+  display_name: State Senator
+  candidates: 
+  - party_ident: party-5
+    ident: cand-783
+    display_name: John S. "Jack" Barnes, Jr.
+  - party_ident: party-5
+    ident: cand-783
+    display_name: "\"Chaz\" Proulx"
+  district_ident: prec-1
+- ident: cont-xx
+  display_name: State Representatives
+  candidates: 
+  - party_ident: party-5
+    ident: cand-783
+    display_name: "\"Betsy\" Sanders"
+  - party_ident: party-5
+    ident: cand-783
+    display_name: Gene P. Charron
+  - party_ident: party-5
+    ident: cand-783
+    display_name: James E. Devine
+  - party_ident: party-5
+    ident: cand-783
+    display_name: Joseph M. Hagan
+  - party_ident: party-5
+    ident: cand-783
+    display_name: Charlotte Lister
+  - party_ident: party-5
+    ident: cand-783
+    display_name: Gertrud Nugent
+  district_ident: prec-1
+- ident: cont-xx
+  display_name: Sheriff
+  candidates: 
+  - party_ident: party-5
+    ident: cand-783
+    display_name: "\"Dan\" Linehan"
+  - party_ident: party-5
+    ident: cand-783
+    display_name: David J. Lovejoy
+  district_ident: prec-1
+- ident: cont-xx
+  display_name: County Attorney
+  candidates: 
+  - party_ident: party-5
+    ident: cand-783
+    display_name: "\"Jim\" Reams"
+  - party_ident: party-5
+    ident: cand-783
+    display_name: Kevin L. Coyle
+  district_ident: prec-1
+- ident: cont-xx
+  display_name: County Treasurer
+  candidates: 
+  - party_ident: party-5
+    ident: cand-783
+    display_name: Edward "Sandy" Buck III
+  - party_ident: party-5
+    ident: cand-783
+    display_name: David E. Ahearn
+  district_ident: prec-1
+- ident: cont-xx
+  display_name: Register of Deeds
+  candidates: 
+  - party_ident: party-5
+    ident: cand-783
+    display_name: Cathy Stacey
+  - party_ident: party-5
+    ident: cand-783
+    display_name: Philip Nugent
+  district_ident: prec-1
+- ident: cont-xx
+  display_name: Register of Probate
+  candidates: 
+  - party_ident: party-5
+    ident: cand-783
+    display_name: Andrew "Spizz" Christie
+  - party_ident: party-5
+    ident: cand-783
+    display_name: Debra E. Crapo
+  district_ident: prec-1

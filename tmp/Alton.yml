@@ -1,0 +1,182 @@
+--- 
+precinct_list: 
+- voting_places: 
+  - ballot_counters: 2
+    ident: vplace-xxx
+  ident: prec-0
+  display_name: Alton
+  district_list: 
+  - ident: prec-0
+    display_name: Alton
+type: jurisdiction_slate
+jurisdiction_display_name: middleworld
+display_name: General Election
+contest_list: 
+- ident: cont-xx
+  display_name: President and Vice-President of the United States
+  candidates: 
+  - party_ident: party-0
+    ident: cand-0
+    display_name: John McCain and Sarah Palin
+  - party_ident: party-1
+    ident: cand-1
+    display_name: Barack Obama and "Joe" Biden
+  - party_ident: party-2
+    ident: cand-2
+    display_name: Ralph Nader and "Matt" Gonzalez
+  - party_ident: party-3
+    ident: cand-3
+    display_name: George Phillies and Christopher Bennett
+  - party_ident: party-4
+    ident: cand-4
+    display_name: "\"Bob\" Barr and Wayne A. Root"
+  district_ident: prec-0
+- ident: cont-xx
+  display_name: Governor
+  candidates: 
+  - party_ident: party-4
+    ident: cand-5
+    display_name: Joseph D. Kenney
+  - party_ident: party-4
+    ident: cand-6
+    display_name: John Lynch
+  - party_ident: party-4
+    ident: cand-7
+    display_name: Susan M. Newell
+  district_ident: prec-0
+- ident: cont-xx
+  display_name: United States Senator
+  candidates: 
+  - party_ident: party-4
+    ident: cand-8
+    display_name: John E. Sununu
+  - party_ident: party-4
+    ident: cand-9
+    display_name: Jeanne Shaheen
+  - party_ident: party-4
+    ident: cand-10
+    display_name: "\"Ken\" Blevens"
+  district_ident: prec-0
+- ident: cont-xx
+  display_name: Representative in Congress
+  candidates: 
+  - party_ident: party-4
+    ident: cand-11
+    display_name: Jeb Bradley
+  - party_ident: party-4
+    ident: cand-12
+    display_name: Carol Shea-Porter
+  - party_ident: party-4
+    ident: cand-13
+    display_name: Robert Kingsbury
+  district_ident: prec-0
+- ident: cont-xx
+  display_name: Executive Councilor
+  candidates: 
+  - party_ident: party-4
+    ident: cand-14
+    display_name: Raymond S. Burton
+  - party_ident: party-4
+    ident: cand-15
+    display_name: J. Michael Cauble
+  district_ident: prec-0
+- ident: cont-xx
+  display_name: State Senator
+  candidates: 
+  - party_ident: party-4
+    ident: cand-16
+    display_name: Gregory J. Knytych
+  - party_ident: party-4
+    ident: cand-17
+    display_name: Kathleen Sgambati
+  district_ident: prec-0
+- ident: cont-xx
+  display_name: State Representatives
+  candidates: 
+  - party_ident: party-4
+    ident: cand-18
+    display_name: Alida I. Millham
+  - party_ident: party-4
+    ident: cand-19
+    display_name: James "Doc" Pilliod
+  - party_ident: party-4
+    ident: cand-20
+    display_name: Jeffrey L. St. Cyr
+  - party_ident: party-4
+    ident: cand-21
+    display_name: Elaine B. Swinford
+  - party_ident: party-4
+    ident: cand-22
+    display_name: Peter S. Bolster
+  - party_ident: party-4
+    ident: cand-23
+    display_name: Laurie J. Boyce
+  - party_ident: party-4
+    ident: cand-24
+    display_name: Kevin L. Christiansen
+  - party_ident: party-4
+    ident: cand-25
+    display_name: Ellen Marie McClung
+  - party_ident: party-4
+    ident: cand-26
+    display_name: Heather Richardson
+  - party_ident: party-4
+    ident: cand-27
+    display_name: "\"Kenny\" Bourbeau"
+  - party_ident: party-4
+    ident: cand-28
+    display_name: George Condodemetraky
+  - party_ident: party-4
+    ident: cand-29
+    display_name: Duane Hammond
+  - party_ident: party-4
+    ident: cand-30
+    display_name: William "Bill" Johnson
+  district_ident: prec-0
+- ident: cont-xx
+  display_name: Sheriff
+  candidates: 
+  - party_ident: party-4
+    ident: cand-31
+    display_name: Craig Wiggin
+  - party_ident: party-4
+    ident: cand-32
+    display_name: Craig Wiggin
+  district_ident: prec-0
+- ident: cont-xx
+  display_name: County Attorney
+  candidates: 
+  - party_ident: party-4
+    ident: cand-32
+    display_name: James M. Carroll
+  - party_ident: party-4
+    ident: cand-33
+    display_name: James M. Carroll
+  district_ident: prec-0
+- ident: cont-xx
+  display_name: County Treasurer
+  candidates: 
+  - party_ident: party-4
+    ident: cand-33
+    display_name: Michael G. Muzzey
+  district_ident: prec-0
+- ident: cont-xx
+  display_name: Register of Deeds
+  candidates: 
+  - party_ident: party-4
+    ident: cand-34
+    display_name: Barbara R. Luther
+  - party_ident: party-4
+    ident: cand-35
+    display_name: Gail Morrison
+  district_ident: prec-0
+- ident: cont-xx
+  display_name: Register of Probate
+  candidates: 
+  - party_ident: party-4
+    ident: cand-36
+    display_name: Karen H. Brickner
+  - party_ident: party-4
+    ident: cand-37
+    display_name: Lynn R. Chong
+  district_ident: prec-0

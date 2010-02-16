@@ -1,0 +1,167 @@
+--- 
+precinct_list: 
+- voting_places: 
+  - ballot_counters: 2
+    ident: vplace-xxx
+  ident: prec-1
+  display_name: Dublin
+  district_list: 
+  - ident: prec-1
+    display_name: Dublin
+type: jurisdiction_slate
+jurisdiction_display_name: middleworld
+display_name: General Election
+contest_list: 
+- ident: cont-xx
+  display_name: President and Vice-President of the United States
+  candidates: 
+  - party_ident: party-5
+    ident: cand-879
+    display_name: John McCain and Sarah Palin
+  - party_ident: party-5
+    ident: cand-879
+    display_name: Barack Obama and "Joe" Biden
+  - party_ident: party-5
+    ident: cand-879
+    display_name: Ralph Nader and "Matt" Gonzalez
+  - party_ident: party-5
+    ident: cand-879
+    display_name: George Phillies and Christopher Bennett
+  - party_ident: party-5
+    ident: cand-879
+    display_name: "\"Bob\" Barr and Wayne A. Root"
+  district_ident: prec-1
+- ident: cont-xx
+  display_name: Governor
+  candidates: 
+  - party_ident: party-5
+    ident: cand-879
+    display_name: Joseph D. Kenney
+  - party_ident: party-5
+    ident: cand-879
+    display_name: John Lynch
+  - party_ident: party-5
+    ident: cand-879
+    display_name: Susan M. Newell
+  district_ident: prec-1
+- ident: cont-xx
+  display_name: United States Senator
+  candidates: 
+  - party_ident: party-5
+    ident: cand-879
+    display_name: John E. Sununu
+  - party_ident: party-5
+    ident: cand-879
+    display_name: Jeanne Shaheen
+  - party_ident: party-5
+    ident: cand-879
+    display_name: "\"Ken\" Blevens"
+  district_ident: prec-1
+- ident: cont-xx
+  display_name: Representative in Congress
+  candidates: 
+  - party_ident: party-5
+    ident: cand-879
+    display_name: Jennifer Horn
+  - party_ident: party-5
+    ident: cand-879
+    display_name: Paul W. Hodes
+  - party_ident: party-5
+    ident: cand-879
+    display_name: Chester L. Lapointe II
+  district_ident: prec-1
+- ident: cont-xx
+  display_name: Executive Councilor
+  candidates: 
+  - party_ident: party-5
+    ident: cand-879
+    display_name: "\"Dan\" St. Hilaire"
+  - party_ident: party-5
+    ident: cand-879
+    display_name: John D. Shea
+  district_ident: prec-1
+- ident: cont-xx
+  display_name: State Senator
+  candidates: 
+  - party_ident: party-5
+    ident: cand-879
+    display_name: Thomas R. Eaton
+  - party_ident: party-5
+    ident: cand-879
+    display_name: Molly Kelly
+  district_ident: prec-1
+- ident: cont-xx
+  display_name: State Representatives
+  candidates: 
+  - party_ident: party-5
+    ident: cand-879
+    display_name: William J. Shea
+  - party_ident: party-5
+    ident: cand-879
+    display_name: Franklin W. Sterling, Jr.
+  - party_ident: party-5
+    ident: cand-879
+    display_name: Susan Emerson
+  - party_ident: party-5
+    ident: cand-879
+    display_name: John B. Hunt
+  - party_ident: party-5
+    ident: cand-879
+    display_name: Bonnie Mitchell
+  - party_ident: party-5
+    ident: cand-879
+    display_name: Keith David Halloran
+  district_ident: prec-1
+- ident: cont-xx
+  display_name: Sheriff
+  candidates: 
+  - party_ident: party-5
+    ident: cand-879
+    display_name: Richard A. Foote
+  - party_ident: party-5
+    ident: cand-879
+    display_name: Richard A. Foote
+  district_ident: prec-1
+- ident: cont-xx
+  display_name: County Attorney
+  candidates: 
+  - party_ident: party-5
+    ident: cand-879
+    display_name: Peter W. Heed
+  - party_ident: party-5
+    ident: cand-879
+    display_name: Peter W. Heed
+  district_ident: prec-1
+- ident: cont-xx
+  display_name: County Treasurer
+  candidates: 
+  - party_ident: party-5
+    ident: cand-879
+    display_name: Fred S. Parker
+  - party_ident: party-5
+    ident: cand-879
+    display_name: Stuart E. West
+  - party_ident: party-5
+    ident: cand-879
+    display_name: Patricia E. Putnam
+  district_ident: prec-1
+- ident: cont-xx
+  display_name: Register of Deeds
+  candidates: 
+  - party_ident: party-5
+    ident: cand-879
+    display_name: Evelyn S. Hubal
+  - party_ident: party-5
+    ident: cand-879
+    display_name: Evelyn S. Hubal
+  district_ident: prec-1
+- ident: cont-xx
+  display_name: Register of Probate
+  candidates: 
+  - party_ident: party-5
+    ident: cand-879
+    display_name: Susan J. Castor
+  - party_ident: party-5
+    ident: cand-879
+    display_name: Anna Z. Tilton
+  district_ident: prec-1

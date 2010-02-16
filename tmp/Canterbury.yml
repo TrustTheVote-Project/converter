@@ -1,0 +1,183 @@
+--- 
+precinct_list: 
+- voting_places: 
+  - ballot_counters: 2
+    ident: vplace-xxx
+  ident: prec-1
+  display_name: Canterbury
+  district_list: 
+  - ident: prec-1
+    display_name: Canterbury
+type: jurisdiction_slate
+jurisdiction_display_name: middleworld
+display_name: General Election
+contest_list: 
+- ident: cont-xx
+  display_name: President and Vice-President of the United States
+  candidates: 
+  - party_ident: party-5
+    ident: cand-526
+    display_name: John McCain and Sarah Palin
+  - party_ident: party-5
+    ident: cand-526
+    display_name: Barack Obama and "Joe" Biden
+  - party_ident: party-5
+    ident: cand-526
+    display_name: Ralph Nader and "Matt" Gonzalez
+  - party_ident: party-5
+    ident: cand-526
+    display_name: George Phillies and Christopher Bennett
+  - party_ident: party-5
+    ident: cand-526
+    display_name: "\"Bob\" Barr and Wayne A. Root"
+  district_ident: prec-1
+- ident: cont-xx
+  display_name: Governor
+  candidates: 
+  - party_ident: party-5
+    ident: cand-526
+    display_name: Joseph D. Kenney
+  - party_ident: party-5
+    ident: cand-526
+    display_name: John Lynch
+  - party_ident: party-5
+    ident: cand-526
+    display_name: Susan M. Newell
+  district_ident: prec-1
+- ident: cont-xx
+  display_name: United States Senator
+  candidates: 
+  - party_ident: party-5
+    ident: cand-526
+    display_name: John E. Sununu
+  - party_ident: party-5
+    ident: cand-526
+    display_name: Jeanne Shaheen
+  - party_ident: party-5
+    ident: cand-526
+    display_name: "\"Ken\" Blevens"
+  district_ident: prec-1
+- ident: cont-xx
+  display_name: Representative in Congress
+  candidates: 
+  - party_ident: party-5
+    ident: cand-526
+    display_name: Jennifer Horn
+  - party_ident: party-5
+    ident: cand-526
+    display_name: Paul W. Hodes
+  - party_ident: party-5
+    ident: cand-526
+    display_name: Chester L. Lapointe II
+  district_ident: prec-1
+- ident: cont-xx
+  display_name: Executive Councilor
+  candidates: 
+  - party_ident: party-5
+    ident: cand-526
+    display_name: "\"Dan\" St. Hilaire"
+  - party_ident: party-5
+    ident: cand-526
+    display_name: John D. Shea
+  district_ident: prec-1
+- ident: cont-xx
+  display_name: State Senator
+  candidates: 
+  - party_ident: party-5
+    ident: cand-526
+    display_name: "\"Andy\" Sanborn"
+  - party_ident: party-5
+    ident: cand-526
+    display_name: Harold Janeway
+  district_ident: prec-1
+- ident: cont-xx
+  display_name: State Representatives
+  candidates: 
+  - party_ident: party-5
+    ident: cand-526
+    display_name: Jared King
+  - party_ident: party-5
+    ident: cand-527
+    display_name: Priscilla Parmenter Lockwood
+  - party_ident: party-5
+    ident: cand-528
+    display_name: Jennifer Coffey
+  - party_ident: party-5
+    ident: cand-529
+    display_name: "\"Danny\" Loehr"
+  - party_ident: party-5
+    ident: cand-530
+    display_name: Joy K. Tilton
+  - party_ident: party-5
+    ident: cand-531
+    display_name: Frank A. Tupper
+  - party_ident: party-5
+    ident: cand-532
+    display_name: Deborah Wheeler
+  - party_ident: party-5
+    ident: cand-533
+    display_name: "\"Tim\" Chrysostom"
+  - party_ident: party-5
+    ident: cand-534
+    display_name: Claire D. Clarke
+  district_ident: prec-1
+- ident: cont-xx
+  display_name: Sheriff
+  candidates: 
+  - party_ident: party-5
+    ident: cand-535
+    display_name: Scott E. Hilliard
+  - party_ident: party-5
+    ident: cand-535
+    display_name: Scott E. Hilliard
+  district_ident: prec-1
+- ident: cont-xx
+  display_name: County Attorney
+  candidates: 
+  - party_ident: party-5
+    ident: cand-535
+    display_name: "\"Tom\" Reid"
+  - party_ident: party-5
+    ident: cand-535
+    display_name: Katherine D. Rogers
+  district_ident: prec-1
+- ident: cont-xx
+  display_name: County Treasurer
+  candidates: 
+  - party_ident: party-5
+    ident: cand-535
+    display_name: Roy Maxfield
+  - party_ident: party-5
+    ident: cand-535
+    display_name: James Monahan
+  district_ident: prec-1
+- ident: cont-xx
+  display_name: Register of Deeds
+  candidates: 
+  - party_ident: party-5
+    ident: cand-535
+    display_name: Kathi L. Guay
+  - party_ident: party-5
+    ident: cand-535
+    display_name: Lawrence K. Hennessy
+  district_ident: prec-1
+- ident: cont-xx
+  display_name: Register of Probate
+  candidates: 
+  - party_ident: party-5
+    ident: cand-535
+    display_name: Jane Bradstreet
+  - party_ident: party-5
+    ident: cand-535
+    display_name: Jane Bradstreet
+  district_ident: prec-1
+- ident: cont-xx
+  display_name: County Commissioner
+  candidates: 
+  - party_ident: party-5
+    ident: cand-535
+    display_name: Bronwyn Asplund-Walsh
+  - party_ident: party-5
+    ident: cand-535
+    display_name: Leo R. Bernier
+  district_ident: prec-1

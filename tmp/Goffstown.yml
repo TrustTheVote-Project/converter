@@ -1,0 +1,207 @@
+--- 
+precinct_list: 
+- voting_places: 
+  - ballot_counters: 2
+    ident: vplace-xxx
+  ident: prec-1
+  display_name: Goffstown
+  district_list: 
+  - ident: prec-1
+    display_name: Goffstown
+type: jurisdiction_slate
+jurisdiction_display_name: middleworld
+display_name: General Election
+contest_list: 
+- ident: cont-xx
+  display_name: President and Vice-President of the United States
+  candidates: 
+  - party_ident: party-5
+    ident: cand-278
+    display_name: Barack Obama and "Joe" Biden
+  - party_ident: party-5
+    ident: cand-278
+    display_name: John McCain and Sarah Palin
+  - party_ident: party-5
+    ident: cand-278
+    display_name: Ralph Nader and "Matt" Gonzalez
+  - party_ident: party-5
+    ident: cand-278
+    display_name: George Phillies and Christopher Bennett
+  - party_ident: party-5
+    ident: cand-278
+    display_name: "\"Bob\" Barr and Wayne A. Root"
+  district_ident: prec-1
+- ident: cont-xx
+  display_name: Governor
+  candidates: 
+  - party_ident: party-5
+    ident: cand-278
+    display_name: John Lynch
+  - party_ident: party-5
+    ident: cand-278
+    display_name: Joseph D. Kenney
+  - party_ident: party-5
+    ident: cand-278
+    display_name: Susan M. Newell
+  district_ident: prec-1
+- ident: cont-xx
+  display_name: United States Senator
+  candidates: 
+  - party_ident: party-5
+    ident: cand-278
+    display_name: John E. Sununu
+  - party_ident: party-5
+    ident: cand-278
+    display_name: Jeanne Shaheen
+  - party_ident: party-5
+    ident: cand-278
+    display_name: "\"Ken\" Blevens"
+  district_ident: prec-1
+- ident: cont-xx
+  display_name: Representative in Congress
+  candidates: 
+  - party_ident: party-5
+    ident: cand-278
+    display_name: Carol Shea-Porter
+  - party_ident: party-5
+    ident: cand-278
+    display_name: Jeb Bradley
+  - party_ident: party-5
+    ident: cand-278
+    display_name: Robert Kingsbury
+  district_ident: prec-1
+- ident: cont-xx
+  display_name: Executive Councilor
+  candidates: 
+  - party_ident: party-5
+    ident: cand-278
+    display_name: Debora B. Pignatelli
+  - party_ident: party-5
+    ident: cand-278
+    display_name: Stephen B. Stepanek
+  district_ident: prec-1
+- ident: cont-xx
+  display_name: State Senator
+  candidates: 
+  - party_ident: party-5
+    ident: cand-278
+    display_name: "\"Lou\" D'Allesandro"
+  - party_ident: party-5
+    ident: cand-279
+    display_name: Jason Sakellar
+  district_ident: prec-1
+- ident: cont-xx
+  display_name: State Representatives
+  candidates: 
+  - party_ident: party-5
+    ident: cand-280
+    display_name: Katelyn M. Kerins
+  - party_ident: party-5
+    ident: cand-281
+    display_name: Becky K. McMennamin
+  - party_ident: party-5
+    ident: cand-282
+    display_name: George McMennamin
+  - party_ident: party-5
+    ident: cand-283
+    display_name: Derek Winsor
+  - party_ident: party-5
+    ident: cand-284
+    display_name: Stephen Brzozowski
+  - party_ident: party-5
+    ident: cand-285
+    display_name: Leigh M. Douglass
+  - party_ident: party-5
+    ident: cand-286
+    display_name: Benjamin H. Hampton
+  - party_ident: party-5
+    ident: cand-287
+    display_name: Kevin Hodges
+  - party_ident: party-5
+    ident: cand-288
+    display_name: Neal M. Kurk
+  - party_ident: party-5
+    ident: cand-289
+    display_name: David Martin
+  - party_ident: party-5
+    ident: cand-290
+    display_name: Calvin D. Pratt
+  - party_ident: party-5
+    ident: cand-291
+    display_name: Russell Day
+  - party_ident: party-5
+    ident: cand-292
+    display_name: "\"Larry\" Emerton"
+  - party_ident: party-5
+    ident: cand-293
+    display_name: John Hikel
+  - party_ident: party-5
+    ident: cand-294
+    display_name: Randolph "Rip" Holden
+  - party_ident: party-5
+    ident: cand-295
+    display_name: Gary S. Hopper
+  - party_ident: party-5
+    ident: cand-296
+    display_name: Lisa M. Wilber
+  district_ident: prec-1
+- ident: cont-xx
+  display_name: Sheriff
+  candidates: 
+  - party_ident: party-5
+    ident: cand-297
+    display_name: Harold "Red" Wheeler
+  - party_ident: party-5
+    ident: cand-297
+    display_name: James A. Hardy
+  district_ident: prec-1
+- ident: cont-xx
+  display_name: County Attorney
+  candidates: 
+  - party_ident: party-5
+    ident: cand-297
+    display_name: Marguerite Lefebvre Wageling
+  - party_ident: party-5
+    ident: cand-297
+    display_name: Marguerite Lefebvre Wageling
+  district_ident: prec-1
+- ident: cont-xx
+  display_name: County Treasurer
+  candidates: 
+  - party_ident: party-5
+    ident: cand-297
+    display_name: Christopher C. Pappas
+  - party_ident: party-5
+    ident: cand-297
+    display_name: "\"Bob\" Burns"
+  district_ident: prec-1
+- ident: cont-xx
+  display_name: Register of Deeds
+  candidates: 
+  - party_ident: party-5
+    ident: cand-297
+    display_name: Louise A. Wright
+  - party_ident: party-5
+    ident: cand-297
+    display_name: Pamela D. Coughlin
+  district_ident: prec-1
+- ident: cont-xx
+  display_name: Register of Probate
+  candidates: 
+  - party_ident: party-5
+    ident: cand-297
+    display_name: Graham V. Smith
+  - party_ident: party-5
+    ident: cand-297
+    display_name: "\"Bob\" Rivard"
+  district_ident: prec-1
+- ident: cont-xx
+  display_name: County Commissioner
+  candidates: 
+  - party_ident: party-5
+    ident: cand-297
+    display_name: Shannon Lee  Bernier
+  - party_ident: party-5
+    ident: cand-297
+    display_name: Carol H. Holden
+  district_ident: prec-1

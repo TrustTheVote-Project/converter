@@ -1,0 +1,183 @@
+--- 
+precinct_list: 
+- voting_places: 
+  - ballot_counters: 2
+    ident: vplace-xxx
+  ident: prec-1
+  display_name: Laconia - Ward 4
+  district_list: 
+  - ident: prec-1
+    display_name: Laconia - Ward 4
+type: jurisdiction_slate
+jurisdiction_display_name: middleworld
+display_name: General Election
+contest_list: 
+- ident: cont-xx
+  display_name: President and Vice-President of the United States
+  candidates: 
+  - party_ident: party-4
+    ident: cand-55
+    display_name: John McCain and Sarah Palin
+  - party_ident: party-4
+    ident: cand-55
+    display_name: Barack Obama and "Joe" Biden
+  - party_ident: party-4
+    ident: cand-55
+    display_name: Ralph Nader and "Matt" Gonzalez
+  - party_ident: party-4
+    ident: cand-55
+    display_name: George Phillies and Christopher Bennett
+  - party_ident: party-4
+    ident: cand-55
+    display_name: "\"Bob\" Barr and Wayne A. Root"
+  district_ident: prec-1
+- ident: cont-xx
+  display_name: Governor
+  candidates: 
+  - party_ident: party-4
+    ident: cand-55
+    display_name: Joseph D. Kenney
+  - party_ident: party-4
+    ident: cand-55
+    display_name: John Lynch
+  - party_ident: party-4
+    ident: cand-55
+    display_name: Susan M. Newell
+  district_ident: prec-1
+- ident: cont-xx
+  display_name: United States Senator
+  candidates: 
+  - party_ident: party-4
+    ident: cand-55
+    display_name: John E. Sununu
+  - party_ident: party-4
+    ident: cand-55
+    display_name: Jeanne Shaheen
+  - party_ident: party-4
+    ident: cand-55
+    display_name: "\"Ken\" Blevens"
+  district_ident: prec-1
+- ident: cont-xx
+  display_name: Representative in Congress
+  candidates: 
+  - party_ident: party-4
+    ident: cand-55
+    display_name: Jeb Bradley
+  - party_ident: party-4
+    ident: cand-55
+    display_name: Carol Shea-Porter
+  - party_ident: party-4
+    ident: cand-55
+    display_name: Robert Kingsbury
+  district_ident: prec-1
+- ident: cont-xx
+  display_name: Executive Councilor
+  candidates: 
+  - party_ident: party-4
+    ident: cand-55
+    display_name: Raymond S. Burton
+  - party_ident: party-4
+    ident: cand-55
+    display_name: J. Michael Cauble
+  district_ident: prec-1
+- ident: cont-xx
+  display_name: State Senator
+  candidates: 
+  - party_ident: party-4
+    ident: cand-55
+    display_name: Gregory J. Knytych
+  - party_ident: party-4
+    ident: cand-55
+    display_name: Kathleen Sgambati
+  district_ident: prec-1
+- ident: cont-xx
+  display_name: State Representatives
+  candidates: 
+  - party_ident: party-4
+    ident: cand-55
+    display_name: John A. Veazey
+  - party_ident: party-4
+    ident: cand-55
+    display_name: James "Olie" Anderson
+  - party_ident: party-4
+    ident: cand-55
+    display_name: Thomas "Tom" Brown, Jr.
+  - party_ident: party-4
+    ident: cand-55
+    display_name: Glenn E. Dewhirst
+  - party_ident: party-4
+    ident: cand-55
+    display_name: "\"Don\" Flanders"
+  - party_ident: party-4
+    ident: cand-55
+    display_name: Judith T. Reever
+  - party_ident: party-4
+    ident: cand-55
+    display_name: Richard T. Stuart
+  - party_ident: party-4
+    ident: cand-55
+    display_name: Edwin Allard
+  - party_ident: party-4
+    ident: cand-55
+    display_name: Benjamin Arsenault
+  - party_ident: party-4
+    ident: cand-55
+    display_name: Beth Arsenault
+  district_ident: prec-1
+- ident: cont-xx
+  display_name: Sheriff
+  candidates: 
+  - party_ident: party-4
+    ident: cand-55
+    display_name: Craig Wiggin
+  - party_ident: party-4
+    ident: cand-55
+    display_name: Craig Wiggin
+  district_ident: prec-1
+- ident: cont-xx
+  display_name: County Attorney
+  candidates: 
+  - party_ident: party-4
+    ident: cand-55
+    display_name: James M. Carroll
+  - party_ident: party-4
+    ident: cand-55
+    display_name: James M. Carroll
+  district_ident: prec-1
+- ident: cont-xx
+  display_name: County Treasurer
+  candidates: 
+  - party_ident: party-4
+    ident: cand-55
+    display_name: Michael G. Muzzey
+  district_ident: prec-1
+- ident: cont-xx
+  display_name: Register of Deeds
+  candidates: 
+  - party_ident: party-4
+    ident: cand-55
+    display_name: Barbara R. Luther
+  - party_ident: party-4
+    ident: cand-55
+    display_name: Gail Morrison
+  district_ident: prec-1
+- ident: cont-xx
+  display_name: Register of Probate
+  candidates: 
+  - party_ident: party-4
+    ident: cand-55
+    display_name: Karen H. Brickner
+  - party_ident: party-4
+    ident: cand-55
+    display_name: Lynn R. Chong
+  district_ident: prec-1
+- ident: cont-xx
+  display_name: County Commissioner
+  candidates: 
+  - party_ident: party-4
+    ident: cand-55
+    display_name: Franklin T. Tilton
+  - party_ident: party-4
+    ident: cand-55
+    display_name: Edward D. Philpot
+  district_ident: prec-1

@@ -1,0 +1,177 @@
+--- 
+precinct_list: 
+- voting_places: 
+  - ballot_counters: 2
+    ident: vplace-xxx
+  ident: prec-1
+  display_name: Greenville
+  district_list: 
+  - ident: prec-1
+    display_name: Greenville
+type: jurisdiction_slate
+jurisdiction_display_name: middleworld
+display_name: General Election
+contest_list: 
+- ident: cont-xx
+  display_name: President and Vice-President of the United States
+  candidates: 
+  - party_ident: party-5
+    ident: cand-908
+    display_name: John McCain and Sarah Palin
+  - party_ident: party-5
+    ident: cand-908
+    display_name: Barack Obama and "Joe" Biden
+  - party_ident: party-5
+    ident: cand-908
+    display_name: Ralph Nader and "Matt" Gonzalez
+  - party_ident: party-5
+    ident: cand-908
+    display_name: George Phillies and Christopher Bennett
+  - party_ident: party-5
+    ident: cand-908
+    display_name: "\"Bob\" Barr and Wayne A. Root"
+  district_ident: prec-1
+- ident: cont-xx
+  display_name: Governor
+  candidates: 
+  - party_ident: party-5
+    ident: cand-908
+    display_name: Joseph D. Kenney
+  - party_ident: party-5
+    ident: cand-908
+    display_name: John Lynch
+  - party_ident: party-5
+    ident: cand-908
+    display_name: Susan M. Newell
+  district_ident: prec-1
+- ident: cont-xx
+  display_name: United States Senator
+  candidates: 
+  - party_ident: party-5
+    ident: cand-908
+    display_name: John E. Sununu
+  - party_ident: party-5
+    ident: cand-908
+    display_name: Jeanne Shaheen
+  - party_ident: party-5
+    ident: cand-908
+    display_name: "\"Ken\" Blevens"
+  district_ident: prec-1
+- ident: cont-xx
+  display_name: Representative in Congress
+  candidates: 
+  - party_ident: party-5
+    ident: cand-908
+    display_name: Jennifer Horn
+  - party_ident: party-5
+    ident: cand-908
+    display_name: Paul W. Hodes
+  - party_ident: party-5
+    ident: cand-908
+    display_name: Chester L. Lapointe II
+  district_ident: prec-1
+- ident: cont-xx
+  display_name: Executive Councilor
+  candidates: 
+  - party_ident: party-5
+    ident: cand-908
+    display_name: Stephen B. Stepanek
+  - party_ident: party-5
+    ident: cand-908
+    display_name: Debora B. Pignatelli
+  district_ident: prec-1
+- ident: cont-xx
+  display_name: State Senator
+  candidates: 
+  - party_ident: party-5
+    ident: cand-908
+    display_name: Peter Bragdon
+  - party_ident: party-5
+    ident: cand-908
+    display_name: "\"Steve\" Spratt"
+  district_ident: prec-1
+- ident: cont-xx
+  display_name: State Representatives
+  candidates: 
+  - party_ident: party-5
+    ident: cand-908
+    display_name: "\"Andy\" Peterson"
+  - party_ident: party-5
+    ident: cand-908
+    display_name: Ronald S. Scaccia
+  - party_ident: party-5
+    ident: cand-908
+    display_name: Peter R. Leishman
+  - party_ident: party-5
+    ident: cand-908
+    display_name: Regina Vorce
+  - party_ident: party-5
+    ident: cand-908
+    display_name: "\"Jill\" Shaffer Hammond"
+  - party_ident: party-5
+    ident: cand-908
+    display_name: Anne-Marie Irwin
+  - party_ident: party-5
+    ident: cand-908
+    display_name: Dana A. Glow
+  district_ident: prec-1
+- ident: cont-xx
+  display_name: Sheriff
+  candidates: 
+  - party_ident: party-5
+    ident: cand-908
+    display_name: James A. Hardy
+  - party_ident: party-5
+    ident: cand-908
+    display_name: Harold "Red" Wheeler
+  district_ident: prec-1
+- ident: cont-xx
+  display_name: County Attorney
+  candidates: 
+  - party_ident: party-5
+    ident: cand-908
+    display_name: Marguerite Lefebvre Wageling
+  - party_ident: party-5
+    ident: cand-908
+    display_name: Marguerite Lefebvre Wageling
+  district_ident: prec-1
+- ident: cont-xx
+  display_name: County Treasurer
+  candidates: 
+  - party_ident: party-5
+    ident: cand-908
+    display_name: "\"Bob\" Burns"
+  - party_ident: party-5
+    ident: cand-908
+    display_name: Christopher C. Pappas
+  district_ident: prec-1
+- ident: cont-xx
+  display_name: Register of Deeds
+  candidates: 
+  - party_ident: party-5
+    ident: cand-908
+    display_name: Pamela D. Coughlin
+  - party_ident: party-5
+    ident: cand-908
+    display_name: Louise A. Wright
+  district_ident: prec-1
+- ident: cont-xx
+  display_name: Register of Probate
+  candidates: 
+  - party_ident: party-5
+    ident: cand-908
+    display_name: "\"Bob\" Rivard"
+  - party_ident: party-5
+    ident: cand-908
+    display_name: Graham V. Smith
+  district_ident: prec-1
+- ident: cont-xx
+  display_name: County Commissioner
+  candidates: 
+  - party_ident: party-5
+    ident: cand-908
+    display_name: Carol H. Holden
+  - party_ident: party-5
+    ident: cand-908
+    display_name: Shannon Lee  Bernier
+  district_ident: prec-1
