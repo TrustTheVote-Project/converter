@@ -215,7 +215,7 @@ end
 #
 # Perform some unit tests on Generator and Parser
 #
-class ParserGeneratorTests < Test::Unit::TestCase
+class GeneratorTests < Test::Unit::TestCase
 
   context "A single generator instance" do
     should "begin a file" do
@@ -225,48 +225,87 @@ class ParserGeneratorTests < Test::Unit::TestCase
     end
     
     context "with a single ballot" do
-
-      should "start a ballot and contest with two candidates" do
+      should "start and end ballot and contest with one candidate" do
         gen = Generator.new
         gen.begin_file
-        gen.start_ballot("Test-ton")
-        gen.start_contest("Chair and Vice-Chair of Test-ton School Lunch Board", "Vote for One Only")
-        gen.add_candidate("Person 3 and Person 4", "Cheese Party")        
+        gen.start_ballot("Town name A")
+        gen.start_contest("Contest name", "Contest Rules")
+        gen.add_candidate("Person 3 and Person 4", "Cheese Party")
+        gen.end_contest
+        gen.end_ballot
+        assert true unless gen.h_file.empty?
       end
       
       should "start and end ballot and contest with two candidates" do
         gen = Generator.new
         gen.begin_file
-        gen.start_ballot("Test-ton")
-        gen.start_contest("Chair and Vice-Chair of Test-ton School Lunch Board", "Vote for One Only")
-        gen.add_candidate("Person 1 and Person 2", "Cheese Party")
-        gen.add_candidate("Person 3 and Person 4", "Cheese Party")
+        gen.start_ballot("Town name B")
+        gen.start_contest("Contest name", "Contest Rules")
+        gen.add_candidate("Person 1 and Person 2", "Party 1")
+        gen.add_candidate("Person 3 and Person 4", "Party 2")
         gen.end_contest
         gen.end_ballot
-        assert true unless gen.h_file.nil?
+        assert true unless gen.h_file.empty?
       end
+      
+      should "start and end two contests with two candidates" do
+        gen = Generator.new
+        gen.begin_file
+        gen.start_ballot("Town name C")
+        gen.start_contest("Contest 1", "Contest 1 rules")
+        gen.add_candidate("Person 1 and Person 2", "Party 1")
+        gen.add_candidate("Person 3 and Person 4", "Party 2")
+        gen.end_contest
+        gen.start_contest("Contest 2", "Contest 2 rules")
+        gen.add_candidate("Person 5 and Person 6", "Party 1")
+        gen.add_candidate("Person 7 and Person 8", "Party 2")
+        gen.end_ballot
+        assert true unless gen.h_file.empty?
+      end      
+    end
+    
+    context "with multiple ballots" do
+      should "start and end two ballots" do
+        gen = Generator.new
+        gen.begin_file
+        # Ballot 1
+        gen.start_ballot("Town name D")
+        gen.start_contest("Contest 1", "Contest 1 rules")
+        gen.add_candidate("Person 1 and Person 2", "Party 1")
+        gen.end_contest
+        gen.end_ballot
+        # Ballot 2
+        gen.start_ballot("Town name E")
+        gen.start_contest("Contest 1", "Contest 1 rules")
+        gen.add_candidate("Person 1 and Person 2", "Party 1")
+        gen.end_contest
+        gen.end_ballot
+        assert true unless gen.h_file.empty?
+      end    
     end
   end
 
   #
   # This test func is too broad, doesn't use shoulda style
   #
-  def test_generator_file_tiny
-    gen = Generator.new
-    par = Parser.new("inputs/tinyballot.txt", gen)
-    par.parse_file
+  context "A single parser instance" do
+    should "open a ballot info text file" do
+      gen = Generator.new
+      par = Parser.new("inputs/tinyballot.txt", gen)      
+    end
     
-    assert true unless gen.h_file.nil? # generated file
-    assert gen.h_file.length == 1 # 1 ballot
-    single_ballot = gen.h_file[0]
-    assert single_ballot["type"].eql? "jurisdiction_slate"
-    assert single_ballot["precinct_list"].length == 1
-    assert single_ballot["precinct_list"][0]["display_name"] == "Alton"
+    should "parse a ballot info text file" do
+      gen = Generator.new
+      par = Parser.new("inputs/tinyballot.txt", gen)
+      par.parse_file
+      assert true unless gen.h_file.nil? # generated file
+      assert gen.h_file.length == 1 # 1 ballot
+      single_ballot = gen.h_file[0]
+      assert single_ballot["type"].eql? "jurisdiction_slate"
+      assert single_ballot["precinct_list"].length == 1
+      assert single_ballot["precinct_list"][0]["display_name"] == "Alton"
+    end
   end
-
-  should "be true" do
-    assert true
-  end  
 end
 
 #
