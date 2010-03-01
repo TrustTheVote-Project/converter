@@ -18,7 +18,7 @@
   GNU General Public License for more details.
 
   You should have received a copy of the GNU General Public License
-  along with Ballot-Analizer.  If not, see <http://www.gnu.org/licenses/>.
+  along with Ballot-Analyzer.  If not, see <http://www.gnu.org/licenses/>.
 
 =end
 require 'rubygems'
@@ -26,6 +26,7 @@ require 'yaml'
 require 'pp'
 require 'getoptlong'
 require 'pathname'
+require 'shoulda'
 
 #
 # Implements a simple top-down parser for the New Hampshire formatted input file.  @line is the current line, and @lookahead is the next line.
@@ -212,6 +213,68 @@ class Generator
 end
 
 #
+# Perform some unit tests on Generator and Parser
+#
+class ParserGeneratorTests < Test::Unit::TestCase
+
+  context "A generator instance" do
+    setup do
+      @gen = Generator.new
+      @par = Parser.new("inputs/tinyballot.txt", @gen)
+    end
+    
+    should "begin a file" do
+      @gen.begin_file
+      assert true unless @gen.h_file.nil?
+    end
+    
+    should "start a ballot" do
+      @gen.start_ballot("Test-ton")
+    end
+    
+    should "start a contest" do
+      @gen.start_contest("Chair and Vice-Chair of Test-ton School Lunch Board", "Vote for One Only")
+    end
+    
+    should "add a candidate" do
+      #@gen.add_candidate("Person 1 and Person 2", "Deli Meat Lovers")
+      @gen.add_candidate("Person 3 and Person 4", "Cheese Party")
+      
+    end
+  
+    should "end a contest" do
+      @gen.end_contest
+    end
+    
+    should "end a ballot" do
+      @gen.end_ballot
+#      puts @gen.h_file
+    end
+    
+  end
+
+  #
+  # This test func is too broad, doesn't use shoulda style
+  #
+  def test_generator_file_tiny
+    gen = Generator.new
+    par = Parser.new("inputs/tinyballot.txt", gen)
+    par.parse_file
+    
+    assert true unless gen.h_file.nil? # generated file
+    assert gen.h_file.length == 1 # 1 ballot
+    single_ballot = gen.h_file[0]
+    assert single_ballot["type"].eql? "jurisdiction_slate"
+    assert single_ballot["precinct_list"].length == 1
+    assert single_ballot["precinct_list"][0]["display_name"] == "Alton"
+  end
+
+  should "be true" do
+    assert true
+  end  
+end
+
+#
 # Main Program: Parse the command line and do the work
 #
 HELPTEXT = "TTV File Coverter.
@@ -222,7 +285,7 @@ Usage:
  Options:
      -h   display help text
      -f   format code. -fNH - New Hampshire Ballot.txt
-     -o    optional destination folder
+     -o   optional destination folder
 "
 opts = GetoptLong.new(
       ["-h", "--help", GetoptLong::NO_ARGUMENT],

@@ -1,0 +1,1459 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<EDX creationDateTime="2009-09-24T09:31:59.140">
+  <StateDefinedCodes state="WA">
+    <VotingDefinitions>
+      <VotingMethodCode code="P" name="Polling Place-Election Day" voteCategory="ED" />
+      <VotingMethodCode code="M" name="Mail Ballot (Absentee)" voteCategory="AB" />
+      <VotingMethodCode code="E" name="Early by Personal Appearance" voteCategory="EV" />
+    </VotingDefinitions>
+  </StateDefinedCodes>
+  <County id="MA" name="Mason" state="WA">
+    <DistrictTypeList>
+      <DistrictType name="County" id="4" code="CNTY" />
+      <DistrictType name="City/Town" id="20" code="CTWN" />
+      <DistrictType name="School" id="14" code="SCH" />
+      <DistrictType name="Fire" id="13" code="FIRE" />
+      <DistrictType name="Water" id="11" code="WATER" />
+      <DistrictType name="Port" id="19" code="PORT" />
+      <DistrictType name="Public Hospital" id="17" code="HOSP" />
+    </DistrictTypeList>
+    <Election name="General" id="32" date="11/03/2009" isFinalized="true" type="GE">
+      <DataSources>
+        <DataSource name="Votec Corporation" isDefault="true">
+          <SourceDescription>Vemacs/Hart Election Export</SourceDescription>
+        </DataSource>
+      </DataSources>
+      <Title>
+        <DisplayText lang="en-us">General</DisplayText>
+      </Title>
+      <ElectionDate>
+        <DisplayText lang="en-us">11/03/2009</DisplayText>
+      </ElectionDate>
+      <Parties>
+        <party name="Nonpartisan" id="3" code="NP" displayOrder="3" isUnaffiliated="true" />
+      </Parties>
+      <Contests>
+        <Contest name="State Initiative Measure 1033" id="54" displayOrder="1" type="MS" isCumlative="false" maxVotes="1">
+          <MeasureText lang="en-us">Initiative Measure No. 1033 concerns state, county and city revenue. | |This measure would limit growth of certain state, county and city revenue to annual inflation and population growth, not including voter-approved revenue increases. Revenue collected above the limit would reduce property tax levies.  | |Should this measure be enacted into law? Yes [ ] No [ ]</MeasureText>
+          <Choice name="Yes" displayOrder="1" id="72" type="OP" />
+          <Choice name="No" displayOrder="2" id="73" type="OP" />
+        </Contest>
+        <Contest name="City of Shelton Commissioner of Streets and Public Improvement" id="47" displayOrder="406" type="OF" isCumlative="false" maxVotes="1" maxWriteIns="1">
+          <Choice name="Dawn Pannell" displayOrder="1" id="2" type="CD" />
+        </Contest>
+        <Contest name="Fire Protection Dist 1 Fire Commissioner Position #3" id="1" displayOrder="413" type="OF" isCumlative="false" maxVotes="1" maxWriteIns="1">
+          <Choice name="Jim Goodpaster" displayOrder="1" id="18" type="CD" />
+        </Contest>
+        <Contest name="Fire Protection Dist 2 Fire Commissioner Position #1" id="2" displayOrder="414" type="OF" isCumlative="false" maxVotes="1" maxWriteIns="1">
+          <Choice name="Dan Burrus" displayOrder="1" id="3" type="CD" />
+        </Contest>
+        <Contest name="Fire Protection Dist 2 Fire Commissioner Position #5" id="3" displayOrder="418" type="OF" isCumlative="false" maxVotes="1" maxWriteIns="1">
+          <Choice name="Denny Hamilton" displayOrder="1" id="4" type="CD" />
+        </Contest>
+        <Contest name="Fire Protection Dist 3 Fire Commissioner Position #1" id="4" displayOrder="419" type="OF" isCumlative="false" maxVotes="1" maxWriteIns="1">
+          <Choice name="Michael Petcu" displayOrder="1" id="56" type="CD" />
+        </Contest>
+        <Contest name="Fire Protection Dist 4 Fire Commissioner Position #2" id="5" displayOrder="423" type="OF" isCumlative="false" maxVotes="1" maxWriteIns="1">
+          <Choice name="Curtis W. Bennett" displayOrder="1" id="10" type="CD" />
+        </Contest>
+        <Contest name="Fire Protection Dist 5 Fire Commissioner Position #2" id="6" displayOrder="426" type="OF" isCumlative="false" maxVotes="1" maxWriteIns="1">
+          <Choice name="Tommy O. Taylor" displayOrder="1" id="16" type="CD" />
+        </Contest>
+        <Contest name="Fire Protection Dist 6 Fire Commissioner Position #3" id="7" displayOrder="430" type="OF" isCumlative="false" maxVotes="1" maxWriteIns="1">
+          <Choice name="Steven D. Grout" displayOrder="1" id="29" type="CD" />
+          <Choice name="Merlyn Flakus" displayOrder="2" id="41" type="CD" />
+        </Contest>
+        <Contest name="Fire Protection Dist 8 Fire Commissioner Position #1" id="8" displayOrder="431" type="OF" isCumlative="false" maxVotes="1" maxWriteIns="1">
+          <Choice name="Bev Voss-Petredis" displayOrder="1" id="46" type="CD" />
+          <Choice name="Tom Wampold" displayOrder="2" id="49" type="CD" />
+        </Contest>
+        <Contest name="Fire Protection Dist 8 Fire Commissioner Position #2" id="9" displayOrder="432" type="OF" isCumlative="false" maxVotes="1" maxWriteIns="1">
+          <Choice name="Daniel K. Kewish" displayOrder="1" id="7" type="CD" />
+          <Choice name="John W. Pate" displayOrder="2" id="24" type="CD" />
+        </Contest>
+        <Contest name="Fire Protection Dist 9 Fire Commissioner Position #3" id="10" displayOrder="436" type="OF" isCumlative="false" maxVotes="1" maxWriteIns="1">
+          <Choice name="Marvin C. Anderson" displayOrder="1" id="9" type="CD" />
+        </Contest>
+        <Contest name="Fire Protection Dist 11 Fire Commissioner Position #1" id="11" displayOrder="437" type="OF" isCumlative="false" maxVotes="1" maxWriteIns="1">
+          <Choice name="Chris Perrott" displayOrder="1" id="70" type="CD" />
+          <Choice name="Dan C. Ward" displayOrder="2" id="64" type="CD" />
+        </Contest>
+        <Contest name="Fire Protection Dist 12 Fire Commissioner Position #2" id="12" displayOrder="441" type="OF" isCumlative="false" maxVotes="1" maxWriteIns="1">
+          <Choice name="Steve Townsend" displayOrder="1" id="40" type="CD" />
+        </Contest>
+        <Contest name="Fire Protection Dist 12 Fire Commissioner Position #3" id="13" displayOrder="442" type="OF" isCumlative="false" maxVotes="1" maxWriteIns="1">
+          <Choice name="Terri S. Wood" displayOrder="1" id="38" type="CD" />
+        </Contest>
+        <Contest name="Fire Protection Dist 13 Fire Commissioner Position #3" id="14" displayOrder="445" type="OF" isCumlative="false" maxVotes="1" maxWriteIns="1">
+          <Choice name="Jan Hedman" displayOrder="1" id="22" type="CD" />
+          <Choice name="Randy Norris" displayOrder="2" id="51" type="CD" />
+        </Contest>
+        <Contest name="Fire Protection Dist 16 Fire Commissioner Position #3" id="15" displayOrder="448" type="OF" isCumlative="false" maxVotes="1" maxWriteIns="1">
+          <Choice name="Steve Edmondson" displayOrder="1" id="8" type="CD" />
+        </Contest>
+        <Contest name="Fire Protection Dist 17 Fire Commissioner Position #1" id="16" displayOrder="449" type="OF" isCumlative="false" maxVotes="1" maxWriteIns="1">
+          <Choice name="Jim Boldt" displayOrder="1" id="14" type="CD" />
+        </Contest>
+        <Contest name="Fire Protection Dist 18 Fire Commissioner Position #2" id="17" displayOrder="453" type="OF" isCumlative="false" maxVotes="1" maxWriteIns="1">
+          <Choice name="Franklin D. Phillips" displayOrder="1" id="21" type="CD" />
+          <Choice name="Douglas Drinkall" displayOrder="2" id="44" type="CD" />
+        </Contest>
+        <Contest name="Public Hospital Dist 1 Hospital Commissioner Position #3" id="46" displayOrder="457" type="OF" isCumlative="false" maxVotes="1" maxWriteIns="1">
+          <Choice name="Chris A. Truppner" displayOrder="1" id="17" type="CD" />
+          <Choice name="Nancy R. Trucksess" displayOrder="2" id="23" type="CD" />
+        </Contest>
+        <Contest name="Public Hospital Dist 2 Hospital Commissioner Position #3" id="48" displayOrder="460" type="OF" isCumlative="false" maxVotes="1" maxWriteIns="1">
+          <Choice name="Peggy VanBuskirk" displayOrder="1" id="42" type="CD" />
+        </Contest>
+        <Contest name="Port of Allyn Port Commissioner District #1" id="18" displayOrder="463" type="OF" isCumlative="false" maxVotes="1" maxWriteIns="1">
+          <Choice name="Judy Scott" displayOrder="1" id="25" type="CD" />
+        </Contest>
+        <Contest name="Port of Dewatto Port Commissioner District #2" id="19" displayOrder="467" type="OF" isCumlative="false" maxVotes="1" maxWriteIns="1">
+          <Choice name="Doug Stevens" displayOrder="1" id="54" type="CD" />
+        </Contest>
+        <Contest name="Port of Grapeview Port Commissioner District #1" id="20" displayOrder="469" type="OF" isCumlative="false" maxVotes="1" maxWriteIns="1">
+          <Choice name="William C. VanderWal" displayOrder="1" id="66" type="CD" />
+        </Contest>
+        <Contest name="Port of Hoodsport Port Commissioner Position #1" id="21" displayOrder="472" type="OF" isCumlative="false" maxVotes="1" maxWriteIns="1">
+          <Choice name="Terry W. Brazil" displayOrder="1" id="13" type="CD" />
+          <Choice name="Lew Parsons" displayOrder="2" id="55" type="CD" />
+        </Contest>
+        <Contest name="Port of Hoodsport Port Commissioner Position #2" id="22" displayOrder="473" type="OF" isCumlative="false" maxVotes="1" maxWriteIns="1">
+          <Choice name="Ed Johnston" displayOrder="1" id="57" type="CD" />
+          <Choice name="Mike Petz" displayOrder="2" id="58" type="CD" />
+        </Contest>
+        <Contest name="Port of Hoodsport Port Commissioner Position #3" id="23" displayOrder="474" type="OF" isCumlative="false" maxVotes="1" maxWriteIns="1">
+          <Choice name="John Olaughlin" displayOrder="1" id="59" type="CD" />
+          <Choice name="Frank Benavente" displayOrder="2" id="63" type="CD" />
+        </Contest>
+        <Contest name="Port of Shelton Port Commissioner District #1" id="24" displayOrder="475" type="OF" isCumlative="false" maxVotes="1" maxWriteIns="1">
+          <Choice name="Tom Wallitner" displayOrder="1" id="1" type="CD" />
+          <Choice name="Richard Byrd" displayOrder="2" id="61" type="CD" />
+        </Contest>
+        <Contest name="Southside School 42 School Board Position #3" id="27" displayOrder="486" type="OF" isCumlative="false" maxVotes="1" maxWriteIns="1">
+          <Choice name="Sadie Whitener" displayOrder="1" id="68" type="CD" />
+        </Contest>
+        <Contest name="Southside School 42 School Board Position #5" id="28" displayOrder="488" type="OF" isCumlative="false" maxVotes="1" maxWriteIns="1">
+          <Choice name="Linda S. Farrimond" displayOrder="1" id="65" type="CD" />
+        </Contest>
+        <Contest name="Grapeview School 54 School Board Position #1" id="29" displayOrder="489" type="OF" isCumlative="false" maxVotes="1" maxWriteIns="1">
+          <Choice name="Jolene Dumont" displayOrder="1" id="11" type="CD" />
+        </Contest>
+        <Contest name="Grapeview School 54 School Board Position #3" id="31" displayOrder="491" type="OF" isCumlative="false" maxVotes="1" maxWriteIns="1">
+          <Choice name="Pamela Berger" displayOrder="1" id="67" type="CD" />
+        </Contest>
+        <Contest name="Shelton School 309 School Board Director District #3" id="32" displayOrder="496" type="OF" isCumlative="false" maxVotes="1" maxWriteIns="1">
+          <Choice name="Holly M. Sharpe" displayOrder="1" id="39" type="CD" />
+        </Contest>
+        <Contest name="Shelton School 309 School Board Director District #4" id="34" displayOrder="497" type="OF" isCumlative="false" maxVotes="1" maxWriteIns="1">
+          <Choice name="Brian R. Major" displayOrder="1" id="62" type="CD" />
+        </Contest>
+        <Contest name="Shelton School 309 School Board Director District #5" id="35" displayOrder="498" type="OF" isCumlative="false" maxVotes="1" maxWriteIns="1">
+          <Choice name="Dean Hirschi" displayOrder="1" id="30" type="CD" />
+        </Contest>
+        <Contest name="Mary M Knight School 311 School Board Director District #2" id="38" displayOrder="500" type="OF" isCumlative="false" maxVotes="1" maxWriteIns="1">
+          <Choice name="Joe E. Rothrock" displayOrder="1" id="32" type="CD" />
+        </Contest>
+        <Contest name="Mary M Knight School 311 School Board Position #1" id="36" displayOrder="502" type="OF" isCumlative="false" maxVotes="1" maxWriteIns="1">
+          <Choice name="Leroy T. Valley" displayOrder="1" id="45" type="CD" />
+          <Choice name="Jim Frost" displayOrder="2" id="47" type="CD" />
+        </Contest>
+        <Contest name="Pioneer School 402 School Board Position #1" id="39" displayOrder="504" type="OF" isCumlative="false" maxVotes="1" maxWriteIns="1">
+          <Choice name="Sandra Borys" displayOrder="1" id="71" type="CD" />
+        </Contest>
+        <Contest name="Pioneer School 402 School Board Position #3" id="40" displayOrder="506" type="OF" isCumlative="false" maxVotes="1" maxWriteIns="1">
+          <Choice name="Dick Parrett" displayOrder="1" id="15" type="CD" />
+          <Choice name="Kirk Schwerzler" displayOrder="2" id="27" type="CD" />
+        </Contest>
+        <Contest name="Pioneer School 402 School Board Position #4" id="41" displayOrder="507" type="OF" isCumlative="false" maxVotes="1" maxWriteIns="1">
+          <Choice name="Jeanette L. Leach" displayOrder="1" id="20" type="CD" />
+        </Contest>
+        <Contest name="Pioneer School 402 School Board Position #5" id="42" displayOrder="508" type="OF" isCumlative="false" maxVotes="1" maxWriteIns="1">
+          <Choice name="Mike Felton" displayOrder="1" id="26" type="CD" />
+        </Contest>
+        <Contest name="North Mason School 403 School Board Director District #5" id="43" displayOrder="513" type="OF" isCumlative="false" maxVotes="1" maxWriteIns="1">
+          <Choice name="Mike Gaudio" displayOrder="1" id="43" type="CD" />
+          <Choice name="Danielle Skeeters" displayOrder="2" id="53" type="CD" />
+        </Contest>
+        <Contest name="Hood Canal School 404 School Board Director District #1" id="44" displayOrder="514" type="OF" isCumlative="false" maxVotes="1" maxWriteIns="1">
+          <Choice name="Judi Woodard" displayOrder="1" id="6" type="CD" />
+        </Contest>
+        <Contest name="Hood Canal School 404 School Board Position #4" id="45" displayOrder="518" type="OF" isCumlative="false" maxVotes="1" maxWriteIns="1">
+          <Choice name="Roslynne Reed" displayOrder="1" id="5" type="CD" />
+          <Choice name="Ginger R. Tejada" displayOrder="2" id="19" type="CD" />
+        </Contest>
+        <Contest name="Belfair Water Dist Water Commissioner Position #1" id="25" displayOrder="519" type="OF" isCumlative="false" maxVotes="1" maxWriteIns="1">
+          <Choice name="Michael D. Pope" displayOrder="1" id="35" type="CD" />
+          <Choice name="Irene B. Werdall" displayOrder="2" id="50" type="CD" />
+        </Contest>
+        <Contest name="Hartstene Pointe Water Commissioner Position #2" id="53" displayOrder="523" type="OF" isCumlative="false" maxVotes="1" maxWriteIns="1">
+          <Choice name="Mary A. Cary" displayOrder="1" id="12" type="CD" />
+        </Contest>
+        <Contest name="Maggie Lake Water Dist Water Commissioner Position #1" id="26" displayOrder="525" type="OF" isCumlative="false" maxVotes="1" maxWriteIns="1">
+          <Choice name="Donald R. Husted" displayOrder="1" id="33" type="CD" />
+        </Contest>
+        <Contest name="Maggie Lake Water Dist Water Commissioner Position #3" id="30" displayOrder="527" type="OF" isCumlative="false" maxVotes="1" maxWriteIns="1">
+          <Choice name="Robert K. Sample" displayOrder="1" id="34" type="CD" />
+        </Contest>
+        <Contest name="Tahuya River Water Dist Water Commissioner Position #2" id="37" displayOrder="529" type="OF" isCumlative="false" maxVotes="1" maxWriteIns="1">
+          <Choice name="Anthony T. Butler" displayOrder="1" id="36" type="CD" />
+          <Choice name="Darrin Klein" displayOrder="2" id="52" type="CD" />
+        </Contest>
+        <Contest name="Trails End Water Dist Water Commissioner Position #2" id="33" displayOrder="532" type="OF" isCumlative="false" maxVotes="1" maxWriteIns="1">
+          <Choice name="Douglas E. Doll" displayOrder="1" id="69" type="CD" />
+        </Contest>
+        <Contest name="Sch Dist 68 - Elma School 68 Director District 1" id="50" displayOrder="647" type="OF" isCumlative="false" maxVotes="1" maxWriteIns="1">
+          <Choice name="Larry Bridenback" displayOrder="1" id="28" type="CD" />
+        </Contest>
+        <Contest name="Sch Dist 68 - Elma School 68 Director District 2" id="51" displayOrder="648" type="OF" isCumlative="false" maxVotes="1" maxWriteIns="1">
+          <Choice name="Jamie Bailey" displayOrder="1" id="60" type="CD" />
+          <Choice name="Rick Gravatt" displayOrder="2" id="31" type="CD" />
+        </Contest>
+        <Contest name="Sch Dist 68 - Elma School 68 Director District 5" id="52" displayOrder="651" type="OF" isCumlative="false" maxVotes="1" maxWriteIns="1">
+          <Choice name="Teresa Boling" displayOrder="1" id="37" type="CD" />
+        </Contest>
+        <Contest name="Sch Dist 65 - McCleary School 65 Director District 5" id="49" displayOrder="656" type="OF" isCumlative="false" maxVotes="1" maxWriteIns="1">
+          <Choice name="R. Troy Colley" displayOrder="1" id="48" type="CD" />
+        </Contest>
+      </Contests>
+      <Precincts>
+        <Precinct name="101" id="101" displayOrder="101">
+          <Splits>
+            <Split name="26" id="26" displayOrder="26">
+              <DistrictPrecinctSplits>
+                <DistrictPrecinctSplit district="1" />
+                <DistrictPrecinctSplit district="18" />
+                <DistrictPrecinctSplit district="23" />
+                <DistrictPrecinctSplit district="31" />
+              </DistrictPrecinctSplits>
+            </Split>
+            <Split name="31" id="31" displayOrder="31">
+              <DistrictPrecinctSplits>
+                <DistrictPrecinctSplit district="1" />
+                <DistrictPrecinctSplit district="6" />
+                <DistrictPrecinctSplit district="23" />
+                <DistrictPrecinctSplit district="30" />
+                <DistrictPrecinctSplit district="31" />
+              </DistrictPrecinctSplits>
+            </Split>
+            <Split name="32" id="32" displayOrder="32">
+              <DistrictPrecinctSplits>
+                <DistrictPrecinctSplit district="1" />
+                <DistrictPrecinctSplit district="15" />
+                <DistrictPrecinctSplit district="23" />
+                <DistrictPrecinctSplit district="30" />
+                <DistrictPrecinctSplit district="31" />
+              </DistrictPrecinctSplits>
+            </Split>
+            <Split name="36" id="36" displayOrder="36">
+              <DistrictPrecinctSplits>
+                <DistrictPrecinctSplit district="1" />
+                <DistrictPrecinctSplit district="18" />
+                <DistrictPrecinctSplit district="23" />
+                <DistrictPrecinctSplit district="31" />
+              </DistrictPrecinctSplits>
+            </Split>
+          </Splits>
+        </Precinct>
+        <Precinct name="102" id="102" displayOrder="102">
+          <Splits>
+            <Split name="5" id="5" displayOrder="5">
+              <DistrictPrecinctSplits>
+                <DistrictPrecinctSplit district="1" />
+                <DistrictPrecinctSplit district="12" />
+                <DistrictPrecinctSplit district="23" />
+                <DistrictPrecinctSplit district="24" />
+                <DistrictPrecinctSplit district="26" />
+              </DistrictPrecinctSplits>
+            </Split>
+            <Split name="15" id="15" displayOrder="15">
+              <DistrictPrecinctSplits>
+                <DistrictPrecinctSplit district="1" />
+                <DistrictPrecinctSplit district="15" />
+                <DistrictPrecinctSplit district="23" />
+                <DistrictPrecinctSplit district="24" />
+                <DistrictPrecinctSplit district="26" />
+              </DistrictPrecinctSplits>
+            </Split>
+          </Splits>
+        </Precinct>
+        <Precinct name="103" id="103" displayOrder="103">
+          <Splits>
+            <Split name="45" id="45" displayOrder="45">
+              <DistrictPrecinctSplits>
+                <DistrictPrecinctSplit district="1" />
+                <DistrictPrecinctSplit district="14" />
+                <DistrictPrecinctSplit district="23" />
+                <DistrictPrecinctSplit district="31" />
+              </DistrictPrecinctSplits>
+            </Split>
+            <Split name="55" id="55" displayOrder="55">
+              <DistrictPrecinctSplits>
+                <DistrictPrecinctSplit district="1" />
+                <DistrictPrecinctSplit district="14" />
+                <DistrictPrecinctSplit district="23" />
+                <DistrictPrecinctSplit district="30" />
+                <DistrictPrecinctSplit district="31" />
+              </DistrictPrecinctSplits>
+            </Split>
+          </Splits>
+        </Precinct>
+        <Precinct name="104" id="104" displayOrder="104">
+          <Splits>
+            <Split name="5" id="5" displayOrder="5">
+              <DistrictPrecinctSplits>
+                <DistrictPrecinctSplit district="1" />
+                <DistrictPrecinctSplit district="12" />
+                <DistrictPrecinctSplit district="24" />
+                <DistrictPrecinctSplit district="26" />
+                <DistrictPrecinctSplit district="35" />
+              </DistrictPrecinctSplits>
+            </Split>
+            <Split name="6" id="6" displayOrder="6">
+              <DistrictPrecinctSplits>
+                <DistrictPrecinctSplit district="1" />
+                <DistrictPrecinctSplit district="12" />
+                <DistrictPrecinctSplit district="24" />
+                <DistrictPrecinctSplit district="26" />
+                <DistrictPrecinctSplit district="34" />
+                <DistrictPrecinctSplit district="35" />
+              </DistrictPrecinctSplits>
+            </Split>
+            <Split name="16" id="16" displayOrder="16">
+              <DistrictPrecinctSplits>
+                <DistrictPrecinctSplit district="1" />
+                <DistrictPrecinctSplit district="15" />
+                <DistrictPrecinctSplit district="24" />
+                <DistrictPrecinctSplit district="26" />
+                <DistrictPrecinctSplit district="34" />
+                <DistrictPrecinctSplit district="35" />
+              </DistrictPrecinctSplits>
+            </Split>
+            <Split name="75" id="75" displayOrder="75">
+              <DistrictPrecinctSplits>
+                <DistrictPrecinctSplit district="1" />
+                <DistrictPrecinctSplit district="12" />
+                <DistrictPrecinctSplit district="24" />
+                <DistrictPrecinctSplit district="26" />
+                <DistrictPrecinctSplit district="35" />
+              </DistrictPrecinctSplits>
+            </Split>
+            <Split name="77" id="77" displayOrder="77">
+              <DistrictPrecinctSplits>
+                <DistrictPrecinctSplit district="1" />
+                <DistrictPrecinctSplit district="12" />
+                <DistrictPrecinctSplit district="24" />
+                <DistrictPrecinctSplit district="26" />
+                <DistrictPrecinctSplit district="34" />
+                <DistrictPrecinctSplit district="35" />
+              </DistrictPrecinctSplits>
+            </Split>
+            <Split name="86" id="86" displayOrder="86">
+              <DistrictPrecinctSplits>
+                <DistrictPrecinctSplit district="1" />
+                <DistrictPrecinctSplit district="12" />
+                <DistrictPrecinctSplit district="19" />
+                <DistrictPrecinctSplit district="28" />
+                <DistrictPrecinctSplit district="35" />
+              </DistrictPrecinctSplits>
+            </Split>
+          </Splits>
+        </Precinct>
+        <Precinct name="105" id="105" displayOrder="105">
+          <DistrictPrecinctSplits>
+            <DistrictPrecinctSplit district="1" />
+            <DistrictPrecinctSplit district="12" />
+            <DistrictPrecinctSplit district="24" />
+            <DistrictPrecinctSplit district="26" />
+            <DistrictPrecinctSplit district="35" />
+          </DistrictPrecinctSplits>
+        </Precinct>
+        <Precinct name="106" id="106" displayOrder="106">
+          <Splits>
+            <Split name="75" id="75" displayOrder="75">
+              <DistrictPrecinctSplits>
+                <DistrictPrecinctSplit district="1" />
+                <DistrictPrecinctSplit district="12" />
+                <DistrictPrecinctSplit district="24" />
+                <DistrictPrecinctSplit district="26" />
+                <DistrictPrecinctSplit district="35" />
+              </DistrictPrecinctSplits>
+            </Split>
+            <Split name="87" id="87" displayOrder="87">
+              <DistrictPrecinctSplits>
+                <DistrictPrecinctSplit district="1" />
+                <DistrictPrecinctSplit district="12" />
+                <DistrictPrecinctSplit district="24" />
+                <DistrictPrecinctSplit district="27" />
+                <DistrictPrecinctSplit district="35" />
+              </DistrictPrecinctSplits>
+            </Split>
+            <Split name="99" id="99" displayOrder="99">
+              <DistrictPrecinctSplits>
+                <DistrictPrecinctSplit district="1" />
+                <DistrictPrecinctSplit district="12" />
+                <DistrictPrecinctSplit district="24" />
+                <DistrictPrecinctSplit district="26" />
+                <DistrictPrecinctSplit district="35" />
+              </DistrictPrecinctSplits>
+            </Split>
+          </Splits>
+        </Precinct>
+        <Precinct name="107" id="107" displayOrder="107">
+          <Splits>
+            <Split name="75" id="75" displayOrder="75">
+              <DistrictPrecinctSplits>
+                <DistrictPrecinctSplit district="1" />
+                <DistrictPrecinctSplit district="12" />
+                <DistrictPrecinctSplit district="24" />
+                <DistrictPrecinctSplit district="26" />
+                <DistrictPrecinctSplit district="35" />
+              </DistrictPrecinctSplits>
+            </Split>
+            <Split name="76" id="76" displayOrder="76">
+              <DistrictPrecinctSplits>
+                <DistrictPrecinctSplit district="1" />
+                <DistrictPrecinctSplit district="2" />
+                <DistrictPrecinctSplit district="12" />
+                <DistrictPrecinctSplit district="24" />
+                <DistrictPrecinctSplit district="26" />
+                <DistrictPrecinctSplit district="35" />
+              </DistrictPrecinctSplits>
+            </Split>
+          </Splits>
+        </Precinct>
+        <Precinct name="108" id="108" displayOrder="108">
+          <Splits>
+            <Split name="31" id="31" displayOrder="31">
+              <DistrictPrecinctSplits>
+                <DistrictPrecinctSplit district="1" />
+                <DistrictPrecinctSplit district="6" />
+                <DistrictPrecinctSplit district="23" />
+                <DistrictPrecinctSplit district="30" />
+                <DistrictPrecinctSplit district="31" />
+              </DistrictPrecinctSplits>
+            </Split>
+            <Split name="32" id="32" displayOrder="32">
+              <DistrictPrecinctSplits>
+                <DistrictPrecinctSplit district="1" />
+                <DistrictPrecinctSplit district="15" />
+                <DistrictPrecinctSplit district="23" />
+                <DistrictPrecinctSplit district="30" />
+                <DistrictPrecinctSplit district="31" />
+              </DistrictPrecinctSplits>
+            </Split>
+            <Split name="91" id="91" displayOrder="91">
+              <DistrictPrecinctSplits>
+                <DistrictPrecinctSplit district="1" />
+                <DistrictPrecinctSplit district="15" />
+                <DistrictPrecinctSplit district="23" />
+                <DistrictPrecinctSplit district="25" />
+                <DistrictPrecinctSplit district="30" />
+              </DistrictPrecinctSplits>
+            </Split>
+          </Splits>
+        </Precinct>
+        <Precinct name="109" id="109" displayOrder="109">
+          <Splits>
+            <Split name="11" id="11" displayOrder="11">
+              <DistrictPrecinctSplits>
+                <DistrictPrecinctSplit district="1" />
+                <DistrictPrecinctSplit district="4" />
+                <DistrictPrecinctSplit district="8" />
+                <DistrictPrecinctSplit district="23" />
+              </DistrictPrecinctSplits>
+            </Split>
+            <Split name="41" id="41" displayOrder="41">
+              <DistrictPrecinctSplits>
+                <DistrictPrecinctSplit district="1" />
+                <DistrictPrecinctSplit district="8" />
+                <DistrictPrecinctSplit district="23" />
+                <DistrictPrecinctSplit district="31" />
+              </DistrictPrecinctSplits>
+            </Split>
+            <Split name="66" id="66" displayOrder="66">
+              <DistrictPrecinctSplits>
+                <DistrictPrecinctSplit district="1" />
+                <DistrictPrecinctSplit district="7" />
+                <DistrictPrecinctSplit district="22" />
+                <DistrictPrecinctSplit district="23" />
+              </DistrictPrecinctSplits>
+            </Split>
+            <Split name="67" id="67" displayOrder="67">
+              <DistrictPrecinctSplits>
+                <DistrictPrecinctSplit district="1" />
+                <DistrictPrecinctSplit district="8" />
+                <DistrictPrecinctSplit district="22" />
+                <DistrictPrecinctSplit district="23" />
+              </DistrictPrecinctSplits>
+            </Split>
+            <Split name="90" id="90" displayOrder="90">
+              <DistrictPrecinctSplits>
+                <DistrictPrecinctSplit district="1" />
+                <DistrictPrecinctSplit district="8" />
+                <DistrictPrecinctSplit district="23" />
+                <DistrictPrecinctSplit district="36" />
+              </DistrictPrecinctSplits>
+            </Split>
+          </Splits>
+        </Precinct>
+        <Precinct name="110" id="110" displayOrder="110">
+          <Splits>
+            <Split name="42" id="42" displayOrder="42">
+              <DistrictPrecinctSplits>
+                <DistrictPrecinctSplit district="1" />
+                <DistrictPrecinctSplit district="9" />
+                <DistrictPrecinctSplit district="23" />
+                <DistrictPrecinctSplit district="31" />
+              </DistrictPrecinctSplits>
+            </Split>
+            <Split name="66" id="66" displayOrder="66">
+              <DistrictPrecinctSplits>
+                <DistrictPrecinctSplit district="1" />
+                <DistrictPrecinctSplit district="7" />
+                <DistrictPrecinctSplit district="22" />
+                <DistrictPrecinctSplit district="23" />
+              </DistrictPrecinctSplits>
+            </Split>
+          </Splits>
+        </Precinct>
+        <Precinct name="111" id="111" displayOrder="111">
+          <DistrictPrecinctSplits>
+            <DistrictPrecinctSplit district="1" />
+            <DistrictPrecinctSplit district="18" />
+            <DistrictPrecinctSplit district="20" />
+            <DistrictPrecinctSplit district="23" />
+          </DistrictPrecinctSplits>
+        </Precinct>
+        <Precinct name="112" id="112" displayOrder="112">
+          <Splits>
+            <Split name="80" id="80" displayOrder="80">
+              <DistrictPrecinctSplits>
+                <DistrictPrecinctSplit district="1" />
+                <DistrictPrecinctSplit district="13" />
+                <DistrictPrecinctSplit district="19" />
+                <DistrictPrecinctSplit district="23" />
+                <DistrictPrecinctSplit district="28" />
+              </DistrictPrecinctSplits>
+            </Split>
+            <Split name="85" id="85" displayOrder="85">
+              <DistrictPrecinctSplits>
+                <DistrictPrecinctSplit district="1" />
+                <DistrictPrecinctSplit district="15" />
+                <DistrictPrecinctSplit district="19" />
+                <DistrictPrecinctSplit district="23" />
+                <DistrictPrecinctSplit district="28" />
+              </DistrictPrecinctSplits>
+            </Split>
+          </Splits>
+        </Precinct>
+        <Precinct name="113" id="113" displayOrder="113">
+          <Splits>
+            <Split name="82" id="82" displayOrder="82">
+              <DistrictPrecinctSplits>
+                <DistrictPrecinctSplit district="1" />
+                <DistrictPrecinctSplit district="15" />
+                <DistrictPrecinctSplit district="23" />
+                <DistrictPrecinctSplit district="25" />
+              </DistrictPrecinctSplits>
+            </Split>
+            <Split name="99" id="99" displayOrder="99">
+              <DistrictPrecinctSplits>
+                <DistrictPrecinctSplit district="1" />
+                <DistrictPrecinctSplit district="15" />
+                <DistrictPrecinctSplit district="23" />
+                <DistrictPrecinctSplit district="25" />
+                <DistrictPrecinctSplit district="37" />
+              </DistrictPrecinctSplits>
+            </Split>
+          </Splits>
+        </Precinct>
+        <Precinct name="114" id="114" displayOrder="114">
+          <Splits>
+            <Split name="25" id="25" displayOrder="25">
+              <DistrictPrecinctSplits>
+                <DistrictPrecinctSplit district="1" />
+                <DistrictPrecinctSplit district="5" />
+                <DistrictPrecinctSplit district="20" />
+                <DistrictPrecinctSplit district="23" />
+                <DistrictPrecinctSplit district="29" />
+              </DistrictPrecinctSplits>
+            </Split>
+            <Split name="35" id="35" displayOrder="35">
+              <DistrictPrecinctSplits>
+                <DistrictPrecinctSplit district="1" />
+                <DistrictPrecinctSplit district="20" />
+                <DistrictPrecinctSplit district="23" />
+                <DistrictPrecinctSplit district="29" />
+              </DistrictPrecinctSplits>
+            </Split>
+            <Split name="36" id="36" displayOrder="36">
+              <DistrictPrecinctSplits>
+                <DistrictPrecinctSplit district="1" />
+                <DistrictPrecinctSplit district="11" />
+                <DistrictPrecinctSplit district="20" />
+                <DistrictPrecinctSplit district="23" />
+                <DistrictPrecinctSplit district="29" />
+              </DistrictPrecinctSplits>
+            </Split>
+          </Splits>
+        </Precinct>
+        <Precinct name="115" id="115" displayOrder="115">
+          <Splits>
+            <Split name="45" id="45" displayOrder="45">
+              <DistrictPrecinctSplits>
+                <DistrictPrecinctSplit district="1" />
+                <DistrictPrecinctSplit district="14" />
+                <DistrictPrecinctSplit district="23" />
+                <DistrictPrecinctSplit district="31" />
+              </DistrictPrecinctSplits>
+            </Split>
+            <Split name="51" id="51" displayOrder="51">
+              <DistrictPrecinctSplits>
+                <DistrictPrecinctSplit district="1" />
+                <DistrictPrecinctSplit district="8" />
+                <DistrictPrecinctSplit district="23" />
+                <DistrictPrecinctSplit district="30" />
+                <DistrictPrecinctSplit district="31" />
+              </DistrictPrecinctSplits>
+            </Split>
+            <Split name="55" id="55" displayOrder="55">
+              <DistrictPrecinctSplits>
+                <DistrictPrecinctSplit district="1" />
+                <DistrictPrecinctSplit district="14" />
+                <DistrictPrecinctSplit district="23" />
+                <DistrictPrecinctSplit district="30" />
+                <DistrictPrecinctSplit district="31" />
+              </DistrictPrecinctSplits>
+            </Split>
+          </Splits>
+        </Precinct>
+        <Precinct name="116" id="116" displayOrder="116">
+          <Splits>
+            <Split name="11" id="11" displayOrder="11">
+              <DistrictPrecinctSplits>
+                <DistrictPrecinctSplit district="1" />
+                <DistrictPrecinctSplit district="4" />
+                <DistrictPrecinctSplit district="8" />
+                <DistrictPrecinctSplit district="23" />
+              </DistrictPrecinctSplits>
+            </Split>
+            <Split name="45" id="45" displayOrder="45">
+              <DistrictPrecinctSplits>
+                <DistrictPrecinctSplit district="1" />
+                <DistrictPrecinctSplit district="14" />
+                <DistrictPrecinctSplit district="23" />
+                <DistrictPrecinctSplit district="31" />
+              </DistrictPrecinctSplits>
+            </Split>
+            <Split name="90" id="90" displayOrder="90">
+              <DistrictPrecinctSplits>
+                <DistrictPrecinctSplit district="1" />
+                <DistrictPrecinctSplit district="8" />
+                <DistrictPrecinctSplit district="23" />
+                <DistrictPrecinctSplit district="36" />
+              </DistrictPrecinctSplits>
+            </Split>
+          </Splits>
+        </Precinct>
+        <Precinct name="117" id="117" displayOrder="117">
+          <Splits>
+            <Split name="45" id="45" displayOrder="45">
+              <DistrictPrecinctSplits>
+                <DistrictPrecinctSplit district="1" />
+                <DistrictPrecinctSplit district="14" />
+                <DistrictPrecinctSplit district="23" />
+                <DistrictPrecinctSplit district="31" />
+              </DistrictPrecinctSplits>
+            </Split>
+            <Split name="70" id="70" displayOrder="70">
+              <DistrictPrecinctSplits>
+                <DistrictPrecinctSplit district="1" />
+                <DistrictPrecinctSplit district="14" />
+                <DistrictPrecinctSplit district="23" />
+                <DistrictPrecinctSplit district="30" />
+                <DistrictPrecinctSplit district="32" />
+              </DistrictPrecinctSplits>
+            </Split>
+          </Splits>
+        </Precinct>
+        <Precinct name="118" id="118" displayOrder="118">
+          <Splits>
+            <Split name="85" id="85" displayOrder="85">
+              <DistrictPrecinctSplits>
+                <DistrictPrecinctSplit district="1" />
+                <DistrictPrecinctSplit district="15" />
+                <DistrictPrecinctSplit district="19" />
+                <DistrictPrecinctSplit district="23" />
+                <DistrictPrecinctSplit district="28" />
+              </DistrictPrecinctSplits>
+            </Split>
+            <Split name="87" id="87" displayOrder="87">
+              <DistrictPrecinctSplits>
+                <DistrictPrecinctSplit district="1" />
+                <DistrictPrecinctSplit district="15" />
+                <DistrictPrecinctSplit district="23" />
+                <DistrictPrecinctSplit district="25" />
+                <DistrictPrecinctSplit district="28" />
+              </DistrictPrecinctSplits>
+            </Split>
+          </Splits>
+        </Precinct>
+        <Precinct name="119" id="119" displayOrder="119">
+          <Splits>
+            <Split name="11" id="11" displayOrder="11">
+              <DistrictPrecinctSplits>
+                <DistrictPrecinctSplit district="1" />
+                <DistrictPrecinctSplit district="10" />
+                <DistrictPrecinctSplit district="20" />
+                <DistrictPrecinctSplit district="23" />
+              </DistrictPrecinctSplits>
+            </Split>
+            <Split name="15" id="15" displayOrder="15">
+              <DistrictPrecinctSplits>
+                <DistrictPrecinctSplit district="1" />
+                <DistrictPrecinctSplit district="5" />
+                <DistrictPrecinctSplit district="20" />
+                <DistrictPrecinctSplit district="23" />
+              </DistrictPrecinctSplits>
+            </Split>
+            <Split name="30" id="30" displayOrder="30">
+              <DistrictPrecinctSplits>
+                <DistrictPrecinctSplit district="1" />
+                <DistrictPrecinctSplit district="20" />
+                <DistrictPrecinctSplit district="23" />
+              </DistrictPrecinctSplits>
+            </Split>
+            <Split name="33" id="33" displayOrder="33">
+              <DistrictPrecinctSplits>
+                <DistrictPrecinctSplit district="1" />
+                <DistrictPrecinctSplit district="10" />
+                <DistrictPrecinctSplit district="20" />
+                <DistrictPrecinctSplit district="23" />
+              </DistrictPrecinctSplits>
+            </Split>
+          </Splits>
+        </Precinct>
+        <Precinct name="120" id="120" displayOrder="120">
+          <DistrictPrecinctSplits>
+            <DistrictPrecinctSplit district="1" />
+            <DistrictPrecinctSplit district="7" />
+            <DistrictPrecinctSplit district="22" />
+            <DistrictPrecinctSplit district="23" />
+          </DistrictPrecinctSplits>
+        </Precinct>
+        <Precinct name="121" id="121" displayOrder="121">
+          <Splits>
+            <Split name="55" id="55" displayOrder="55">
+              <DistrictPrecinctSplits>
+                <DistrictPrecinctSplit district="1" />
+                <DistrictPrecinctSplit district="14" />
+                <DistrictPrecinctSplit district="23" />
+                <DistrictPrecinctSplit district="30" />
+                <DistrictPrecinctSplit district="31" />
+              </DistrictPrecinctSplits>
+            </Split>
+            <Split name="70" id="70" displayOrder="70">
+              <DistrictPrecinctSplits>
+                <DistrictPrecinctSplit district="1" />
+                <DistrictPrecinctSplit district="14" />
+                <DistrictPrecinctSplit district="23" />
+                <DistrictPrecinctSplit district="30" />
+                <DistrictPrecinctSplit district="32" />
+              </DistrictPrecinctSplits>
+            </Split>
+          </Splits>
+        </Precinct>
+        <Precinct name="122" id="122" displayOrder="122">
+          <DistrictPrecinctSplits>
+            <DistrictPrecinctSplit district="1" />
+            <DistrictPrecinctSplit district="15" />
+            <DistrictPrecinctSplit district="23" />
+            <DistrictPrecinctSplit district="25" />
+            <DistrictPrecinctSplit district="30" />
+          </DistrictPrecinctSplits>
+        </Precinct>
+        <Precinct name="123" id="123" displayOrder="123">
+          <Splits>
+            <Split name="31" id="31" displayOrder="31">
+              <DistrictPrecinctSplits>
+                <DistrictPrecinctSplit district="1" />
+                <DistrictPrecinctSplit district="6" />
+                <DistrictPrecinctSplit district="23" />
+                <DistrictPrecinctSplit district="30" />
+                <DistrictPrecinctSplit district="31" />
+              </DistrictPrecinctSplits>
+            </Split>
+            <Split name="34" id="34" displayOrder="34">
+              <DistrictPrecinctSplits>
+                <DistrictPrecinctSplit district="1" />
+                <DistrictPrecinctSplit district="9" />
+                <DistrictPrecinctSplit district="23" />
+                <DistrictPrecinctSplit district="30" />
+                <DistrictPrecinctSplit district="31" />
+              </DistrictPrecinctSplits>
+            </Split>
+          </Splits>
+        </Precinct>
+        <Precinct name="124" id="124" displayOrder="124">
+          <Splits>
+            <Split name="6" id="6" displayOrder="6">
+              <DistrictPrecinctSplits>
+                <DistrictPrecinctSplit district="1" />
+                <DistrictPrecinctSplit district="15" />
+                <DistrictPrecinctSplit district="20" />
+                <DistrictPrecinctSplit district="23" />
+                <DistrictPrecinctSplit district="30" />
+              </DistrictPrecinctSplits>
+            </Split>
+            <Split name="32" id="32" displayOrder="32">
+              <DistrictPrecinctSplits>
+                <DistrictPrecinctSplit district="1" />
+                <DistrictPrecinctSplit district="15" />
+                <DistrictPrecinctSplit district="23" />
+                <DistrictPrecinctSplit district="30" />
+                <DistrictPrecinctSplit district="31" />
+              </DistrictPrecinctSplits>
+            </Split>
+            <Split name="91" id="91" displayOrder="91">
+              <DistrictPrecinctSplits>
+                <DistrictPrecinctSplit district="1" />
+                <DistrictPrecinctSplit district="15" />
+                <DistrictPrecinctSplit district="23" />
+                <DistrictPrecinctSplit district="25" />
+                <DistrictPrecinctSplit district="30" />
+              </DistrictPrecinctSplits>
+            </Split>
+          </Splits>
+        </Precinct>
+        <Precinct name="125" id="125" displayOrder="125">
+          <Splits>
+            <Split name="81" id="81" displayOrder="81">
+              <DistrictPrecinctSplits>
+                <DistrictPrecinctSplit district="1" />
+                <DistrictPrecinctSplit district="13" />
+                <DistrictPrecinctSplit district="23" />
+                <DistrictPrecinctSplit district="25" />
+              </DistrictPrecinctSplits>
+            </Split>
+            <Split name="82" id="82" displayOrder="82">
+              <DistrictPrecinctSplits>
+                <DistrictPrecinctSplit district="1" />
+                <DistrictPrecinctSplit district="15" />
+                <DistrictPrecinctSplit district="23" />
+                <DistrictPrecinctSplit district="25" />
+              </DistrictPrecinctSplits>
+            </Split>
+            <Split name="86" id="86" displayOrder="86">
+              <DistrictPrecinctSplits>
+                <DistrictPrecinctSplit district="1" />
+                <DistrictPrecinctSplit district="13" />
+                <DistrictPrecinctSplit district="23" />
+                <DistrictPrecinctSplit district="25" />
+                <DistrictPrecinctSplit district="28" />
+              </DistrictPrecinctSplits>
+            </Split>
+            <Split name="87" id="87" displayOrder="87">
+              <DistrictPrecinctSplits>
+                <DistrictPrecinctSplit district="1" />
+                <DistrictPrecinctSplit district="15" />
+                <DistrictPrecinctSplit district="23" />
+                <DistrictPrecinctSplit district="25" />
+                <DistrictPrecinctSplit district="28" />
+              </DistrictPrecinctSplits>
+            </Split>
+            <Split name="91" id="91" displayOrder="91">
+              <DistrictPrecinctSplits>
+                <DistrictPrecinctSplit district="1" />
+                <DistrictPrecinctSplit district="15" />
+                <DistrictPrecinctSplit district="23" />
+                <DistrictPrecinctSplit district="25" />
+                <DistrictPrecinctSplit district="30" />
+              </DistrictPrecinctSplits>
+            </Split>
+          </Splits>
+        </Precinct>
+        <Precinct name="126" id="126" displayOrder="126">
+          <DistrictPrecinctSplits>
+            <DistrictPrecinctSplit district="1" />
+            <DistrictPrecinctSplit district="5" />
+            <DistrictPrecinctSplit district="20" />
+            <DistrictPrecinctSplit district="23" />
+            <DistrictPrecinctSplit district="29" />
+          </DistrictPrecinctSplits>
+        </Precinct>
+        <Precinct name="127" id="127" displayOrder="127">
+          <DistrictPrecinctSplits>
+            <DistrictPrecinctSplit district="1" />
+            <DistrictPrecinctSplit district="7" />
+            <DistrictPrecinctSplit district="22" />
+            <DistrictPrecinctSplit district="23" />
+          </DistrictPrecinctSplits>
+        </Precinct>
+        <Precinct name="128" id="128" displayOrder="128">
+          <Splits>
+            <Split name="15" id="15" displayOrder="15">
+              <DistrictPrecinctSplits>
+                <DistrictPrecinctSplit district="1" />
+                <DistrictPrecinctSplit district="5" />
+                <DistrictPrecinctSplit district="20" />
+                <DistrictPrecinctSplit district="23" />
+              </DistrictPrecinctSplits>
+            </Split>
+            <Split name="16" id="16" displayOrder="16">
+              <DistrictPrecinctSplits>
+                <DistrictPrecinctSplit district="1" />
+                <DistrictPrecinctSplit district="18" />
+                <DistrictPrecinctSplit district="20" />
+                <DistrictPrecinctSplit district="23" />
+              </DistrictPrecinctSplits>
+            </Split>
+          </Splits>
+        </Precinct>
+        <Precinct name="129" id="129" displayOrder="129">
+          <Splits>
+            <Split name="58" id="58" displayOrder="58">
+              <DistrictPrecinctSplits>
+                <DistrictPrecinctSplit district="1" />
+                <DistrictPrecinctSplit district="12" />
+                <DistrictPrecinctSplit district="24" />
+                <DistrictPrecinctSplit district="35" />
+              </DistrictPrecinctSplits>
+            </Split>
+            <Split name="59" id="59" displayOrder="59">
+              <DistrictPrecinctSplits>
+                <DistrictPrecinctSplit district="1" />
+                <DistrictPrecinctSplit district="17" />
+                <DistrictPrecinctSplit district="24" />
+                <DistrictPrecinctSplit district="35" />
+              </DistrictPrecinctSplits>
+            </Split>
+            <Split name="60" id="60" displayOrder="60">
+              <DistrictPrecinctSplits>
+                <DistrictPrecinctSplit district="1" />
+                <DistrictPrecinctSplit district="17" />
+                <DistrictPrecinctSplit district="21" />
+                <DistrictPrecinctSplit district="24" />
+                <DistrictPrecinctSplit district="35" />
+              </DistrictPrecinctSplits>
+            </Split>
+            <Split name="63" id="63" displayOrder="63">
+              <DistrictPrecinctSplits>
+                <DistrictPrecinctSplit district="1" />
+                <DistrictPrecinctSplit district="12" />
+                <DistrictPrecinctSplit district="24" />
+                <DistrictPrecinctSplit district="33" />
+                <DistrictPrecinctSplit district="35" />
+              </DistrictPrecinctSplits>
+            </Split>
+          </Splits>
+        </Precinct>
+        <Precinct name="130" id="130" displayOrder="130">
+          <Splits>
+            <Split name="7" id="7" displayOrder="7">
+              <DistrictPrecinctSplits>
+                <DistrictPrecinctSplit district="1" />
+                <DistrictPrecinctSplit district="16" />
+                <DistrictPrecinctSplit district="20" />
+                <DistrictPrecinctSplit district="23" />
+                <DistrictPrecinctSplit district="30" />
+              </DistrictPrecinctSplits>
+            </Split>
+            <Split name="26" id="26" displayOrder="26">
+              <DistrictPrecinctSplits>
+                <DistrictPrecinctSplit district="1" />
+                <DistrictPrecinctSplit district="18" />
+                <DistrictPrecinctSplit district="23" />
+                <DistrictPrecinctSplit district="31" />
+              </DistrictPrecinctSplits>
+            </Split>
+            <Split name="36" id="36" displayOrder="36">
+              <DistrictPrecinctSplits>
+                <DistrictPrecinctSplit district="1" />
+                <DistrictPrecinctSplit district="18" />
+                <DistrictPrecinctSplit district="23" />
+                <DistrictPrecinctSplit district="31" />
+              </DistrictPrecinctSplits>
+            </Split>
+            <Split name="50" id="50" displayOrder="50">
+              <DistrictPrecinctSplits>
+                <DistrictPrecinctSplit district="1" />
+                <DistrictPrecinctSplit district="16" />
+                <DistrictPrecinctSplit district="20" />
+                <DistrictPrecinctSplit district="23" />
+              </DistrictPrecinctSplits>
+            </Split>
+            <Split name="55" id="55" displayOrder="55">
+              <DistrictPrecinctSplits>
+                <DistrictPrecinctSplit district="1" />
+                <DistrictPrecinctSplit district="16" />
+                <DistrictPrecinctSplit district="20" />
+                <DistrictPrecinctSplit district="23" />
+              </DistrictPrecinctSplits>
+            </Split>
+            <Split name="57" id="57" displayOrder="57">
+              <DistrictPrecinctSplits>
+                <DistrictPrecinctSplit district="1" />
+                <DistrictPrecinctSplit district="16" />
+                <DistrictPrecinctSplit district="20" />
+                <DistrictPrecinctSplit district="23" />
+              </DistrictPrecinctSplits>
+            </Split>
+            <Split name="61" id="61" displayOrder="61">
+              <DistrictPrecinctSplits>
+                <DistrictPrecinctSplit district="1" />
+                <DistrictPrecinctSplit district="18" />
+                <DistrictPrecinctSplit district="20" />
+                <DistrictPrecinctSplit district="23" />
+              </DistrictPrecinctSplits>
+            </Split>
+            <Split name="62" id="62" displayOrder="62">
+              <DistrictPrecinctSplits>
+                <DistrictPrecinctSplit district="1" />
+                <DistrictPrecinctSplit district="18" />
+                <DistrictPrecinctSplit district="20" />
+                <DistrictPrecinctSplit district="23" />
+              </DistrictPrecinctSplits>
+            </Split>
+          </Splits>
+        </Precinct>
+        <Precinct name="131" id="131" displayOrder="131">
+          <Splits>
+            <Split name="35" id="35" displayOrder="35">
+              <DistrictPrecinctSplits>
+                <DistrictPrecinctSplit district="1" />
+                <DistrictPrecinctSplit district="15" />
+                <DistrictPrecinctSplit district="23" />
+                <DistrictPrecinctSplit district="24" />
+              </DistrictPrecinctSplits>
+            </Split>
+            <Split name="45" id="45" displayOrder="45">
+              <DistrictPrecinctSplits>
+                <DistrictPrecinctSplit district="1" />
+                <DistrictPrecinctSplit district="15" />
+                <DistrictPrecinctSplit district="23" />
+                <DistrictPrecinctSplit district="24" />
+                <DistrictPrecinctSplit district="26" />
+              </DistrictPrecinctSplits>
+            </Split>
+          </Splits>
+        </Precinct>
+        <Precinct name="132" id="132" displayOrder="132">
+          <Splits>
+            <Split name="34" id="34" displayOrder="34">
+              <DistrictPrecinctSplits>
+                <DistrictPrecinctSplit district="1" />
+                <DistrictPrecinctSplit district="9" />
+                <DistrictPrecinctSplit district="23" />
+                <DistrictPrecinctSplit district="30" />
+                <DistrictPrecinctSplit district="31" />
+              </DistrictPrecinctSplits>
+            </Split>
+            <Split name="51" id="51" displayOrder="51">
+              <DistrictPrecinctSplits>
+                <DistrictPrecinctSplit district="1" />
+                <DistrictPrecinctSplit district="8" />
+                <DistrictPrecinctSplit district="23" />
+                <DistrictPrecinctSplit district="30" />
+                <DistrictPrecinctSplit district="31" />
+              </DistrictPrecinctSplits>
+            </Split>
+          </Splits>
+        </Precinct>
+        <Precinct name="201" id="201" displayOrder="201">
+          <DistrictPrecinctSplits>
+            <DistrictPrecinctSplit district="1" />
+            <DistrictPrecinctSplit district="3" />
+            <DistrictPrecinctSplit district="23" />
+            <DistrictPrecinctSplit district="30" />
+            <DistrictPrecinctSplit district="31" />
+          </DistrictPrecinctSplits>
+        </Precinct>
+        <Precinct name="202" id="202" displayOrder="202">
+          <DistrictPrecinctSplits>
+            <DistrictPrecinctSplit district="1" />
+            <DistrictPrecinctSplit district="3" />
+            <DistrictPrecinctSplit district="23" />
+            <DistrictPrecinctSplit district="30" />
+            <DistrictPrecinctSplit district="31" />
+          </DistrictPrecinctSplits>
+        </Precinct>
+        <Precinct name="203" id="203" displayOrder="203">
+          <DistrictPrecinctSplits>
+            <DistrictPrecinctSplit district="1" />
+            <DistrictPrecinctSplit district="3" />
+            <DistrictPrecinctSplit district="23" />
+            <DistrictPrecinctSplit district="30" />
+            <DistrictPrecinctSplit district="31" />
+          </DistrictPrecinctSplits>
+        </Precinct>
+        <Precinct name="204" id="204" displayOrder="204">
+          <DistrictPrecinctSplits>
+            <DistrictPrecinctSplit district="1" />
+            <DistrictPrecinctSplit district="3" />
+            <DistrictPrecinctSplit district="23" />
+            <DistrictPrecinctSplit district="30" />
+            <DistrictPrecinctSplit district="31" />
+          </DistrictPrecinctSplits>
+        </Precinct>
+        <Precinct name="205" id="205" displayOrder="205">
+          <DistrictPrecinctSplits>
+            <DistrictPrecinctSplit district="1" />
+            <DistrictPrecinctSplit district="3" />
+            <DistrictPrecinctSplit district="23" />
+            <DistrictPrecinctSplit district="30" />
+            <DistrictPrecinctSplit district="31" />
+          </DistrictPrecinctSplits>
+        </Precinct>
+        <Precinct name="206" id="206" displayOrder="206">
+          <DistrictPrecinctSplits>
+            <DistrictPrecinctSplit district="1" />
+            <DistrictPrecinctSplit district="3" />
+            <DistrictPrecinctSplit district="23" />
+            <DistrictPrecinctSplit district="30" />
+            <DistrictPrecinctSplit district="31" />
+          </DistrictPrecinctSplits>
+        </Precinct>
+        <Precinct name="207" id="207" displayOrder="207">
+          <DistrictPrecinctSplits>
+            <DistrictPrecinctSplit district="1" />
+            <DistrictPrecinctSplit district="3" />
+            <DistrictPrecinctSplit district="23" />
+            <DistrictPrecinctSplit district="30" />
+            <DistrictPrecinctSplit district="31" />
+          </DistrictPrecinctSplits>
+        </Precinct>
+        <Precinct name="208" id="208" displayOrder="208">
+          <DistrictPrecinctSplits>
+            <DistrictPrecinctSplit district="1" />
+            <DistrictPrecinctSplit district="3" />
+            <DistrictPrecinctSplit district="23" />
+            <DistrictPrecinctSplit district="30" />
+            <DistrictPrecinctSplit district="31" />
+          </DistrictPrecinctSplits>
+        </Precinct>
+        <Precinct name="209" id="209" displayOrder="209">
+          <DistrictPrecinctSplits>
+            <DistrictPrecinctSplit district="1" />
+            <DistrictPrecinctSplit district="3" />
+            <DistrictPrecinctSplit district="23" />
+            <DistrictPrecinctSplit district="30" />
+            <DistrictPrecinctSplit district="31" />
+          </DistrictPrecinctSplits>
+        </Precinct>
+        <Precinct name="210" id="210" displayOrder="210">
+          <DistrictPrecinctSplits>
+            <DistrictPrecinctSplit district="1" />
+            <DistrictPrecinctSplit district="3" />
+            <DistrictPrecinctSplit district="23" />
+            <DistrictPrecinctSplit district="30" />
+            <DistrictPrecinctSplit district="31" />
+          </DistrictPrecinctSplits>
+        </Precinct>
+        <Precinct name="211" id="211" displayOrder="211">
+          <DistrictPrecinctSplits>
+            <DistrictPrecinctSplit district="1" />
+            <DistrictPrecinctSplit district="3" />
+            <DistrictPrecinctSplit district="23" />
+            <DistrictPrecinctSplit district="30" />
+            <DistrictPrecinctSplit district="31" />
+          </DistrictPrecinctSplits>
+        </Precinct>
+        <Precinct name="212" id="212" displayOrder="212">
+          <DistrictPrecinctSplits>
+            <DistrictPrecinctSplit district="1" />
+            <DistrictPrecinctSplit district="3" />
+            <DistrictPrecinctSplit district="23" />
+            <DistrictPrecinctSplit district="30" />
+            <DistrictPrecinctSplit district="31" />
+          </DistrictPrecinctSplits>
+        </Precinct>
+        <Precinct name="213" id="213" displayOrder="213">
+          <DistrictPrecinctSplits>
+            <DistrictPrecinctSplit district="1" />
+            <DistrictPrecinctSplit district="3" />
+            <DistrictPrecinctSplit district="23" />
+            <DistrictPrecinctSplit district="30" />
+            <DistrictPrecinctSplit district="31" />
+          </DistrictPrecinctSplits>
+        </Precinct>
+        <Precinct name="214" id="214" displayOrder="214">
+          <DistrictPrecinctSplits>
+            <DistrictPrecinctSplit district="1" />
+            <DistrictPrecinctSplit district="3" />
+            <DistrictPrecinctSplit district="23" />
+            <DistrictPrecinctSplit district="30" />
+            <DistrictPrecinctSplit district="31" />
+          </DistrictPrecinctSplits>
+        </Precinct>
+        <Precinct name="215" id="215" displayOrder="215">
+          <DistrictPrecinctSplits>
+            <DistrictPrecinctSplit district="1" />
+            <DistrictPrecinctSplit district="3" />
+            <DistrictPrecinctSplit district="23" />
+            <DistrictPrecinctSplit district="30" />
+            <DistrictPrecinctSplit district="31" />
+          </DistrictPrecinctSplits>
+        </Precinct>
+        <Precinct name="216" id="216" displayOrder="216">
+          <DistrictPrecinctSplits>
+            <DistrictPrecinctSplit district="1" />
+            <DistrictPrecinctSplit district="3" />
+            <DistrictPrecinctSplit district="23" />
+            <DistrictPrecinctSplit district="30" />
+            <DistrictPrecinctSplit district="31" />
+          </DistrictPrecinctSplits>
+        </Precinct>
+        <Precinct name="301" id="301" displayOrder="301">
+          <Splits>
+            <Split name="75" id="75" displayOrder="75">
+              <DistrictPrecinctSplits>
+                <DistrictPrecinctSplit district="1" />
+                <DistrictPrecinctSplit district="12" />
+                <DistrictPrecinctSplit district="24" />
+                <DistrictPrecinctSplit district="26" />
+                <DistrictPrecinctSplit district="35" />
+              </DistrictPrecinctSplits>
+            </Split>
+            <Split name="76" id="76" displayOrder="76">
+              <DistrictPrecinctSplits>
+                <DistrictPrecinctSplit district="1" />
+                <DistrictPrecinctSplit district="2" />
+                <DistrictPrecinctSplit district="12" />
+                <DistrictPrecinctSplit district="24" />
+                <DistrictPrecinctSplit district="26" />
+                <DistrictPrecinctSplit district="35" />
+              </DistrictPrecinctSplits>
+            </Split>
+          </Splits>
+        </Precinct>
+        <Precinct name="302" id="302" displayOrder="302">
+          <Splits>
+            <Split name="58" id="58" displayOrder="58">
+              <DistrictPrecinctSplits>
+                <DistrictPrecinctSplit district="1" />
+                <DistrictPrecinctSplit district="12" />
+                <DistrictPrecinctSplit district="24" />
+                <DistrictPrecinctSplit district="35" />
+              </DistrictPrecinctSplits>
+            </Split>
+            <Split name="62" id="62" displayOrder="62">
+              <DistrictPrecinctSplits>
+                <DistrictPrecinctSplit district="1" />
+                <DistrictPrecinctSplit district="12" />
+                <DistrictPrecinctSplit district="24" />
+                <DistrictPrecinctSplit district="27" />
+                <DistrictPrecinctSplit district="35" />
+              </DistrictPrecinctSplits>
+            </Split>
+            <Split name="63" id="63" displayOrder="63">
+              <DistrictPrecinctSplits>
+                <DistrictPrecinctSplit district="1" />
+                <DistrictPrecinctSplit district="12" />
+                <DistrictPrecinctSplit district="24" />
+                <DistrictPrecinctSplit district="33" />
+                <DistrictPrecinctSplit district="35" />
+              </DistrictPrecinctSplits>
+            </Split>
+          </Splits>
+        </Precinct>
+        <Precinct name="303" id="303" displayOrder="303">
+          <DistrictPrecinctSplits>
+            <DistrictPrecinctSplit district="1" />
+            <DistrictPrecinctSplit district="15" />
+            <DistrictPrecinctSplit district="23" />
+            <DistrictPrecinctSplit district="25" />
+            <DistrictPrecinctSplit district="30" />
+          </DistrictPrecinctSplits>
+        </Precinct>
+        <Precinct name="304" id="304" displayOrder="304">
+          <DistrictPrecinctSplits>
+            <DistrictPrecinctSplit district="1" />
+            <DistrictPrecinctSplit district="14" />
+            <DistrictPrecinctSplit district="23" />
+            <DistrictPrecinctSplit district="30" />
+            <DistrictPrecinctSplit district="32" />
+          </DistrictPrecinctSplits>
+        </Precinct>
+        <Precinct name="305" id="305" displayOrder="305">
+          <Splits>
+            <Split name="63" id="63" displayOrder="63">
+              <DistrictPrecinctSplits>
+                <DistrictPrecinctSplit district="1" />
+                <DistrictPrecinctSplit district="20" />
+                <DistrictPrecinctSplit district="23" />
+                <DistrictPrecinctSplit district="29" />
+              </DistrictPrecinctSplits>
+            </Split>
+            <Split name="64" id="64" displayOrder="64">
+              <DistrictPrecinctSplits>
+                <DistrictPrecinctSplit district="1" />
+                <DistrictPrecinctSplit district="11" />
+                <DistrictPrecinctSplit district="20" />
+                <DistrictPrecinctSplit district="23" />
+                <DistrictPrecinctSplit district="29" />
+              </DistrictPrecinctSplits>
+            </Split>
+          </Splits>
+        </Precinct>
+        <Precinct name="306" id="306" displayOrder="306">
+          <DistrictPrecinctSplits>
+            <DistrictPrecinctSplit district="1" />
+            <DistrictPrecinctSplit district="15" />
+            <DistrictPrecinctSplit district="23" />
+            <DistrictPrecinctSplit district="25" />
+            <DistrictPrecinctSplit district="30" />
+          </DistrictPrecinctSplits>
+        </Precinct>
+        <Precinct name="307" id="307" displayOrder="307">
+          <Splits>
+            <Split name="32" id="32" displayOrder="32">
+              <DistrictPrecinctSplits>
+                <DistrictPrecinctSplit district="1" />
+                <DistrictPrecinctSplit district="15" />
+                <DistrictPrecinctSplit district="23" />
+                <DistrictPrecinctSplit district="30" />
+                <DistrictPrecinctSplit district="31" />
+              </DistrictPrecinctSplits>
+            </Split>
+            <Split name="91" id="91" displayOrder="91">
+              <DistrictPrecinctSplits>
+                <DistrictPrecinctSplit district="1" />
+                <DistrictPrecinctSplit district="15" />
+                <DistrictPrecinctSplit district="23" />
+                <DistrictPrecinctSplit district="25" />
+                <DistrictPrecinctSplit district="30" />
+              </DistrictPrecinctSplits>
+            </Split>
+          </Splits>
+        </Precinct>
+        <Precinct name="308" id="308" displayOrder="308">
+          <DistrictPrecinctSplits>
+            <DistrictPrecinctSplit district="1" />
+            <DistrictPrecinctSplit district="12" />
+            <DistrictPrecinctSplit district="24" />
+            <DistrictPrecinctSplit district="26" />
+            <DistrictPrecinctSplit district="35" />
+          </DistrictPrecinctSplits>
+        </Precinct>
+        <Precinct name="309" id="309" displayOrder="309">
+          <Splits>
+            <Split name="10" id="10" displayOrder="10">
+              <DistrictPrecinctSplits>
+                <DistrictPrecinctSplit district="1" />
+                <DistrictPrecinctSplit district="13" />
+                <DistrictPrecinctSplit district="23" />
+                <DistrictPrecinctSplit district="24" />
+                <DistrictPrecinctSplit district="26" />
+              </DistrictPrecinctSplits>
+            </Split>
+            <Split name="15" id="15" displayOrder="15">
+              <DistrictPrecinctSplits>
+                <DistrictPrecinctSplit district="1" />
+                <DistrictPrecinctSplit district="15" />
+                <DistrictPrecinctSplit district="23" />
+                <DistrictPrecinctSplit district="24" />
+                <DistrictPrecinctSplit district="26" />
+              </DistrictPrecinctSplits>
+            </Split>
+          </Splits>
+        </Precinct>
+      </Precincts>
+      <Districts>
+        <District id="1" name="Mason County" districtType="4" />
+        <District id="2" name="Belfair Water Dist" districtType="11" />
+        <District id="3" name="City of Shelton" districtType="20" />
+        <District id="4" name="Elma School 68" districtType="14" />
+        <District id="5" name="Fire Protection Dist 1" districtType="13" />
+        <District id="6" name="Fire Protection Dist 11" districtType="13" />
+        <District id="7" name="Fire Protection Dist 12" districtType="13" />
+        <District id="8" name="Fire Protection Dist 13" districtType="13" />
+        <District id="9" name="Fire Protection Dist 16" districtType="13" />
+        <District id="10" name="Fire Protection Dist 17" districtType="13" />
+        <District id="11" name="Fire Protection Dist 18" districtType="13" />
+        <District id="12" name="Fire Protection Dist 2" districtType="13" />
+        <District id="13" name="Fire Protection Dist 3" districtType="13" />
+        <District id="14" name="Fire Protection Dist 4" districtType="13" />
+        <District id="15" name="Fire Protection Dist 5" districtType="13" />
+        <District id="16" name="Fire Protection Dist 6" districtType="13" />
+        <District id="17" name="Fire Protection Dist 8" districtType="13" />
+        <District id="18" name="Fire Protection Dist 9" districtType="13" />
+        <District id="19" name="Grapeview School 54" districtType="14" />
+        <District id="20" name="Hood Canal School 404" districtType="14" />
+        <District id="21" name="Maggie Lake Water Dist" districtType="11" />
+        <District id="22" name="Mary M Knight School 311" districtType="14" />
+        <District id="23" name="Public Hospital Dist 1" districtType="17" />
+        <District id="24" name="North Mason School 403" districtType="14" />
+        <District id="25" name="Pioneer School 402" districtType="14" />
+        <District id="26" name="Port of Allyn" districtType="19" />
+        <District id="27" name="Port of Dewatto" districtType="19" />
+        <District id="28" name="Port of Grapeview" districtType="19" />
+        <District id="29" name="Port of Hoodsport" districtType="19" />
+        <District id="30" name="Port of Shelton" districtType="19" />
+        <District id="31" name="Shelton School 309" districtType="14" />
+        <District id="32" name="Southside School 42" districtType="14" />
+        <District id="33" name="Tahuya River Water Dist" districtType="11" />
+        <District id="34" name="Trails End Water Dist" districtType="11" />
+        <District id="35" name="Public Hospital Dist 2" districtType="17" />
+        <District id="36" name="McCleary School 65" districtType="14" />
+        <District id="37" name="Hartstene Pointe Water" districtType="11" />
+      </Districts>
+      <DistrictContests>
+        <DistrictContest contest="1" district="5" />
+        <DistrictContest contest="2" district="12" />
+        <DistrictContest contest="3" district="12" />
+        <DistrictContest contest="4" district="13" />
+        <DistrictContest contest="5" district="14" />
+        <DistrictContest contest="6" district="15" />
+        <DistrictContest contest="7" district="16" />
+        <DistrictContest contest="8" district="17" />
+        <DistrictContest contest="9" district="17" />
+        <DistrictContest contest="10" district="18" />
+        <DistrictContest contest="11" district="6" />
+        <DistrictContest contest="12" district="7" />
+        <DistrictContest contest="13" district="7" />
+        <DistrictContest contest="14" district="8" />
+        <DistrictContest contest="15" district="9" />
+        <DistrictContest contest="16" district="10" />
+        <DistrictContest contest="17" district="11" />
+        <DistrictContest contest="18" district="26" />
+        <DistrictContest contest="19" district="27" />
+        <DistrictContest contest="20" district="28" />
+        <DistrictContest contest="21" district="29" />
+        <DistrictContest contest="22" district="29" />
+        <DistrictContest contest="23" district="29" />
+        <DistrictContest contest="24" district="30" />
+        <DistrictContest contest="25" district="2" />
+        <DistrictContest contest="26" district="21" />
+        <DistrictContest contest="27" district="32" />
+        <DistrictContest contest="28" district="32" />
+        <DistrictContest contest="29" district="19" />
+        <DistrictContest contest="30" district="21" />
+        <DistrictContest contest="31" district="19" />
+        <DistrictContest contest="32" district="31" />
+        <DistrictContest contest="33" district="34" />
+        <DistrictContest contest="34" district="31" />
+        <DistrictContest contest="35" district="31" />
+        <DistrictContest contest="36" district="22" />
+        <DistrictContest contest="37" district="33" />
+        <DistrictContest contest="38" district="22" />
+        <DistrictContest contest="39" district="25" />
+        <DistrictContest contest="40" district="25" />
+        <DistrictContest contest="41" district="25" />
+        <DistrictContest contest="42" district="25" />
+        <DistrictContest contest="43" district="24" />
+        <DistrictContest contest="44" district="20" />
+        <DistrictContest contest="45" district="20" />
+        <DistrictContest contest="46" district="23" />
+        <DistrictContest contest="47" district="3" />
+        <DistrictContest contest="48" district="35" />
+        <DistrictContest contest="49" district="36" />
+        <DistrictContest contest="50" district="4" />
+        <DistrictContest contest="51" district="4" />
+        <DistrictContest contest="52" district="4" />
+        <DistrictContest contest="53" district="37" />
+        <DistrictContest contest="54" district="1" />
+      </DistrictContests>
+    </Election>
+  </County>
+</EDX>
