@@ -217,40 +217,35 @@ end
 #
 class ParserGeneratorTests < Test::Unit::TestCase
 
-  context "A generator instance" do
-    setup do
-      @gen = Generator.new
-      @par = Parser.new("inputs/tinyballot.txt", @gen)
-    end
-    
+  context "A single generator instance" do
     should "begin a file" do
-      @gen.begin_file
-      assert true unless @gen.h_file.nil?
+      gen = Generator.new
+      gen.begin_file
+      assert true unless gen.h_file.nil?
     end
     
-    should "start a ballot" do
-      @gen.start_ballot("Test-ton")
-    end
-    
-    should "start a contest" do
-      @gen.start_contest("Chair and Vice-Chair of Test-ton School Lunch Board", "Vote for One Only")
-    end
-    
-    should "add a candidate" do
-      #@gen.add_candidate("Person 1 and Person 2", "Deli Meat Lovers")
-      @gen.add_candidate("Person 3 and Person 4", "Cheese Party")
+    context "with a single ballot" do
+
+      should "start a ballot and contest with two candidates" do
+        gen = Generator.new
+        gen.begin_file
+        gen.start_ballot("Test-ton")
+        gen.start_contest("Chair and Vice-Chair of Test-ton School Lunch Board", "Vote for One Only")
+        gen.add_candidate("Person 3 and Person 4", "Cheese Party")        
+      end
       
+      should "start and end ballot and contest with two candidates" do
+        gen = Generator.new
+        gen.begin_file
+        gen.start_ballot("Test-ton")
+        gen.start_contest("Chair and Vice-Chair of Test-ton School Lunch Board", "Vote for One Only")
+        gen.add_candidate("Person 1 and Person 2", "Cheese Party")
+        gen.add_candidate("Person 3 and Person 4", "Cheese Party")
+        gen.end_contest
+        gen.end_ballot
+        assert true unless gen.h_file.nil?
+      end
     end
-  
-    should "end a contest" do
-      @gen.end_contest
-    end
-    
-    should "end a ballot" do
-      @gen.end_ballot
-#      puts @gen.h_file
-    end
-    
   end
 
   #
