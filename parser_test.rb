@@ -4,7 +4,7 @@
 require 'rubygems'
 require 'shoulda'
 require 'parser'
-require 'generator'
+require './generator'
 
 class ParserTest < Test::Unit::TestCase
   context "A single parser instance" do

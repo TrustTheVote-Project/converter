@@ -27,7 +27,7 @@ require 'pp'
 require 'getoptlong'
 require 'pathname'
 require 'parser'
-require 'generator'
+require './generator'
 
 #
 # Main Program: Parse the command line and do the work
