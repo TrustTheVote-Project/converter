@@ -35,6 +35,7 @@ class Generator
     @candidates = {}
     @parties = {}
     @precincts = {}
+    @districts = {}
     @cont_count = 0
     @prec_count = 0
     @ballot_count = 0
@@ -47,6 +48,22 @@ class Generator
   
   def end_file
     #    pp @h_file
+  end
+
+  def start_precinct(name)
+    puts "new precinct: #{name}"
+    @prec_count += 1
+    @precinct = {"display_name" => name}
+    @districts = {}
+  end
+  
+  def end_precinct
+    @precinct << @districts
+    @precincts << @precinct
+  end
+  
+  def add_district(district)
+    @districts << {"display name" => district}
   end
   
   def start_ballot(town)
