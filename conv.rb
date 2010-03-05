@@ -72,7 +72,7 @@ end
 
 # command line is parsed. Now lets do the work
 
-gen = Generator.new
+gen = Generator.new(@format)
 par = Parser.new(ARGV[0], gen)
 par.parse_file
 

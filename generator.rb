@@ -30,7 +30,8 @@ require 'pathname'
 class Generator
   attr_reader :h_file
   
-  def initialize
+  def initialize(formcode)
+    @format = formcode
     @rules = {}
     @candidates = {}
     @parties = {}
@@ -58,7 +59,7 @@ class Generator
   end
   
   def end_precinct
-    @precinct << @districts
+    @precinct["districts"] = @districts
     @precincts << @precinct
   end
   
@@ -76,10 +77,13 @@ class Generator
   end
   
   def end_ballot
-    gen_precinct_list
-    @h_ballot["precinct_list"] = @h_precincts
-    @h_ballot["jurisdiction_display_name"] = "middleworld"
-    @h_ballot["type"] = "jurisdiction_slate"
+    # if formcode == "CSV"
+      gen_precinct_list
+      @h_ballot["precinct_list"] = @h_precincts
+      @h_ballot["jurisdiction_display_name"] = "middleworld"
+      @h_ballot["type"] = "jurisdiction_slate"
+    # else
+      # @h_ballot["type"] = "jurisdiction_info"
     @h_file << @h_ballot
   end
   
