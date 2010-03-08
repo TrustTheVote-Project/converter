@@ -37,6 +37,7 @@ class Generator
     @parties = {}
     @precincts = {}
     @districts = {}
+    @h_precincts = []
     @cont_count = 0
     @prec_count = 0
     @ballot_count = 0
@@ -55,12 +56,12 @@ class Generator
     puts "new precinct: #{name}"
     @prec_count += 1
     @precinct = {"display_name" => name}
-    @districts = {}
+    @districts = [] # Empty districts
   end
   
   def end_precinct
     @precinct["districts"] = @districts
-    @precincts << @precinct
+    @h_precincts << @precinct
   end
   
   def add_district(district)
@@ -72,18 +73,25 @@ class Generator
     @ballot_count += 1
     @prec_id = "prec-#{@precincts.length}"
     @precincts = {town => @prec_id}
+    # if @format = "TXT" ?
     @h_ballot = {"display_name" => "General Election"}
     @h_ballot["contest_list"] = []
+
   end
   
   def end_ballot
-    # if formcode == "CSV"
+    
+    if @format == "TXT"
       gen_precinct_list
-      @h_ballot["precinct_list"] = @h_precincts
       @h_ballot["jurisdiction_display_name"] = "middleworld"
       @h_ballot["type"] = "jurisdiction_slate"
-    # else
-      # @h_ballot["type"] = "jurisdiction_info"
+    
+    elsif @format == "CSV"
+      @h_ballot["ballotinfo_type"] = "jurisdiction_info"
+    end
+
+    @h_ballot["precinct_list"] = @h_precincts
+    
     @h_file << @h_ballot
   end
   
