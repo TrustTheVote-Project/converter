@@ -5,20 +5,20 @@
 
 require 'rubygems'
 require 'shoulda'
-require 'generator'
+require './generator'
 
 class GeneratorTest < Test::Unit::TestCase
 
   context "A single generator instance" do
     should "begin a file" do
-      gen = Generator.new
+      gen = Generator.new('NH')
       gen.begin_file
       assert true unless gen.h_file.nil?
     end
     
     context "with a single ballot" do
       should "start and end ballot and contest with one candidate" do
-        gen = Generator.new
+        gen = Generator.new('NH')
         gen.begin_file
         gen.start_ballot("Town name A")
         gen.start_contest("Contest name", "Contest Rules")
@@ -29,7 +29,7 @@ class GeneratorTest < Test::Unit::TestCase
       end
       
       should "start and end ballot and contest with two candidates" do
-        gen = Generator.new
+        gen = Generator.new('NH')
         gen.begin_file
         gen.start_ballot("Town name B")
         gen.start_contest("Contest name", "Contest Rules")
@@ -41,7 +41,7 @@ class GeneratorTest < Test::Unit::TestCase
       end
       
       should "start and end two contests with two candidates" do
-        gen = Generator.new
+        gen = Generator.new('NH')
         gen.begin_file
         gen.start_ballot("Town name C")
         gen.start_contest("Contest 1", "Contest 1 rules")
@@ -58,7 +58,7 @@ class GeneratorTest < Test::Unit::TestCase
     
     context "with multiple ballots" do
       should "start and end two ballots" do
-        gen = Generator.new
+        gen = Generator.new('NH')
         gen.begin_file
         # Ballot 1
         gen.start_ballot("Town name D")

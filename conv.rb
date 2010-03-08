@@ -74,8 +74,8 @@ end
 # command line is parsed. Now lets do the work
 
 gen = Generator.new(@format)
-par = Parser.new(ARGV[0], gen) if @format == "TXT"
-par = ParserCSV.new(ARGV[0], gen) if @format == "CSV"
+par = NHParser.new(ARGV[0], gen) if @format == "NH"
+par = FLParser.new(ARGV[0], gen) if @format == "FL"
 par.parse_file
 
 @dir.mkdir unless @dir.directory?

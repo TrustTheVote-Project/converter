@@ -3,14 +3,14 @@
 #
 require 'rubygems'
 require 'shoulda'
-require 'parser_csv'
+require 'flparser'
 require './generator'
 
 class ParserCSVTest < Test::Unit::TestCase
 
   context "A generator instance" do
     setup do
-      @gen = Generator.new('CSV')
+      @gen = Generator.new('FL')
     end
     
     should "start and end a precinct" do
@@ -29,8 +29,8 @@ class ParserCSVTest < Test::Unit::TestCase
   
   context "A parser_csv on a small csv file" do
     setup do
-      @gen = Generator.new('CSV')
-      @par = ParserCSV.new("inputs/smallpandd.csv", @gen)      
+      @gen = Generator.new('FL')
+      @par = FLParser.new("inputs/smallpandd.csv", @gen)      
     end
   
     context "skipping blank/header rows, having found precinct rows" do

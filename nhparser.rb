@@ -31,7 +31,7 @@ require 'pathname'
 # Implements a simple top-down parser for the New Hampshire formatted input file.  @line is the current line, and @lookahead is the next line.
 # Some of the syntax requires us to know what the next line looks like. At interesting points in the parsing, we call Generator who then 
 # uses what the parser knows to build up what is to be written out.
-class Parser
+class NHParser
   
   def initialize(fname, generator)
     @file = File.open(fname)

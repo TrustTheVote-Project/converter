@@ -73,7 +73,7 @@ class Generator
     @ballot_count += 1
     @prec_id = "prec-#{@precincts.length}"
     @precincts = {town => @prec_id}
-    # if @format = "TXT" ?
+    # if @format = "NH" ?
     @h_ballot = {"display_name" => "General Election"}
     @h_ballot["contest_list"] = []
 
@@ -81,12 +81,12 @@ class Generator
   
   def end_ballot
     
-    if @format == "TXT"
+    if @format == "NH"
       gen_precinct_list
       @h_ballot["jurisdiction_display_name"] = "middleworld"
       @h_ballot["type"] = "jurisdiction_slate"
     
-    elsif @format == "CSV"
+    elsif @format == "FL"
       @h_ballot["ballotinfo_type"] = "jurisdiction_info"
     end
 

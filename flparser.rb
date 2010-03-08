@@ -29,10 +29,10 @@ require 'pathname'
 require 'fastercsv'
 
 #
-# Implements a simple CSV parser for P and D Split list jurisdiction_info
+# Implements a simple CSV parser for Florida P and D Split list jurisdiction_info
 # files
 #
-class ParserCSV
+class FLParser
   def initialize(fname, generator)
     @gen = generator
     @csv = FasterCSV.read(fname)
