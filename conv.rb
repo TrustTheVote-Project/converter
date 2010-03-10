@@ -26,8 +26,9 @@ require 'yaml'
 require 'pp'
 require 'getoptlong'
 require 'pathname'
-require 'parser'
-require 'parser_csv'
+require 'flparser'
+require 'nhparser'
+require 'xmlparser'
 require './generator'
 
 #
@@ -76,6 +77,7 @@ end
 gen = Generator.new(@format)
 par = NHParser.new(ARGV[0], gen) if @format == "NH"
 par = FLParser.new(ARGV[0], gen) if @format == "FL"
+par = XMLParser.new(ARGV[0], gen) if @format == "XML"
 par.parse_file
 
 @dir.mkdir unless @dir.directory?

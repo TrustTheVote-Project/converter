@@ -15,7 +15,7 @@ class XMLParserTest < Test::Unit::TestCase
     end
     
     should "begin a contest with two candidates" do
-      @gen.start_contest("Test Contest") # No rules specified
+      @gen.start_contest("Test Contest", "Vote for only one") # No rules specified
       @gen.add_candidate("Candidate 1", "Party 1")
       @gen.add_candidate("Candidate 2", "Party 2")
       @gen.end_contest
@@ -36,53 +36,69 @@ class XMLParserTest < Test::Unit::TestCase
     end
   end
   
-  # begin_file start_ballot [display_name]<County><Election> (name)
-    # [contest_list]<Contests>
-      # start_contest [candidates] <Contest>
-        # <MeasureText> (opt)
-  # add_candidate [display name] <Choice>
-  # <DistrictContests>
-  # [precinct_list] <Precincts>
-  # start_precinct [display_name] <Precinct> (name) #
-  # <Splits>
-  # <Split> (name) #
-  # [district_list]<DistrictPrecinctSplits>
-  # add_district [district]<DistrictPrecinctSplit> (district) # (lookup name)
-  # <Districts>
-  # <District> (name, type)
-  # assign_district(contest, district) <DistrictContest> (contest --> district) 
-  
   context "A XMLParser instance" do
     setup do
       @gen = Generator.new("XML")
-      @par = XMLParser.new("inputs/mason.edx")
-      @doc = @par.doc
+      @gen.begin_file
+  
+      @par = XMLParser.new("inputs/mason.xml", @gen)
+      @doc = @par.file
     end
     
     should "find election name from XML file" do
       name = @doc.elements["EDX/County/Election"].attributes["name"]
-      assert_equals name, "general"
+      assert_equal name, "General"
+      
+      @par.start_election("EDX/County/Election", "name")
     end
     
-    should "find contest and its candidates" do
+    should "find a contest and a candidate" do
       contest = @doc.elements["EDX/County/Election/Contests/Contest"]
-      contestname = @doc.elements["EDX/County/Election/Contests/Contest"].attributes["name"]
-      contestrule = "Vote for " + doc.elements["EDX/County/Election/Contests/Contest"].attributes["maxVotes"]
+      contestname = contest.attributes["name"]
+      contestrule = "Vote for " + contest.attributes["maxVotes"]
       
-      assert_equals contestname, "State Initiative Measure 1033"
-      assert_equals contestrule, "Vote for 1"
+      assert_equal contestname, "State Initiative Measure 1033"
+      assert_equal contestrule, "Vote for 1"
       
-      # start_contest(contestname, contestrule)
+      @gen.start_contest(contestname, contestrule)
+      
+      candidate = contest.elements["Choice"].attributes["name"]
+      
+      @gen.add_candidate(candidate, "Nonpartisan")
+      
+      assert_equal candidate, "Yes"
     end
     
-    
+    should "find all precincts, splits" do
+      @doc.elements.each("EDX/County/Election/Precincts/Precinct") { |precinct|
 
-    #require "rexml/document"
-    #include REXML
-    #doc = Document.new File.new("inputs/mason.edx")
-    #doc.elements.each("EDX/County/Election/DistrictContests/DistrictContest") {|element| puts element.attributes["contest"] + " " + element.attributes["district"]}
-
+        precinct.elements.each("Splits/Split") {|split|
+          #puts precinct.attributes["name"] + "." + split.attributes["name"]
+          @gen.start_precinct(precinct.attributes["name"] + "." + split.attributes["name"])
+          
+          split.elements.each("DistrictPrecinctSplits/DistrictPrecinctSplit") { |district|
+            #print district.attributes["district"] + " "
+            @gen.add_district(district.attributes["district"])
+          }
+          #puts
+        }
+      }
+    end
     
+    should "look up district names" do
+      @par.parse_district_names
+
+      assert_equal @par.district_name(1), "Mason County"
+      assert_equal @par.district_name(37), "Hartstene Pointe Water"
+    end
+    
+    should "parse precincts" do
+      @par.parse_precincts
+    end
+    
+    should "parse contests" do
+      @par.parse_contests
+    end
     
   end
   
