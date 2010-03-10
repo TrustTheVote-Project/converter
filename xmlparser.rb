@@ -75,14 +75,21 @@ class XMLParser
     }
   end
   
+  # TODO: handle cases wherein there is no split
   def parse_splits(precinct)
-    precinct.elements.each("Splits/Split") {|split|
-      @gen.start_precinct(precinct.attributes["name"] + "." + 
-                          split.attributes["name"])
-      
-      parse_districts(split)
-      @gen.end_precinct
-    }
+    if precinct.elements["Splits/Split"].nil?
+      @gen.start_precinct(precinct.attributes["name"])
+      parse_districts(precinct)
+    else
+      precinct.elements.each("Splits/Split") { |split|
+        @gen.start_precinct(precinct.attributes["name"] + "." + 
+                            split.attributes["name"])
+        
+        parse_districts(split)
+      }
+    end
+    
+    @gen.end_precinct
   end
   
   def parse_districts(split)
