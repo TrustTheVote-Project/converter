@@ -70,6 +70,7 @@ class FLParser
     @lastprecinct = @csv[@row][2] # save last precinct name
     
     @gen.start_precinct(@csv[@row][2] + " " + @csv[@row][1])
+    
     @gen.add_district("Congress " + @csv[@row][3]) unless @csv[@row][3].nil?
     @gen.add_district("Senate " + @csv[@row][4]) unless @csv[@row][4].nil?
     @gen.add_district("House " + @csv[@row][5]) unless @csv[@row][5].nil? 
