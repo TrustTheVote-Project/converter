@@ -38,7 +38,7 @@ class XMLParser
 
   def initialize(fname, generator)
     @file = Document.new(File.new(fname))
-    @gen = Generator.new("XML")
+    @gen = generator
     @districts = {}
   end
 
@@ -48,7 +48,6 @@ class XMLParser
     start_election
 
     parse_district_names
-    
     parse_precincts
     parse_contests
     

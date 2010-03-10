@@ -129,10 +129,6 @@ class Generator
     @rules[rule] = 1
   end
   
-  def add_candidate(name)
-    @h_contest["candidates"] << {"display_name" => name}
-  end
-  
   def add_candidate(name, party)
     @parties[party] = "party-#{@parties.length}"
     @candidates[name] = "cand-#{@candidates.length}"

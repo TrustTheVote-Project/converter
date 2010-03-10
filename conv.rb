@@ -83,6 +83,7 @@ par.parse_file
 @dir.mkdir unless @dir.directory?
 @dir = @dir.realpath
 i = 0
+
 gen.h_file.each do |ballot|
   i += 1
   puts "ballot #{i}: #{ballot["precinct_list"][0]["display_name"]}"

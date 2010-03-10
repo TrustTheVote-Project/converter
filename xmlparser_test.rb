@@ -40,7 +40,8 @@ class XMLParserTest < Test::Unit::TestCase
     setup do
       @gen = Generator.new("XML")
       @gen.begin_file
-  
+      @gen.start_ballot("Test Election")
+      
       @par = XMLParser.new("inputs/mason.xml", @gen)
       @doc = @par.file
     end
@@ -49,7 +50,7 @@ class XMLParserTest < Test::Unit::TestCase
       name = @doc.elements["EDX/County/Election"].attributes["name"]
       assert_equal name, "General"
       
-      @par.start_election("EDX/County/Election", "name")
+      @par.start_election
     end
     
     should "find a contest and a candidate" do
