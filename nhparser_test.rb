@@ -4,17 +4,17 @@
 require 'rubygems'
 require 'shoulda'
 require 'nhparser'
-require './generator'
+require 'data_layer'
 
 class ParserTest < Test::Unit::TestCase
   context "A single parser instance" do
     should "open a ballot info text file" do
-      gen = Generator.new("NH")
+      gen = DataLayer.new("NH")
       par = NHParser.new("inputs/tinyballot.txt", gen)      
     end
     
     should "parse a ballot info text file" do
-      gen = Generator.new("NH")
+      gen = DataLayer.new("NH")
       par = NHParser.new("inputs/tinyballot.txt", gen)
       par.parse_file
       assert true unless gen.h_file.nil? # generated file

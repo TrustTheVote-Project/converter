@@ -4,12 +4,12 @@
 require 'rubygems'
 require 'shoulda'
 require 'xmlparser'
-require './generator'
+require 'data_layer'
 
 class XMLParserTest < Test::Unit::TestCase
   context "A generator instance" do
     setup do
-      @gen = Generator.new("XML")
+      @gen = DataLayer.new("XML")
       @gen.begin_file
       @gen.start_ballot("Test Election")    
     end
@@ -38,7 +38,7 @@ class XMLParserTest < Test::Unit::TestCase
   
   context "A XMLParser instance" do
     setup do
-      @gen = Generator.new("XML")
+      @gen = DataLayer.new("XML")
       @gen.begin_file
       @gen.start_ballot("Test Election")
       

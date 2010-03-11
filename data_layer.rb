@@ -26,8 +26,9 @@ require 'yaml'
 require 'pp'
 require 'getoptlong'
 require 'pathname'
+require 'active_support/secure_random'
 
-class Generator
+class DataLayer
   attr_reader :h_file
   
   def initialize(formcode)
@@ -41,6 +42,18 @@ class Generator
     @cont_count = 0
     @prec_count = 0
     @ballot_count = 0
+  end
+  
+  def audit_header_dummy
+    @audit_header_hash = {
+        "file_id" => "9F023408009B11DF924800163E3DE33F",
+        "create_date" => DateTime.now,
+        "type" => "jurisdiction_slate",
+        "operator" => "Pito Salas",
+        "hardware" => "TTV Tabulator TAB02",
+        "software" => "TTV Election Management System 0.1 JAN-1-2010"
+    }
+    @audit_header_hash
   end
   
   def begin_file
@@ -91,6 +104,7 @@ class Generator
     end
 
     @h_ballot["precinct_list"] = @h_precincts
+    @h_ballot.merge!(audit_header_dummy)
     
     @h_file << @h_ballot
   end
@@ -100,8 +114,9 @@ class Generator
     @precincts.each do |key, value|
       @h_precincts << 
       { "voting_places" =>
+        # TODO: what are these three lines for? Pito?
         [{ "ballot_counters" => 2,
-              "ident" => "vplace-xxx"}
+              "ident" => "vplace-#{ActiveSupport::SecureRandom.hex}"}
         ],
           "display_name" => key,
           "ident" => value,
@@ -116,7 +131,7 @@ class Generator
   def start_contest(name, rule)
     @h_contest = {"display_name" => name}
     @h_contest["district_ident"] = @prec_id
-    @h_contest["ident"] = "cont-xx"
+    @h_contest["ident"] = "cont-#{ActiveSupport::SecureRandom.hex}"
     @h_contest["candidates"] = []
     add_rule(rule)
   end
@@ -130,8 +145,8 @@ class Generator
   end
   
   def add_candidate(name, party)
-    @parties[party] = "party-#{@parties.length}"
-    @candidates[name] = "cand-#{@candidates.length}"
+    @parties[party] = "party-#{ActiveSupport::SecureRandom.hex}"
+    @candidates[name] = "cand-#{ActiveSupport::SecureRandom.hex}"
     
     @h_contest["candidates"] << 
     {"party_ident" => @parties[party], 

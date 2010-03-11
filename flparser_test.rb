@@ -4,13 +4,13 @@
 require 'rubygems'
 require 'shoulda'
 require 'flparser'
-require './generator'
+require 'data_layer'
 
 class ParserCSVTest < Test::Unit::TestCase
 
   context "A generator instance" do
     setup do
-      @gen = Generator.new('FL')
+      @gen = DataLayer.new('FL')
     end
     
     should "start and end a precinct" do
@@ -29,7 +29,7 @@ class ParserCSVTest < Test::Unit::TestCase
   
   context "A parser_csv on a small csv file" do
     setup do
-      @gen = Generator.new('FL')
+      @gen = DataLayer.new('FL')
       @par = FLParser.new("inputs/smallpandd.csv", @gen)      
     end
   

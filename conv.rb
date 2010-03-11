@@ -29,7 +29,7 @@ require 'pathname'
 require 'flparser'
 require 'nhparser'
 require 'xmlparser'
-require './generator'
+require 'data_layer'
 
 #
 # Main Program: Parse the command line and do the work
@@ -74,7 +74,7 @@ end
 
 # command line is parsed. Now lets do the work
 
-gen = Generator.new(@format)
+gen = DataLayer.new(@format)
 par = NHParser.new(ARGV[0], gen) if @format == "NH"
 par = FLParser.new(ARGV[0], gen) if @format == "FL"
 par = XMLParser.new(ARGV[0], gen) if @format == "XML"
