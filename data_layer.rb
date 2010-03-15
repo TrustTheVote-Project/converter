@@ -34,22 +34,6 @@ class DataLayer
   attr_reader :h_file
   
   def initialize()
-    @all_district_idents = {}
-    @all_precinct_idents = {}
-    @all_candidate_idents = {}
-    @all_voting_place_idents = {}
-    @rules = {}
-    @candidates = {}
-    @parties = {}
-    @precincts = {}
-    @districts = {}
-    @h_precincts = []
-    @cont_count = 0
-    @prec_count = 0
-    @ballot_count = 0
-  end
-  
-  def audit_header_dummy
     @audit_header_hash = {
         "file_id" => "9F023408009B11DF924800163E3DE33F",
         "create_date" => DateTime.now,
@@ -58,9 +42,41 @@ class DataLayer
         "hardware" => "TTV Tabulator TAB02",
         "software" => "TTV Election Management System 0.1 JAN-1-2010"
     }
-    @audit_header_hash
+    
+    @idents = {}
+    @idents["parties"] = ["Unaffiliated"]
+    @idents["districts"] = []
+    @idents["precincts"] = []
+    @idents["candidates"] = []
+    @idents["contests"] = []
   end
   
+  def party_ident(name)
+    ident("PART", "parties", name)
+  end
+  
+  def district_ident(name)
+    ident("DIST", "districts", name)
+  end
+  
+  def precinct_ident(name)
+    ident("PREC", "precincts", name)
+  end
+  
+  def candidate_ident(name)
+    ident("CAND", "candidates", name)
+  end
+  
+  def contest_ident(name)
+    ident("CONT", "contests", name)
+  end
+  
+  def ident(prefix, type, name)
+    @idents[type][@idents[type].length] = name unless @idents[type].index(name)
+    return prefix + "-" + @idents[type].index(name).to_s
+  end
+  
+  # Initialize an output array to later store ballots in
   def begin_file
     @h_file = []
   end
@@ -69,88 +85,80 @@ class DataLayer
     #    pp @h_file
   end
 
-  # Begin a precinct record
-  def start_precinct(name)
-    puts "new precinct: #{name}"
-    @prec_count += 1
-    @curr_precinct = {"display_name" => name}
-    @districts = [] # Empty temporary district list
-  end
-  
-  # End a precinct record. Associate added districts with precinct.
-  def end_precinct
-    @curr_precinct["districts"] = @districts
-    @h_precincts << @curr_precinct
-  end
-  
-  # Add a district to the precinct currently being added
-  def add_district(name)
-    @districts << {"display name" => name}
-    # TODO: Set unique district ident
-  end
-  
+  # Begin a new ballot. Takes "name", which is display name of ballot.
   def start_ballot(name)
     puts "new ballot: #{name}"
-    @ballot_count += 1
-    @prec_id = "prec-#{@precincts.length}"
 
-    @h_ballot = {"display_name" => name}
-    @h_ballot["contest_list"] = []
-
+    @curr_ballot = {"display_name" => name}
+    @curr_ballot["contest_list"] = []
+    @curr_ballot["precinct_list"] = []
   end
   
+  # Add the header to the ballot and push the ballot to the output file  
   def end_ballot
+    add_header
     
-    @h_ballot["precinct_list"] = @h_precincts
-    @h_ballot.merge!(audit_header_dummy)
-    
-    @h_file << @h_ballot
+    @h_file << @curr_ballot
+  end
+
+  # Add the dummy audit header to the ballot.
+  def add_header
+    @curr_ballot["Audit-header"] = @audit_header_hash
   end
   
-  def gen_precinct_list
-    @h_precincts = []
-    @precincts.each do |key, value|
-      @h_precincts << 
-      { "voting_places" =>
-        # TODO: what are these three lines for?
-        [{ "ballot_counters" => 2,
-              "ident" => "vplace-#{ActiveSupport::SecureRandom.hex}"}
-        ],
-          "display_name" => key,
-          "ident" => value,
-          "district_list" =>
-        [{ "ident" => value,
-               "display_name" => key}
-        ]
-      }
-    end
+  # Set ballotinfo_type
+  def set_type(type)
+    @audit_header_hash["type"] = type
+  end
+
+  # Start a contest.
+  # Often followed by calls to add_candidate and/or contest_district
+  def start_contest(name)
+    @curr_contest = {"display_name" => name}
+    @curr_contest["ident"] = contest_ident(name)
+    @curr_contest["candidates"] = []
   end
   
-  def start_contest(name, rule)
-    @h_contest = {"display_name" => name}
-    @h_contest["district_ident"] = @prec_id
-    @h_contest["ident"] = "cont-#{ActiveSupport::SecureRandom.hex}"
-    @h_contest["candidates"] = []
-    add_rule(rule)
+  # Add a candidate to the current contest. Party is none by default.
+  def add_candidate(name, party = "Unaffiliated")
+    @curr_contest["candidates"] << 
+    {"party_ident" => party_ident(party), 
+       "ident" => candidate_ident(name),
+       "display_name" => name}
+  end  
+  
+  # Associates a contest with a district ident
+  # By name: contest_district(district_ident("District name"))
+  def contest_district(district)
+    @curr_contest["district_ident"] = district
   end
   
   def end_contest
-    @h_ballot["contest_list"] << @h_contest
+    @curr_ballot["contest_list"] << @curr_contest
   end
   
-  def add_rule(rule)
-    @rules[rule] = 1
-  end
-  
-  def add_candidate(name, party)
-    @parties[party] = "party-#{ActiveSupport::SecureRandom.hex}"
-    @candidates[name] = "cand-#{ActiveSupport::SecureRandom.hex}"
+  # Begins a precinct record
+  # Often followed by calls to add_district
+  def start_precinct(name)
+    puts "new precinct: #{name}"
     
-    @h_contest["candidates"] << 
-    {"party_ident" => @parties[party], 
-       "ident" => @candidates[name],
-       "display_name" => name}
-    @parties[party] = party
-    @candidates[name] = party
+    @curr_precinct = {"display_name" => name}
+    @curr_precinct["district_list"] = []
   end
+
+  # Add a district to the current precinct
+  def add_district(name)
+    @curr_district = {"display_name" => name}
+    @curr_district["ident"] = district_ident(name)
+
+    @curr_precinct["district_list"] << @curr_district
+  end
+  
+  # End a precinct record. Add precinct to current ballot's list
+  def end_precinct
+    @curr_ballot["precinct_list"] << @curr_precinct
+  end
+  
+  # 
+  
 end
