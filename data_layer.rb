@@ -51,31 +51,6 @@ class DataLayer
     @idents["contests"] = []
   end
   
-  def party_ident(name)
-    ident("PART", "parties", name)
-  end
-  
-  def district_ident(name)
-    ident("DIST", "districts", name)
-  end
-  
-  def precinct_ident(name)
-    ident("PREC", "precincts", name)
-  end
-  
-  def candidate_ident(name)
-    ident("CAND", "candidates", name)
-  end
-  
-  def contest_ident(name)
-    ident("CONT", "contests", name)
-  end
-  
-  def ident(prefix, type, name)
-    @idents[type][@idents[type].length] = name unless @idents[type].index(name)
-    return prefix + "-" + @idents[type].index(name).to_s
-  end
-  
   # Initialize an output array to later store ballots in
   def begin_file
     @h_file = []
@@ -113,19 +88,21 @@ class DataLayer
 
   # Start a contest.
   # Often followed by calls to add_candidate and/or contest_district
-  def start_contest(name)
+  def start_contest(name, order = -1)
     @curr_contest = {"display_name" => name}
+    @curr_contest["display_order"] = order unless order == -1
     @curr_contest["ident"] = contest_ident(name)
     @curr_contest["candidates"] = []
   end
   
   # Add a candidate to the current contest. Party is none by default.
-  def add_candidate(name, party = "Unaffiliated")
-    @curr_contest["candidates"] << 
-    {"party_ident" => party_ident(party), 
+  def add_candidate(name, party = "Unaffiliated", order = -1)
+    @curr_candidate = {"party_ident" => party_ident(party), 
        "ident" => candidate_ident(name),
        "display_name" => name}
-  end  
+    @curr_candidate["display_order"] = order unless order == -1
+    @curr_contest["candidates"] << @curr_candidate
+  end
   
   # Associates a contest with a district ident
   # By name: contest_district(district_ident("District name"))
@@ -139,10 +116,11 @@ class DataLayer
   
   # Begins a precinct record
   # Often followed by calls to add_district
-  def start_precinct(name)
+  def start_precinct(name, order = -1)
     puts "new precinct: #{name}"
     
     @curr_precinct = {"display_name" => name}
+    @curr_precinct["display_order"] = order unless order == -1
     @curr_precinct["district_list"] = []
   end
 
@@ -159,6 +137,31 @@ class DataLayer
     @curr_ballot["precinct_list"] << @curr_precinct
   end
   
-  # 
+  
+  def party_ident(name)
+    ident("PART", "parties", name)
+  end
+  
+  def district_ident(name)
+    ident("DIST", "districts", name)
+  end
+  
+  def precinct_ident(name)
+    ident("PREC", "precincts", name)
+  end
+  
+  def candidate_ident(name)
+    ident("CAND", "candidates", name)
+  end
+  
+  def contest_ident(name)
+    ident("CONT", "contests", name)
+  end
+  
+  # Maintain a list of unique ID numbers for names of things of a type
+  def ident(prefix, type, name)
+    @idents[type][@idents[type].length] = name unless @idents[type].index(name)
+    return prefix + "-" + @idents[type].index(name).to_s
+  end
   
 end

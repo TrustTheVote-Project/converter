@@ -18,7 +18,7 @@ class DataLayerTest < Test::Unit::TestCase
     should "have set the ballot display_name" do
       @gen.end_ballot
       @gen.end_file
-      assert @gen.h_file[0]["display_name"].eql? "display_name"
+      assert_equal "display_name", @gen.h_file[0]["display_name"]
     end
     
     should "begin a contest with two candidates" do
@@ -83,6 +83,33 @@ class DataLayerTest < Test::Unit::TestCase
       assert_equal  precinct_file["district_list"][0]["ident"],
                     precinct_file_2["district_list"][0]["ident"]
     end
+
+    should "store ordered precincts" do
+      @gen.start_precinct("Precinct 1", 3)
+      @gen.end_precinct
+      @gen.start_precinct("Precinct 2", 1)
+      @gen.end_precinct
+      
+      @gen.end_ballot
+      @gen.end_file
+      
+      assert_equal 3, @gen.h_file[0]["precinct_list"][0]["display_order"]
+      assert_equal 1, @gen.h_file[0]["precinct_list"][1]["display_order"]
+    end
+    
+    should "store ordered contests, candidates" do
+      @gen.start_contest("Test Contest", 3)
+      @gen.add_candidate("Candidate 1", "Unaffiliated", 60)
+      @gen.add_candidate("Candidate 2", "Green Party", 59)
+      @gen.end_contest
+      
+      @gen.end_ballot
+      @gen.end_file
+      
+      assert_equal 3, @gen.h_file[0]["contest_list"][0]["display_order"]
+      assert_equal 60, @gen.h_file[0]["contest_list"][0]["candidates"][0]["display_order"]
+      assert_equal 59, @gen.h_file[0]["contest_list"][0]["candidates"][1]["display_order"]
+    end
     
     should "generate unique idents for precincts" do
       assert_equal @gen.precinct_ident("Test Name"), "PREC-0"
@@ -97,7 +124,7 @@ class DataLayerTest < Test::Unit::TestCase
     end
     
     should "generate unique idents for parties" do
-      # PART-0 is write-in candidate
+      # PART-0 is "Unaffiliated"
       assert_equal @gen.party_ident("Test Name"), "PART-1"
       assert_equal @gen.party_ident("Different Test Name"), "PART-2"
       assert_equal @gen.party_ident("Test Name"), "PART-1"
