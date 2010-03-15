@@ -28,11 +28,16 @@ require 'getoptlong'
 require 'pathname'
 require 'active_support/secure_random'
 
+
+# Contains methods to build BallotInfo records which fit the TTV data model.  
 class DataLayer
   attr_reader :h_file
   
-  def initialize(formcode)
-    @format = formcode
+  def initialize()
+    @all_district_idents = {}
+    @all_precinct_idents = {}
+    @all_candidate_idents = {}
+    @all_voting_place_idents = {}
     @rules = {}
     @candidates = {}
     @parties = {}
@@ -58,51 +63,44 @@ class DataLayer
   
   def begin_file
     @h_file = []
-    
   end
   
   def end_file
     #    pp @h_file
   end
 
+  # Begin a precinct record
   def start_precinct(name)
     puts "new precinct: #{name}"
     @prec_count += 1
-    @precinct = {"display_name" => name}
-    @districts = [] # Empty districts
+    @curr_precinct = {"display_name" => name}
+    @districts = [] # Empty temporary district list
   end
   
+  # End a precinct record. Associate added districts with precinct.
   def end_precinct
-    @precinct["districts"] = @districts
-    @h_precincts << @precinct
+    @curr_precinct["districts"] = @districts
+    @h_precincts << @curr_precinct
   end
   
-  def add_district(district)
-    @districts << {"display name" => district}
+  # Add a district to the precinct currently being added
+  def add_district(name)
+    @districts << {"display name" => name}
+    # TODO: Set unique district ident
   end
   
-  def start_ballot(town)
-    puts "new ballot: #{town}"
+  def start_ballot(name)
+    puts "new ballot: #{name}"
     @ballot_count += 1
     @prec_id = "prec-#{@precincts.length}"
-    @precincts = {town => @prec_id}
-    # if @format = "NH" ?
-    @h_ballot = {"display_name" => "General Election"}
+
+    @h_ballot = {"display_name" => name}
     @h_ballot["contest_list"] = []
 
   end
   
   def end_ballot
     
-    if @format == "NH"
-      gen_precinct_list
-      @h_ballot["jurisdiction_display_name"] = "middleworld"
-      @h_ballot["type"] = "jurisdiction_slate"
-    
-    elsif @format == "FL"
-      @h_ballot["ballotinfo_type"] = "jurisdiction_info"
-    end
-
     @h_ballot["precinct_list"] = @h_precincts
     @h_ballot.merge!(audit_header_dummy)
     
@@ -114,7 +112,7 @@ class DataLayer
     @precincts.each do |key, value|
       @h_precincts << 
       { "voting_places" =>
-        # TODO: what are these three lines for? Pito?
+        # TODO: what are these three lines for?
         [{ "ballot_counters" => 2,
               "ident" => "vplace-#{ActiveSupport::SecureRandom.hex}"}
         ],
