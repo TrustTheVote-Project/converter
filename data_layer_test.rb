@@ -1,6 +1,5 @@
 #
 # Perform some unit tests on Data Layer
-# TODO: k.instance_eval { @secret }
 #
 require 'rubygems'
 require 'shoulda'
@@ -19,6 +18,19 @@ class DataLayerTest < Test::Unit::TestCase
       @gen.end_ballot
       @gen.end_file
       assert_equal "display_name", @gen.h_file[0]["display_name"]
+    end
+    
+    should "create multiple ballots" do
+      @gen.end_ballot
+      @gen.start_ballot "Ballot 2"
+      @gen.end_ballot
+      @gen.start_ballot "Ballot 3"
+      @gen.end_ballot
+      
+      @gen.end_file
+      
+      assert_equal 3, @gen.h_file.length
+      assert_equal "Ballot 2", @gen.h_file[1]["display_name"]
     end
     
     should "begin a contest with two candidates" do

@@ -84,6 +84,7 @@ class NHParser
     get_line
     get_line
     @gen.start_ballot(town)
+    @gen.set_type("jurisdiction_slate")
     parse_contests
     @gen.end_ballot
   end
@@ -97,7 +98,7 @@ class NHParser
       get_line
       @rule = @line.chop.lstrip
       get_line
-      @gen.start_contest(@contest, @rule)
+      @gen.start_contest(@contest) # , @rule
       parse_candidates()
       @gen.end_contest
     end

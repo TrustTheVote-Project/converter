@@ -61,7 +61,7 @@ class DataLayer
   end
 
   # Begin a new ballot. Takes "name", which is display name of ballot.
-  def start_ballot(name)
+  def start_ballot(name = "Election")
     puts "new ballot: #{name}"
 
     @curr_ballot = {"display_name" => name}
@@ -121,6 +121,7 @@ class DataLayer
     
     @curr_precinct = {"display_name" => name}
     @curr_precinct["display_order"] = order unless order == -1
+    @curr_precinct["ident"] = precinct_ident(name)
     @curr_precinct["district_list"] = []
   end
 
@@ -134,6 +135,7 @@ class DataLayer
   
   # End a precinct record. Add precinct to current ballot's list
   def end_precinct
+    raise "Must start a precinct before ending one" if @curr_ballot.nil?
     @curr_ballot["precinct_list"] << @curr_precinct
   end
   

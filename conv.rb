@@ -74,7 +74,7 @@ end
 
 # command line is parsed. Now lets do the work
 
-gen = DataLayer.new(@format)
+gen = DataLayer.new
 par = NHParser.new(ARGV[0], gen) if @format == "NH"
 par = FLParser.new(ARGV[0], gen) if @format == "FL"
 par = XMLParser.new(ARGV[0], gen) if @format == "XML"

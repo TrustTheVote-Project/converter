@@ -9,9 +9,9 @@ require 'data_layer'
 class XMLParserTest < Test::Unit::TestCase
   context "A generator instance" do
     setup do
-      @gen = DataLayer.new("XML")
+      @gen = DataLayer.new
       @gen.begin_file
-      @gen.start_ballot("Test Election")    
+      @gen.start_ballot    
     end
     
     should "begin a contest with two candidates" do
@@ -36,14 +36,26 @@ class XMLParserTest < Test::Unit::TestCase
     end
   end
   
-  context "A XMLParser instance" do
+  context "XMLParser testing" do
     setup do
-      @gen = DataLayer.new("XML")
+      @gen = DataLayer.new
       @gen.begin_file
-      @gen.start_ballot("Test Election")
+      @gen.start_ballot
       
       @par = XMLParser.new("inputs/mason.xml", @gen)
       @doc = @par.file
+    end
+
+    context "having parsed a file" do
+      setup do
+        @par.parse_file
+      end
+      
+      should "have imported a precinct" do
+        # TODO: check for ordering data
+        # of precincts, contests, candidates
+      end
+      
     end
     
     should "find election name from XML file" do
@@ -75,7 +87,7 @@ class XMLParserTest < Test::Unit::TestCase
 
         precinct.elements.each("Splits/Split") {|split|
           #puts precinct.attributes["name"] + "." + split.attributes["name"]
-          @gen.start_precinct(precinct.attributes["name"] + "." + split.attributes["name"])
+          @gen.start_precinct(precinct.attributes["name"] + "." + split.attributes["name"], precinct.attributes["displayOrder"])
           
           split.elements.each("DistrictPrecinctSplits/DistrictPrecinctSplit") { |district|
             #print district.attributes["district"] + " "

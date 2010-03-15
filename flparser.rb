@@ -42,7 +42,7 @@ class FLParser
 
   def parse_file
     @gen.begin_file
-    @gen.start_ballot("TestTown")
+    @gen.start_ballot
     parse_precincts
     @gen.end_ballot
     @gen.end_file

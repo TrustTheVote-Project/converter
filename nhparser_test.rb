@@ -9,20 +9,23 @@ require 'data_layer'
 class ParserTest < Test::Unit::TestCase
   context "A single parser instance" do
     should "open a ballot info text file" do
-      gen = DataLayer.new("NH")
+      gen = DataLayer.new
       par = NHParser.new("inputs/tinyballot.txt", gen)      
     end
     
     should "parse a ballot info text file" do
-      gen = DataLayer.new("NH")
+      gen = DataLayer.new
       par = NHParser.new("inputs/tinyballot.txt", gen)
       par.parse_file
       assert true unless gen.h_file.nil? # generated file
-      assert gen.h_file.length == 1 # 1 ballot
+      assert_equal 1, gen.h_file.length # 1 ballot
+      
       single_ballot = gen.h_file[0]
-      assert single_ballot["type"].eql? "jurisdiction_slate"
-      assert single_ballot["precinct_list"].length == 1
-      assert single_ballot["precinct_list"][0]["display_name"] == "Alton"
+
+      assert_equal "jurisdiction_slate", single_ballot["Audit-header"]["type"]
+      assert_equal 2, single_ballot["contest_list"].length
+      assert_equal  "President and Vice-President of the United States",
+                    single_ballot["contest_list"][0]["display_name"]
     end
   end
 end

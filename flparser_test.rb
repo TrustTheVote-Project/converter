@@ -7,34 +7,18 @@ require 'flparser'
 require 'data_layer'
 
 class ParserCSVTest < Test::Unit::TestCase
-
-  context "A generator instance" do
-    setup do
-      @gen = DataLayer.new('FL')
-    end
-    
-    should "start and end a precinct" do
-        @gen.start_precinct("Baker")
-        @gen.end_precinct
-    end
-      
-    should "start precinct, add some districts, end precinct." do
-        @gen.start_precinct("Test")
-        @gen.add_district("Congress 1")
-        @gen.add_district("Senate 2")
-        @gen.add_district("House 1")
-        @gen.end_precinct
-    end
-  end
   
   context "A parser_csv on a small csv file" do
     setup do
-      @gen = DataLayer.new('FL')
-      @par = FLParser.new("inputs/smallpandd.csv", @gen)      
+      @gen = DataLayer.new
+      @par = FLParser.new("inputs/smallpandd.csv", @gen)
     end
   
     context "skipping blank/header rows, having found precinct rows" do
       setup do
+        @gen.begin_file
+        @gen.start_ballot
+        
         until @par.is_precinct?
           @par.get_row
         end
@@ -52,8 +36,11 @@ class ParserCSVTest < Test::Unit::TestCase
         # generate YAML with generator, end file
         # check for proper resulting file, based on known input      
     end
+    
     should "parse all precincts" do
-      @par.parse_precincts
+      @par.parse_file
+      
+      assert_equal "Baker 01.1", @gen.h_file[0]["precinct_list"][0]["display_name"]
     end
   end
   
