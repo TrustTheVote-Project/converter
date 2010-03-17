@@ -80,7 +80,7 @@ class DataLayer
     @curr_ballot["Audit-header"] = @audit_header_hash
   end
   
-  # Set ballotinfo_type
+  # Sets ballot type (in header)
   def set_type(type)
     @audit_header_hash["type"] = type
   end

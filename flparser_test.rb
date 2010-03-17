@@ -30,18 +30,27 @@ class ParserCSVTest < Test::Unit::TestCase
       
       should "send fields from row into generator" do
         @par.parse_precinct
-        # will need last precinct name stored as local var
       end
-
-        # generate YAML with generator, end file
-        # check for proper resulting file, based on known input      
     end
     
-    should "parse all precincts" do
-      @par.parse_file
+    context "having parsed all precincts" do
+      setup do
+        @par.parse_file
+      end
       
-      assert_equal "Baker 01.1", @gen.h_file[0]["precinct_list"][0]["display_name"]
-      assert_equal "Congress 1", @gen.h_file[0]["precinct_list"][0]["district_list"][0]["display_name"]
+      should "set audit header ballot type" do
+        assert_equal "jurisdiction_info", @gen.h_file[0]["Audit-header"]["type"]
+      end
+      
+      should "extract precincts and send to generator" do
+        assert_equal "Baker 01.1", @gen.h_file[0]["precinct_list"][0]["display_name"]
+        assert_equal "Blackman 02.1", @gen.h_file[0]["precinct_list"][1]["display_name"]
+      end
+      
+      should "associate precincts with its districts" do
+        assert_equal "Congress 1", @gen.h_file[0]["precinct_list"][0]["district_list"][0]["display_name"]
+        assert_equal "Senate 2", @gen.h_file[0]["precinct_list"][0]["district_list"][1]["display_name"]
+      end
 
     end
   end

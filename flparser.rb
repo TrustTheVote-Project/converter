@@ -43,6 +43,7 @@ class FLParser
   def parse_file
     @gen.begin_file
     @gen.start_ballot
+    @gen.set_type("jurisdiction_info")
     parse_precincts
     @gen.end_ballot
     @gen.end_file
