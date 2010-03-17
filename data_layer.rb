@@ -26,7 +26,6 @@ require 'yaml'
 require 'pp'
 require 'getoptlong'
 require 'pathname'
-require 'active_support/secure_random'
 
 
 # Contains methods to build BallotInfo records which fit the TTV data model.  
@@ -104,10 +103,9 @@ class DataLayer
     @curr_contest["candidates"] << @curr_candidate
   end
   
-  # Associates a contest with a district ident
-  # By name: contest_district(district_ident("District name"))
+  # Given a district name, associates a contest with a district ident
   def contest_district(district)
-    @curr_contest["district_ident"] = district
+    @curr_contest["district_ident"] = district_ident(district)
   end
   
   def end_contest

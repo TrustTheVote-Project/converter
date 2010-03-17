@@ -39,7 +39,8 @@ class XMLParser
   def initialize(fname, generator)
     @file = Document.new(File.new(fname))
     @gen = generator
-    @districts = {}
+    @districts = {} # ID => name
+    @contests = {} # Cont. ID => Dist. ID 
   end
 
   def parse_file
@@ -48,6 +49,8 @@ class XMLParser
     start_election
 
     parse_district_names
+    parse_contest_district
+    
     parse_precincts
     parse_contests
     
@@ -65,31 +68,54 @@ class XMLParser
     }
   end
   
+  # Generate a hash table of election/district mappings
+  def parse_contest_district
+    @file.elements.each("EDX/County/Election/DistrictContests/DistrictContest") { |dc|
+      @contests[dc.attributes["contest"]] = dc.attributes["district"]
+    }
+  end
+  
+  # Convert district ID to district name
   def district_name(district)
     @districts[district.to_s]
   end
   
+  # Convert contest ID to district 
+  # Should be seeded by running parse_contest_district 
+  def contest_district(contest)
+    @contests[contest]
+  end
+
   def parse_precincts
     @file.elements.each("EDX/County/Election/Precincts/Precinct") { |precinct|
       parse_splits(precinct)
     }
   end
   
-  # TODO: handle cases wherein there is no split
   def parse_splits(precinct)
     if precinct.elements["Splits/Split"].nil?
-      @gen.start_precinct(precinct.attributes["name"])
+      if precinct.attributes["displayOrder"].nil?
+        @gen.start_precinct(precinct.attributes["name"])
+      else
+        @gen.start_precinct(precinct.attributes["name"], precinct.attributes["displayOrder"].to_i)
+      end
       parse_districts(precinct)
+      @gen.end_precinct
     else
       precinct.elements.each("Splits/Split") { |split|
-        @gen.start_precinct(precinct.attributes["name"] + "." + 
-                            split.attributes["name"])
-        
+        if split.attributes["displayOrder"].nil?
+          @gen.start_precinct(precinct.attributes["name"] + "." + 
+                              split.attributes["name"])
+        else
+          @gen.start_precinct(precinct.attributes["name"] + "." + 
+                              split.attributes["name"],
+                              split.attributes["displayOrder"].to_i)
+        end
         parse_districts(split)
+        @gen.end_precinct
       }
     end
     
-    @gen.end_precinct
   end
   
   def parse_districts(split)
@@ -100,8 +126,16 @@ class XMLParser
   
   def parse_contests
     @file.elements.each("EDX/County/Election/Contests/Contest") { |contest|
-      @gen.start_contest( contest.attributes["name"],
-                          "Vote for only " + contest.attributes["maxVotes"].to_s)
+      if contest.attributes["displayOrder"].nil?
+        @gen.start_contest(contest.attributes["name"])
+        #                   "Vote for only " + contest.attributes["maxVotes"].to_s
+      else
+        @gen.start_contest(contest.attributes["name"], contest.attributes["displayOrder"].to_i)
+      end
+      
+      # Send district for contest
+      @gen.contest_district(district_name(contest_district(contest.attributes["id"])))
+      
       parse_candidates(contest)
       @gen.end_contest
     }
@@ -109,7 +143,12 @@ class XMLParser
   
   def parse_candidates(contest)
     contest.elements.each("Choice") { |candidate|
-      @gen.add_candidate(candidate.attributes["name"], "Nonpartisan")
+      if candidate.attributes["displayOrder"].nil?
+        @gen.add_candidate(candidate.attributes["name"], "Nonpartisan")
+      else
+        @gen.add_candidate(candidate.attributes["name"], "Nonpartisan",
+                           candidate.attributes["displayOrder"].to_i)
+      end
     }
   end
   

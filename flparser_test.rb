@@ -41,6 +41,8 @@ class ParserCSVTest < Test::Unit::TestCase
       @par.parse_file
       
       assert_equal "Baker 01.1", @gen.h_file[0]["precinct_list"][0]["display_name"]
+      assert_equal "Congress 1", @gen.h_file[0]["precinct_list"][0]["district_list"][0]["display_name"]
+
     end
   end
   

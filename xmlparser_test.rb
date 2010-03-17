@@ -45,18 +45,6 @@ class XMLParserTest < Test::Unit::TestCase
       @par = XMLParser.new("inputs/mason.xml", @gen)
       @doc = @par.file
     end
-
-    context "having parsed a file" do
-      setup do
-        @par.parse_file
-      end
-      
-      should "have imported a precinct" do
-        # TODO: check for ordering data
-        # of precincts, contests, candidates
-      end
-      
-    end
     
     should "find election name from XML file" do
       name = @doc.elements["EDX/County/Election"].attributes["name"]
@@ -105,12 +93,43 @@ class XMLParserTest < Test::Unit::TestCase
       assert_equal @par.district_name(37), "Hartstene Pointe Water"
     end
     
-    should "parse precincts" do
+    should "parse precincts, incl. display ordering" do
       @par.parse_precincts
+      @gen.end_ballot
+      @gen.end_file
+      
+      # Splits should have their display order set
+      assert_equal 26, @gen.h_file[0]["precinct_list"][0]["display_order"]
     end
     
-    should "parse contests" do
-      @par.parse_contests
+    context "after parsing contests" do
+      setup do
+        @par.parse_district_names
+        @par.parse_contest_district
+        
+        @par.parse_precincts
+        @par.parse_contests
+        
+        @gen.end_ballot
+        @gen.end_file
+      end
+      
+      should "store display order" do   
+        assert_equal 1, @gen.h_file[0]["contest_list"][0]["candidates"][0]["display_order"]
+        assert_equal 2, @gen.h_file[0]["contest_list"][0]["candidates"][1]["display_order"]
+        assert_equal 406, @gen.h_file[0]["contest_list"][1]["display_order"]
+      end
+      
+      should "store contests' districts" do
+        puts @gen.district_ident("Mason County")
+        puts @gen.district_ident("Mason County")
+        assert_equal "DIST-0", @gen.district_ident("Mason County")
+        
+        assert_equal "DIST-0", @gen.h_file[0]["contest_list"][0]["district_ident"]
+        assert_equal "State Initiative Measure 1033", @gen.h_file[0]["contest_list"][0]["display_name"]
+
+        #assert_equal "Mason County", @gen.omgtest
+      end
     end
     
   end

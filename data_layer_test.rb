@@ -50,9 +50,9 @@ class DataLayerTest < Test::Unit::TestCase
       assert_equal contest_file["candidates"][1]["party_ident"], "PART-0" # No party
     end
 
-    should "associate a contest with a district" do
+    should "associate a contest with a district" do      
       @gen.start_contest "Test Contest"
-      @gen.contest_district "DIST-0"
+      @gen.contest_district "Test District"
       @gen.end_contest
       
       @gen.end_ballot
