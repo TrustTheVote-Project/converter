@@ -84,6 +84,8 @@ class NHParser
     get_line
     get_line
     @gen.start_ballot(town)
+    @gen.start_precinct(town)
+    @gen.end_precinct
     @gen.set_type("jurisdiction_slate")
     parse_contests
     @gen.end_ballot
