@@ -21,7 +21,7 @@ class ParserTest < Test::Unit::TestCase
     end
     
     should "set ballot type" do
-      assert_equal "jurisdiction_slate", @single_ballot["Audit-header"]["type"]
+      assert_equal "ballot_config", @single_ballot["Audit-header"]["type"]
     end
     
     should "contain two contests, have display names" do
