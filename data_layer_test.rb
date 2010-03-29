@@ -48,6 +48,7 @@ class DataLayerTest < Test::Unit::TestCase
 
       assert_equal contest_file["candidates"][0]["ident"], "CAND-0"
       assert_equal contest_file["candidates"][1]["party_ident"], "PART-0" # No party
+      assert_equal contest_file["candidates"][0]["party_display_name"], "Party 1"
     end
 
     should "associate a contest with a district" do      

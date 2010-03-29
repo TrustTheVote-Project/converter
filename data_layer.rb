@@ -96,7 +96,8 @@ class DataLayer
   
   # Add a candidate to the current contest. Party is none by default.
   def add_candidate(name, party = "Unaffiliated", order = -1)
-    @curr_candidate = {"party_ident" => party_ident(party), 
+    @curr_candidate = {"party_ident" => party_ident(party),
+       "party_display_name" => party,
        "ident" => candidate_ident(name),
        "display_name" => name}
     @curr_candidate["display_order"] = order unless order == -1
