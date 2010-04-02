@@ -86,9 +86,9 @@ class DataLayerTest < Test::Unit::TestCase
       @gen.end_file
       
       precinct_file = @gen.h_file[0]["precinct_list"][0]
-      assert_equal precinct_file["display_name"], "Precinct Display Name"
-      assert_equal precinct_file["district_list"][0]["ident"], "DIST-0"
-      assert_equal precinct_file["district_list"][0]["display_name"], "House 1"
+      assert_equal "Precinct Display Name", precinct_file["display_name"]
+      assert_equal "DIST-0", precinct_file["district_list"][0]["ident"]
+      assert_equal "House 1", precinct_file["district_list"][0]["display_name"]
       
       precinct_file_2 = @gen.h_file[0]["precinct_list"][1]
 
