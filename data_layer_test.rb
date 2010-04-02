@@ -68,7 +68,7 @@ class DataLayerTest < Test::Unit::TestCase
       @gen.end_ballot
       @gen.end_file
       
-      assert_equal "jurisdiction_slate", @gen.h_file[0]["Audit-header"]["type"].eql
+      assert_equal "jurisdiction_slate", @gen.h_file[0]["Audit-header"]["type"]
     end
       
     should "store precincts with districts" do
