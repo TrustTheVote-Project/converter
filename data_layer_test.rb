@@ -68,7 +68,7 @@ class DataLayerTest < Test::Unit::TestCase
       @gen.end_ballot
       @gen.end_file
       
-      assert @gen.h_file[0]["Audit-header"]["type"].eql? "jurisdiction_slate"
+      assert_equal "jurisdiction_slate", @gen.h_file[0]["Audit-header"]["type"].eql
     end
       
     should "store precincts with districts" do
@@ -125,36 +125,36 @@ class DataLayerTest < Test::Unit::TestCase
     end
     
     should "generate unique idents for precincts" do
-      assert_equal @gen.precinct_ident("Test Name"), "PREC-0"
-      assert_equal @gen.precinct_ident("Different Test Name"), "PREC-1"
-      assert_equal @gen.precinct_ident("Test Name"), "PREC-0"
+      assert_equal "PREC-0", @gen.precinct_ident("Test Name")
+      assert_equal "PREC-1", @gen.precinct_ident("Different Test Name")
+      assert_equal "PREC-0", @gen.precinct_ident("Test Name")
     end
     
     should "generate unique idents for districts" do
-      assert_equal @gen.district_ident("Test Name"), "DIST-0"
-      assert_equal @gen.district_ident("Different Test Name"), "DIST-1"
-      assert_equal @gen.district_ident("Test Name"), "DIST-0"
+      assert_equal "DIST-0", @gen.district_ident("Test Name")
+      assert_equal "DIST-1", @gen.district_ident("Different Test Name")
+      assert_equal "DIST-0", @gen.district_ident("Test Name")
     end
     
     should "generate unique idents for parties" do
       # PART-0 is "Unaffiliated"
-      assert_equal @gen.party_ident("Test Name"), "PART-1"
-      assert_equal @gen.party_ident("Different Test Name"), "PART-2"
-      assert_equal @gen.party_ident("Test Name"), "PART-1"
-      assert_equal @gen.party_ident("Unaffiliated"), "PART-0"
+      assert_equal "PART-1", @gen.party_ident("Test Name")
+      assert_equal "PART-2", @gen.party_ident("Different Test Name")
+      assert_equal "PART-1", @gen.party_ident("Test Name")
+      assert_equal "PART-0", @gen.party_ident("Unaffiliated")
 
     end
     
     should "generate unique idents for candidates" do
-      assert_equal @gen.candidate_ident("Test Name"), "CAND-0"
-      assert_equal @gen.candidate_ident("Different Test Name"), "CAND-1"
-      assert_equal @gen.candidate_ident("Test Name"), "CAND-0"
+      assert_equal "CAND-0", @gen.candidate_ident("Test Name")
+      assert_equal "CAND-1", @gen.candidate_ident("Different Test Name")
+      assert_equal "CAND-0", @gen.candidate_ident("Test Name")
     end
     
     should "generate unique idents for contests" do
-      assert_equal @gen.contest_ident("Test Name"), "CONT-0"
-      assert_equal @gen.contest_ident("Different Test Name"), "CONT-1"
-      assert_equal @gen.contest_ident("Test Name"), "CONT-0"
+      assert_equal "CONT-0", @gen.contest_ident("Test Name")
+      assert_equal "CONT-1", @gen.contest_ident("Different Test Name")
+      assert_equal "CONT-0", @gen.contest_ident("Test Name")
     end
     
   end
