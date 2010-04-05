@@ -66,6 +66,7 @@ class DataLayer
     @curr_ballot = {"display_name" => name}
     @curr_ballot["contest_list"] = []
     @curr_ballot["precinct_list"] = []
+    @curr_ballot["question_list"] = []
   end
   
   # Add the header to the ballot and push the ballot to the output file  
@@ -83,6 +84,27 @@ class DataLayer
   # Sets ballot type (in header)
   def set_type(type)
     @audit_header_hash["type"] = type
+  end
+
+  # Start a question
+  # Often followed by a call to question_text and question_district
+  def start_question(name, order = -1)
+    @curr_question = {"display_name" => name}
+    @curr_question["display_order"] = order unless order == -1
+    # TODO: Should questions get idents?
+  end
+  
+  def question_text(text)
+    @curr_question["question"] = text
+  end
+
+  # Given a district name, associates it with the current question
+  def question_district(district)
+    @curr_question["district_ident"] = district_ident(district)
+  end
+
+  def end_question
+    @curr_ballot["question_list"] << @curr_question
   end
 
   # Start a contest.

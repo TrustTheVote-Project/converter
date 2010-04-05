@@ -43,14 +43,29 @@ class DataLayerTest < Test::Unit::TestCase
       @gen.end_file
       
       contest_file = @gen.h_file[0]["contest_list"][0]
-      assert_equal contest_file["display_name"], "Test Contest"
-      assert_equal contest_file["candidates"][0]["display_name"], "Candidate 1"
+      assert_equal "Test Contest", contest_file["display_name"]
+      assert_equal "Candidate 1", contest_file["candidates"][0]["display_name"]
 
-      assert_equal contest_file["candidates"][0]["ident"], "CAND-0"
-      assert_equal contest_file["candidates"][1]["party_ident"], "PART-0" # No party
-      assert_equal contest_file["candidates"][0]["party_display_name"], "Party 1"
+      assert_equal "CAND-0", contest_file["candidates"][0]["ident"]
+      assert_equal "PART-0", contest_file["candidates"][1]["party_ident"] # No party
+      assert_equal "Party 1", contest_file["candidates"][0]["party_display_name"]
     end
 
+    should "add a question, associate with district" do
+      @gen.start_question "Question title"
+      @gen.question_text "How is my driving?"
+      @gen.question_district "Test District"
+      @gen.end_question
+      
+      @gen.end_ballot
+      @gen.end_file
+      
+      question_file = @gen.h_file[0]["question_list"][0]
+      assert_equal "Question title", question_file["display_name"]
+      assert_equal "How is my driving?", question_file["question"]
+      assert_equal "DIST-0", @gen.h_file[0]["question_list"][0]["district_ident"]
+    end
+    
     should "associate a contest with a district" do      
       @gen.start_contest "Test Contest"
       @gen.contest_district "Test District"
@@ -59,7 +74,7 @@ class DataLayerTest < Test::Unit::TestCase
       @gen.end_ballot
       @gen.end_file
       
-      assert_equal @gen.h_file[0]["contest_list"][0]["district_ident"], "DIST-0"
+      assert_equal "DIST-0", @gen.h_file[0]["contest_list"][0]["district_ident"]
     end
       
     should "set a ballotinfo_type" do
