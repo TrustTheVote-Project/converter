@@ -126,19 +126,41 @@ class XMLParser
   
   def parse_contests
     @file.elements.each("EDX/County/Election/Contests/Contest") { |contest|
-      if contest.attributes["displayOrder"].nil?
-        @gen.start_contest(contest.attributes["name"])
-        #                   "Vote for only " + contest.attributes["maxVotes"].to_s
+      if contest.attributes["type"] == "MS"
+        parse_question(contest)
       else
-        @gen.start_contest(contest.attributes["name"], contest.attributes["displayOrder"].to_i)
+        parse_contest(contest)  
       end
-      
-      # Send district for contest
-      @gen.contest_district(district_name(contest_district(contest.attributes["id"])))
-      
-      parse_candidates(contest)
-      @gen.end_contest
     }
+  end
+  
+  def parse_question(question)
+    if question.attributes["displayOrder"].nil?
+      @gen.start_question(question.attributes["name"])
+    else
+      @gen.start_question(question.attributes["name"], question.attributes["displayOrder"].to_i)
+    end
+    
+    question.elements.each("MeasureText") { |text|
+      @gen.question_text(text.text)
+    }
+    
+    @gen.question_district(district_name(contest_district(question.attributes["id"])))
+    @gen.end_question
+  end
+  
+  def parse_contest(contest)
+    if contest.attributes["displayOrder"].nil?
+      @gen.start_contest(contest.attributes["name"])
+    else
+      @gen.start_contest(contest.attributes["name"], contest.attributes["displayOrder"].to_i)
+    end
+      
+    # Send district for contest
+    @gen.contest_district(district_name(contest_district(contest.attributes["id"])))
+    
+    parse_candidates(contest)
+    @gen.end_contest
   end
   
   def parse_candidates(contest)
