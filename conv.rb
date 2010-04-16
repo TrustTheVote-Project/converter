@@ -86,10 +86,10 @@ i = 0
 
 gen.h_file.each do |ballot|
   i += 1
-  puts "ballot #{i}: #{ballot["precinct_list"][0]["display_name"]}"
+  puts "ballot #{i}: #{ballot["ballot_info"]["precinct_list"][0]["display_name"]}"
 end
 gen.h_file.each do |ballot|
-  @file = @dir + "#{ballot["precinct_list"][0]["display_name"]}.yml"
+  @file = @dir + "#{ballot["ballot_info"]["precinct_list"][0]["display_name"]}.yml"
   puts "writing file #{@file}"
   @file.open("w") do |file| 
     YAML.dump(ballot, file)
