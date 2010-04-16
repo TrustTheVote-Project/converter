@@ -17,7 +17,7 @@ class DataLayerTest < Test::Unit::TestCase
     should "have set the ballot display_name" do
       @gen.end_ballot
       @gen.end_file
-      assert_equal "display_name", @gen.h_file[0]["display_name"]
+      assert_equal "display_name", @gen.h_file[0]["ballot_info"]["display_name"]
     end
     
     should "create multiple ballots" do
@@ -30,7 +30,7 @@ class DataLayerTest < Test::Unit::TestCase
       @gen.end_file
       
       assert_equal 3, @gen.h_file.length
-      assert_equal "Ballot 2", @gen.h_file[1]["display_name"]
+      assert_equal "Ballot 2", @gen.h_file[1]["ballot_info"]["display_name"]
     end
     
     should "begin a contest with two candidates" do
@@ -42,7 +42,7 @@ class DataLayerTest < Test::Unit::TestCase
       @gen.end_ballot
       @gen.end_file
       
-      contest_file = @gen.h_file[0]["contest_list"][0]
+      contest_file = @gen.h_file[0]["ballot_info"]["contest_list"][0]
       assert_equal "Test Contest", contest_file["display_name"]
       assert_equal "Candidate 1", contest_file["candidates"][0]["display_name"]
 
@@ -60,10 +60,10 @@ class DataLayerTest < Test::Unit::TestCase
       @gen.end_ballot
       @gen.end_file
       
-      question_file = @gen.h_file[0]["question_list"][0]
+      question_file = @gen.h_file[0]["ballot_info"]["question_list"][0]
       assert_equal "Question title", question_file["display_name"]
       assert_equal "How is my driving?", question_file["question"]
-      assert_equal "DIST-0", @gen.h_file[0]["question_list"][0]["district_ident"]
+      assert_equal "DIST-0", @gen.h_file[0]["ballot_info"]["question_list"][0]["district_ident"]
     end
     
     should "associate a contest with a district" do      
@@ -74,7 +74,7 @@ class DataLayerTest < Test::Unit::TestCase
       @gen.end_ballot
       @gen.end_file
       
-      assert_equal "DIST-0", @gen.h_file[0]["contest_list"][0]["district_ident"]
+      assert_equal "DIST-0", @gen.h_file[0]["ballot_info"]["contest_list"][0]["district_ident"]
     end
       
     should "set a ballotinfo_type" do
@@ -83,7 +83,7 @@ class DataLayerTest < Test::Unit::TestCase
       @gen.end_ballot
       @gen.end_file
       
-      assert_equal "jurisdiction_slate", @gen.h_file[0]["Audit-header"]["type"]
+      assert_equal "jurisdiction_slate", @gen.h_file[0]["audit_header"]["type"]
     end
       
     should "store precincts with districts" do
@@ -100,12 +100,12 @@ class DataLayerTest < Test::Unit::TestCase
       @gen.end_ballot
       @gen.end_file
       
-      precinct_file = @gen.h_file[0]["precinct_list"][0]
+      precinct_file = @gen.h_file[0]["ballot_info"]["precinct_list"][0]
       assert_equal "Precinct Display Name", precinct_file["display_name"]
       assert_equal "DIST-0", precinct_file["district_list"][0]["ident"]
       assert_equal "House 1", precinct_file["district_list"][0]["display_name"]
       
-      precinct_file_2 = @gen.h_file[0]["precinct_list"][1]
+      precinct_file_2 = @gen.h_file[0]["ballot_info"]["precinct_list"][1]
 
       # Districts with the same name should have the same ident across precincts
       assert_equal  precinct_file["district_list"][0]["ident"],
@@ -121,8 +121,8 @@ class DataLayerTest < Test::Unit::TestCase
       @gen.end_ballot
       @gen.end_file
       
-      assert_equal 3, @gen.h_file[0]["precinct_list"][0]["display_order"]
-      assert_equal 1, @gen.h_file[0]["precinct_list"][1]["display_order"]
+      assert_equal 3, @gen.h_file[0]["ballot_info"]["precinct_list"][0]["display_order"]
+      assert_equal 1, @gen.h_file[0]["ballot_info"]["precinct_list"][1]["display_order"]
     end
     
     should "store ordered contests, candidates" do
@@ -134,9 +134,9 @@ class DataLayerTest < Test::Unit::TestCase
       @gen.end_ballot
       @gen.end_file
       
-      assert_equal 3, @gen.h_file[0]["contest_list"][0]["display_order"]
-      assert_equal 60, @gen.h_file[0]["contest_list"][0]["candidates"][0]["display_order"]
-      assert_equal 59, @gen.h_file[0]["contest_list"][0]["candidates"][1]["display_order"]
+      assert_equal 3, @gen.h_file[0]["ballot_info"]["contest_list"][0]["display_order"]
+      assert_equal 60, @gen.h_file[0]["ballot_info"]["contest_list"][0]["candidates"][0]["display_order"]
+      assert_equal 59, @gen.h_file[0]["ballot_info"]["contest_list"][0]["candidates"][1]["display_order"]
     end
     
     should "generate unique idents for precincts" do

@@ -99,7 +99,7 @@ class XMLParserTest < Test::Unit::TestCase
       @gen.end_file
       
       # Splits should have their display order set
-      assert_equal 26, @gen.h_file[0]["precinct_list"][0]["display_order"]
+      assert_equal 26, @gen.h_file[0]["ballot_info"]["precinct_list"][0]["display_order"]
     end
     
     context "after parsing contests" do
@@ -115,23 +115,23 @@ class XMLParserTest < Test::Unit::TestCase
       end
       
       should "store display order" do   
-        assert_equal 406, @gen.h_file[0]["contest_list"][0]["display_order"]
+        assert_equal 406, @gen.h_file[0]["ballot_info"]["contest_list"][0]["display_order"]
       end
       
       should "store contests' districts" do
 
-        assert_equal @gen.district_ident("City of Shelton"), @gen.h_file[0]["contest_list"][0]["district_ident"]
-        assert_equal "City of Shelton Commissioner of Streets and Public Improvement", @gen.h_file[0]["contest_list"][0]["display_name"]
+        assert_equal @gen.district_ident("City of Shelton"), @gen.h_file[0]["ballot_info"]["contest_list"][0]["district_ident"]
+        assert_equal "City of Shelton Commissioner of Streets and Public Improvement", @gen.h_file[0]["ballot_info"]["contest_list"][0]["display_name"]
 
         #assert_equal "Mason County", @gen.omgtest
       end
 
       should "store a question and its districts" do
-        assert_equal "State Initiative Measure 1033", @gen.h_file[0]["question_list"][0]["display_name"]
+        assert_equal "State Initiative Measure 1033", @gen.h_file[0]["ballot_info"]["question_list"][0]["display_name"]
         assert_equal  "Initiative Measure No. 1033 concerns state, county and city revenue. | |This measure would limit growth of certain state, county and city revenue to annual inflation and population growth, not including voter-approved revenue increases. Revenue collected above the limit would reduce property tax levies.  | |Should this measure be enacted into law? Yes [ ] No [ ]",
-                      @gen.h_file[0]["question_list"][0]["question"]
+                      @gen.h_file[0]["ballot_info"]["question_list"][0]["question"]
         assert_equal  @gen.district_ident("Mason County"),
-                      @gen.h_file[0]["question_list"][0]["district_ident"]
+                      @gen.h_file[0]["ballot_info"]["question_list"][0]["district_ident"]
       end
     
     end

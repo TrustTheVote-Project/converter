@@ -63,22 +63,26 @@ class DataLayer
   def start_ballot(name = "Election")
     puts "new ballot: #{name}"
 
-    @curr_ballot = {"display_name" => name}
-    @curr_ballot["contest_list"] = []
-    @curr_ballot["precinct_list"] = []
-    @curr_ballot["question_list"] = []
+    @curr_ballot = {}
+    @curr_ballot["ballot_info"] = {}
+
+    @ballot_info = {"display_name" => name}
+    @ballot_info["contest_list"] = []
+    @ballot_info["precinct_list"] = []
+    @ballot_info["question_list"] = []
   end
   
   # Add the header to the ballot and push the ballot to the output file  
   def end_ballot
     add_header
+    @curr_ballot["ballot_info"] = @ballot_info
     
     @h_file << @curr_ballot
   end
 
   # Add the dummy audit header to the ballot.
   def add_header
-    @curr_ballot["Audit-header"] = @audit_header_hash
+    @curr_ballot["audit_header"] = @audit_header_hash
   end
   
   # Sets ballot type (in header)
@@ -104,7 +108,7 @@ class DataLayer
   end
 
   def end_question
-    @curr_ballot["question_list"] << @curr_question
+    @ballot_info["question_list"] << @curr_question
   end
 
   # Start a contest.
@@ -132,7 +136,7 @@ class DataLayer
   end
   
   def end_contest
-    @curr_ballot["contest_list"] << @curr_contest
+    @ballot_info["contest_list"] << @curr_contest
   end
   
   # Begins a precinct record
@@ -157,7 +161,7 @@ class DataLayer
   # End a precinct record. Add precinct to current ballot's list
   def end_precinct
     raise "Must start a precinct before ending one" if @curr_ballot.nil?
-    @curr_ballot["precinct_list"] << @curr_precinct
+    @ballot_info["precinct_list"] << @curr_precinct
   end
   
   

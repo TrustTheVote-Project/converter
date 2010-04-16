@@ -39,17 +39,17 @@ class ParserCSVTest < Test::Unit::TestCase
       end
       
       should "set audit header ballot type" do
-        assert_equal "jurisdiction_info", @gen.h_file[0]["Audit-header"]["type"]
+        assert_equal "jurisdiction_info", @gen.h_file[0]["audit_header"]["type"]
       end
       
       should "extract precincts and send to generator" do
-        assert_equal "Baker 01.1", @gen.h_file[0]["precinct_list"][0]["display_name"]
-        assert_equal "Blackman 02.1", @gen.h_file[0]["precinct_list"][1]["display_name"]
+        assert_equal "Baker 01.1", @gen.h_file[0]["ballot_info"]["precinct_list"][0]["display_name"]
+        assert_equal "Blackman 02.1", @gen.h_file[0]["ballot_info"]["precinct_list"][1]["display_name"]
       end
       
       should "associate precincts with its districts" do
-        assert_equal "Congress 1", @gen.h_file[0]["precinct_list"][0]["district_list"][0]["display_name"]
-        assert_equal "Senate 2", @gen.h_file[0]["precinct_list"][0]["district_list"][1]["display_name"]
+        assert_equal "Congress 1", @gen.h_file[0]["ballot_info"]["precinct_list"][0]["district_list"][0]["display_name"]
+        assert_equal "Senate 2", @gen.h_file[0]["ballot_info"]["precinct_list"][0]["district_list"][1]["display_name"]
       end
 
     end

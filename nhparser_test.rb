@@ -21,13 +21,13 @@ class ParserTest < Test::Unit::TestCase
     end
     
     should "set ballot type" do
-      assert_equal "ballot_config", @single_ballot["Audit-header"]["type"]
+      assert_equal "ballot_config", @single_ballot["audit_header"]["type"]
     end
     
     should "contain two contests, have display names" do
-      assert_equal 2, @single_ballot["contest_list"].length
+      assert_equal 2, @single_ballot["ballot_info"]["contest_list"].length
       assert_equal  "President and Vice-President of the United States",
-                    @single_ballot["contest_list"][0]["display_name"] 
+                    @single_ballot["ballot_info"]["contest_list"][0]["display_name"] 
     end
   end
   
@@ -42,9 +42,9 @@ class ParserTest < Test::Unit::TestCase
     
     should "contain two ballots with contests" do
       assert_equal  "President and Vice-President of the United States",
-                    @ballot1["contest_list"][0]["display_name"]
+                    @ballot1["ballot_info"]["contest_list"][0]["display_name"]
       assert_equal  "Governor",
-                    @ballot2["contest_list"][1]["display_name"]                    
+                    @ballot2["ballot_info"]["contest_list"][1]["display_name"]                    
     end
     
   end
