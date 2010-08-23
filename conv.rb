@@ -22,14 +22,15 @@
 
 =end
 require 'rubygems'
-require 'yaml'
 require 'pp'
 require 'getoptlong'
 require 'pathname'
 require 'flparser'
 require 'nhparser'
+require 'dcparser'
 require 'xmlparser'
 require 'data_layer'
+require 'data_layer_v2'
 
 #
 # Main Program: Parse the command line and do the work
@@ -41,7 +42,9 @@ Usage:
 
  Options:
      -h   display help text
-     -f   format code. -fNH - New Hampshire Ballot.txt
+     -f   format code
+          NH -> New Hampshire dump
+          DC -> DC Dump
      -o   optional destination folder
 "
 opts = GetoptLong.new(
@@ -73,11 +76,20 @@ if ARGV.length != 1
 end
 
 # command line is parsed. Now lets do the work
+if @format.upcase == "DC"
+  gen = DataLayer2.new
+elsif @format.upcase != "DC"
+  gen = DataLayer.new
+else
+  puts "Invalid format: #{@format}"
+  exit 0
+end
+  
+par = NHParser.new(ARGV[0], gen) if @format.upcase == "NH"
+par = FLParser.new(ARGV[0], gen) if @format.upcase == "FL"
+par = XMLParser.new(ARGV[0], gen) if @format.upcase == "XML"
+par = DCParser.new(ARGV[0], gen) if @format.upcase == "DC"
 
-gen = DataLayer.new
-par = NHParser.new(ARGV[0], gen) if @format == "NH"
-par = FLParser.new(ARGV[0], gen) if @format == "FL"
-par = XMLParser.new(ARGV[0], gen) if @format == "XML"
 par.parse_file
 
 @dir.mkdir unless @dir.directory?
@@ -85,12 +97,7 @@ par.parse_file
 i = 0
 
 gen.h_file.each do |ballot|
-  i += 1
-  puts "ballot #{i}: #{ballot["ballot_info"]["precinct_list"][0]["display_name"]}"
-end
-gen.h_file.each do |ballot|
-  @file = @dir + "#{ballot["ballot_info"]["precinct_list"][0]["display_name"]}.yml"
-  puts "writing file #{@file}"
+  @file = @dir + "file.yml"
   @file.open("w") do |file| 
     YAML.dump(ballot, file)
   end
