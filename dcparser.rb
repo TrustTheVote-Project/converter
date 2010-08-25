@@ -39,11 +39,17 @@ DTYPEABBREV = 5
 # Implements a parser for the districts_precincts excel file from DC
 #
 class DCParser
+  
   def initialize(fname, generator)
     @gen = generator
-    @csv = FasterCSV.read(fname)
-    @row = 0
-    get_row  # skip the column headers
+    if fname.class == String
+      @csv = FasterCSV.read(fname)
+      @row = 0
+      get_row  # skip the column headers
+    elsif fname.class == Array
+      @csv = fname
+      @row = 0
+    end
   end
 
 # In this input file, each row is a district.
@@ -65,28 +71,48 @@ class DCParser
 #
   def parse_precinct
     last_precinct = precinct_number
-    puts "new precinct: #{last_precinct}"
-    new_district_set = []
+    last_precinct_name = precinct_name
+    all_districts_for_this_precinct = []
     begin
       parse_district
-      puts "contains district: #{@dist_ident}"
-      new_district_set << @dist_ident
+      all_districts_for_this_precinct << @new_district unless @new_district.nil?
       get_row 
     end while @row < @csv.length && last_precinct == precinct_number
-    @gen.add_district_set("ds-#{last_precinct}", new_district_set)
-    @gen.add_precinct(last_precinct, @csv[last_precinct][PNAME])
+    compute_precinct_splits last_precinct, all_districts_for_this_precinct
+    @gen.add_precinct(last_precinct, last_precinct_name)
   end
-        
+  
+  # this method is the only tricky part, that analyzes the districts and computes the splits.
+  def compute_precinct_splits precinct, dists_for_precinct
+    smd_districts = dists_for_precinct.reduce([]) {|memo, dist| dist.smd? ? memo | [dist] : memo}
+    reg_districts = dists_for_precinct.reduce([]) {|memo, dist| dist.regular? ? memo | [dist.ident] : memo}
+    split_ident_base = 0
+    if smd_districts.length == 0
+      split_ident = "ds-#{precinct}"
+      @gen.add_precinct_split(precinct, split_ident)
+      @gen.add_district_set(split_ident, reg_districts)
+    else 
+      smd_districts.each do
+      |a_smd_district|
+        split_ident = "#{split_ident_base.to_s}-#{a_smd_district.ident}"
+        @gen.add_precinct_split(precinct, split_ident)
+        @gen.add_district_set(split_ident, [a_smd_district.ident]  | reg_districts)
+        split_ident_base += 1
+      end    
+    end
+  end  
+
 # Here's the meat: parse a district line
   def parse_district
-    if district_type.upcase == "SMD" 
-      @dist_ident = district_number + district_name
-    elsif district_type_abbrev.upcase != "ANC"
+    if dist_smd?
+      @dist_ident = "#{district_number.to_s}-#{district_name}"
+    elsif !dist_anc?
       @dist_ident = district_number
-    else # ANC district rows
+    else # ANC district rows are not real districts, and don't get generated.
       return
     end
     @gen.add_district(@dist_ident, district_name, district_type, district_type_abbrev)
+    @new_district = District.new(@dist_ident, district_name, district_type, district_type_abbrev)
   end
 
   def get_row
@@ -102,11 +128,11 @@ class DCParser
   end
   
   def district_type
-    @csv[@row][DTYPE]
+    @csv[@row][DTYPE].strip
   end
   
   def district_type_abbrev
-    @csv[@row][DTYPEABBREV]
+    @csv[@row][DTYPEABBREV].strip
   end
 
   def precinct_number
@@ -115,5 +141,40 @@ class DCParser
   
   def precinct_name
     @csv[@row][PNAME]
+  end
+  
+  def dist_smd?
+    district_type_abbrev.upcase.eql? "SMD"
+  end
+  
+  def dist_anc?
+    district_type_abbrev.upcase.eql? "ANC"
+  end  
+  
+  def dist_regular?
+    ! (dist_anc? || dist_smd? )
+  end 
+end
+
+class District
+  attr_accessor :ident, :name, :type, :abbrev
+  
+  def initialize id, nm, typ, abbr
+    @ident = id
+    @name = nm
+    @type = typ
+    @abbrev = abbr
+  end
+  
+  def smd?
+    @abbrev.upcase.eql? "SMD"
+  end
+
+  def anc?
+    @abbrev.upcase.eql? "ANC"
+  end  
+
+  def regular?
+    ! (self.anc? || self.smd? )
   end
 end

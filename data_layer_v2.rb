@@ -48,7 +48,7 @@ class DataLayer2
   
   # Initialize an output array to later store ballots in
   def begin_file
-    @out_file = {"districts" => [], "precincts" => [], "district_sets" => []}
+    @out_file = {"districts" => [], "precincts" => [], "district_sets" => [], "splits" => []}
   end
   
 # h_file at top level is an array, each corresponding to one eventual output file.
@@ -58,18 +58,23 @@ class DataLayer2
 
   def add_precinct(prec_num, prec_name)
     @curr_precinct = {"ident" => prec_num, "display_name" => prec_name}
-    @out_file["precincts"] << @curr_precinct
+    @out_file["precincts"] << {"precinct" => @curr_precinct }
+  end
+  
+  def add_precinct_split(prec_ident, district_set_ident)
+    @curr_precinct_split = {"precinct_ident" => prec_ident, "district_set_ident" => district_set_ident}
+    @out_file["splits"] << {"precinct_split" => @curr_precinct_split}
   end
   
   def add_district_set(ident, dists)
     @curr_district_set = {"ident" => ident, "districts" => []}
     dists.each {|d| @curr_district_set["districts"] << d }
-    @out_file["district_sets"] << @curr_district_set
+    @out_file["district_sets"] << {"district_set" => @curr_district_set}
   end 
     
   def add_district(ident, name, type, abbrev)
     @curr_district = {"ident" => ident, "display_name" => name, "type" => abbrev}
-    @out_file["districts"] << @curr_district
+    @out_file["districts"] << {"district" => @curr_district }
   end
   
   # Maintain a list of unique ID numbers for names of things of a type

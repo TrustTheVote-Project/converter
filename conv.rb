@@ -63,15 +63,16 @@ opts.each do |opt, arg|
       break
     when "-o"
       @dir = Pathname.new(arg)
+      puts "***** #{@dir}"
       if @dir.exist? && !@dir.directory?
         puts "#{arg} doesn't seem to be a directory" unless @dir.directory?
         exit 0
+      end
     end
   end
-end
 
-if ARGV.length != 1
-  puts "Missing file argument (try --help)"
+if ARGV[0].empty?
+  puts "Missing file argument (try --help) #{ARGV[0]}"
   exit 0
 end
 
@@ -96,9 +97,16 @@ par.parse_file
 @dir = @dir.realpath
 i = 0
 
-gen.h_file.each do |ballot|
+gen.h_file.each do |result|
   @file = @dir + "file.yml"
-  @file.open("w") do |file| 
-    YAML.dump(ballot, file)
+  @file.open("w") do |file|
+    if @format.upcase == "DC"
+      YAML.dump(result["precincts"], file)
+      YAML.dump(result["splits"], file)
+      YAML.dump(result["district_sets"], file)
+      YAML.dump(result["districts"], file)
+    else
+      YAML.dump(result, file)
+    end
   end
 end
