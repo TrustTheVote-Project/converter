@@ -39,11 +39,9 @@ class DataLayer2
         "type" => "jurisdiction_slate",
         "operator" => "Pito Salas",
         "hardware" => "TTV Tabulator TAB02",
-        "software" => "TTV Election Management System 0.1 JAN-1-2010"
-    }
-    
-    @idents = {}
-    @idents["districts"] = []
+        "software" => "TTV Election Management System 0.1 JAN-1-2010",
+        "schema_version" => "0.1"
+    }  
   end
   
   # Initialize an output array to later store ballots in
@@ -53,7 +51,7 @@ class DataLayer2
   
 # h_file at top level is an array, each corresponding to one eventual output file.
   def end_file
-    @h_file = [@out_file]
+    @h_file = {"audit_header" => @audit_header_hash, "body" => @out_file}
   end
 
   def add_precinct(prec_num, prec_name)
@@ -74,7 +72,9 @@ class DataLayer2
     
   def add_district(ident, name, type, abbrev)
     @curr_district = {"ident" => ident, "display_name" => name, "type" => abbrev}
-    @out_file["districts"] << {"district" => @curr_district }
+#    @out_file["districts"] << {"district" => @curr_district }
+    @out_file["districts"] << @curr_district
+
   end
   
   # Maintain a list of unique ID numbers for names of things of a type

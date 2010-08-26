@@ -95,18 +95,23 @@ par.parse_file
 
 @dir.mkdir unless @dir.directory?
 @dir = @dir.realpath
-i = 0
 
-gen.h_file.each do |result|
-  @file = @dir + "file.yml"
+@file = @dir + "file.yml"
+
+if @format.upcase == "DC"
   @file.open("w") do |file|
-    if @format.upcase == "DC"
-      YAML.dump(result["precincts"], file)
-      YAML.dump(result["splits"], file)
-      YAML.dump(result["district_sets"], file)
-      YAML.dump(result["districts"], file)
-    else
-      YAML.dump(result, file)
-    end
+    YAML.dump(gen.h_file, file)
+    
+#    YAML.dump(gen.h_file["audit_header"], file)
+#    YAML.dump(gen.h_file["body"]["precincts"], file)
+#    YAML.dump(gen.h_file["body"]["splits"], file)
+#    YAML.dump(gen.h_file["body"]["district_sets"], file)
+#    YAML.dump(gen.h_file["body"]["districts"], file)
   end
+else
+  gen.h_file.each do |result|
+    @file.open("w") do |file|
+        YAML.dump(result, file)
+      end
+    end
 end
