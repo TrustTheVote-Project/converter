@@ -79,7 +79,7 @@ class DCParser
       get_row 
     end while @row < @csv.length && last_precinct == precinct_number
     compute_precinct_splits last_precinct, all_districts_for_this_precinct
-    @gen.add_precinct(last_precinct, last_precinct_name)
+    @gen.add_precinct("prec-#{last_precinct}", last_precinct_name)
   end
   
   # this method is the only tricky part, that analyzes the districts and computes the splits.
@@ -94,21 +94,22 @@ class DCParser
     else 
       smd_districts.each do
       |a_smd_district|
-        split_ident = "#{split_ident_base.to_s}-#{a_smd_district.ident}"
-        @gen.add_precinct_split(precinct, split_ident)
+        split_ident = "ds-#{split_ident_base.to_s}-#{a_smd_district.ident}"
+        @gen.add_precinct_split("prec-#{precinct}", split_ident)
         @gen.add_district_set(split_ident, [a_smd_district.ident]  | reg_districts)
         split_ident_base += 1
       end    
     end
   end  
 
-# Here's the meat: parse a district line
+# Parse a district line
   def parse_district
     if dist_smd?
-      @dist_ident = "#{district_number.to_s}-#{district_name}"
+      @dist_ident = "dist-#{district_name}"
     elsif !dist_anc?
-      @dist_ident = district_number
+      @dist_ident = "dist-#{district_name}"
     else # ANC district rows are not real districts, and don't get generated.
+      @new_district = nil
       return
     end
     @gen.add_district(@dist_ident, district_name, district_type, district_type_abbrev)
@@ -175,6 +176,6 @@ class District
   end  
 
   def regular?
-    ! (self.anc? || self.smd? )
+    ! anc? && ! smd?
   end
 end

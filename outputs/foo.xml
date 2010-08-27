@@ -1,0 +1,653 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ttv_object>
+  <body>
+      <district>
+        <ident>dist-CITY OF WASHINGTON WARD 6</ident>
+        <type>WARD</type>
+        <display_name>CITY OF WASHINGTON WARD 6</display_name>
+      </district>
+      <district>
+        <ident>dist-DISTRICT OF COLUMBIA</ident>
+        <type>CITYWI</type>
+        <display_name>DISTRICT OF COLUMBIA</display_name>
+      </district>
+      <district>
+        <ident>dist-1ST CONGRESSIONAL DIST-DEM</ident>
+        <type>COND</type>
+        <display_name>1ST CONGRESSIONAL DIST-DEM</display_name>
+      </district>
+      <district>
+        <ident>dist-SMD 01-ANC 6C</ident>
+        <type>SMD</type>
+        <display_name>SMD 01-ANC 6C</display_name>
+      </district>
+      <district>
+        <ident>dist-SMD 02-ANC 6C</ident>
+        <type>SMD</type>
+        <display_name>SMD 02-ANC 6C</display_name>
+      </district>
+      <district>
+        <ident>dist-SMD 03-ANC 6C</ident>
+        <type>SMD</type>
+        <display_name>SMD 03-ANC 6C</display_name>
+      </district>
+      <district>
+        <ident>dist-SMD 09-ANC 6C</ident>
+        <type>SMD</type>
+        <display_name>SMD 09-ANC 6C</display_name>
+      </district>
+      <district>
+        <ident>dist-CITY OF WASHINGTON WARD 2</ident>
+        <type>WARD</type>
+        <display_name>CITY OF WASHINGTON WARD 2</display_name>
+      </district>
+      <district>
+        <ident>dist-DISTRICT OF COLUMBIA</ident>
+        <type>CITYWI</type>
+        <display_name>DISTRICT OF COLUMBIA</display_name>
+      </district>
+      <district>
+        <ident>dist-1ST CONGRESSIONAL DIST-DEM</ident>
+        <type>COND</type>
+        <display_name>1ST CONGRESSIONAL DIST-DEM</display_name>
+      </district>
+      <district>
+        <ident>dist-SMD 01-ANC 2A</ident>
+        <type>SMD</type>
+        <display_name>SMD 01-ANC 2A</display_name>
+      </district>
+      <district>
+        <ident>dist-SMD 05-ANC 2A</ident>
+        <type>SMD</type>
+        <display_name>SMD 05-ANC 2A</display_name>
+      </district>
+      <district>
+        <ident>dist-SMD 06-ANC 2A</ident>
+        <type>SMD</type>
+        <display_name>SMD 06-ANC 2A</display_name>
+      </district>
+      <district>
+        <ident>dist-CITY OF WASHINGTON WARD 2</ident>
+        <type>WARD</type>
+        <display_name>CITY OF WASHINGTON WARD 2</display_name>
+      </district>
+      <district>
+        <ident>dist-DISTRICT OF COLUMBIA</ident>
+        <type>CITYWI</type>
+        <display_name>DISTRICT OF COLUMBIA</display_name>
+      </district>
+      <district>
+        <ident>dist-1ST CONGRESSIONAL DIST-DEM</ident>
+        <type>COND</type>
+        <display_name>1ST CONGRESSIONAL DIST-DEM</display_name>
+      </district>
+      <district>
+        <ident>dist-SMD 03-ANC 2A</ident>
+        <type>SMD</type>
+        <display_name>SMD 03-ANC 2A</display_name>
+      </district>
+      <district>
+        <ident>dist-SMD 04-ANC 2A</ident>
+        <type>SMD</type>
+        <display_name>SMD 04-ANC 2A</display_name>
+      </district>
+      <district>
+        <ident>dist-SMD 05-ANC 2A</ident>
+        <type>SMD</type>
+        <display_name>SMD 05-ANC 2A</display_name>
+      </district>
+      <district>
+        <ident>dist-SMD 06-ANC 2A</ident>
+        <type>SMD</type>
+        <display_name>SMD 06-ANC 2A</display_name>
+      </district>
+      <district>
+        <ident>dist-CITY OF WASHINGTON WARD 2</ident>
+        <type>WARD</type>
+        <display_name>CITY OF WASHINGTON WARD 2</display_name>
+      </district>
+      <district>
+        <ident>dist-DISTRICT OF COLUMBIA</ident>
+        <type>CITYWI</type>
+        <display_name>DISTRICT OF COLUMBIA</display_name>
+      </district>
+      <district>
+        <ident>dist-1ST CONGRESSIONAL DIST-DEM</ident>
+        <type>COND</type>
+        <display_name>1ST CONGRESSIONAL DIST-DEM</display_name>
+      </district>
+      <district>
+        <ident>dist-SMD 02-ANC 2A</ident>
+        <type>SMD</type>
+        <display_name>SMD 02-ANC 2A</display_name>
+      </district>
+      <district>
+        <ident>dist-SMD 03-ANC 2A</ident>
+        <type>SMD</type>
+        <display_name>SMD 03-ANC 2A</display_name>
+      </district>
+      <district>
+        <ident>dist-SMD 06-ANC 2A</ident>
+        <type>SMD</type>
+        <display_name>SMD 06-ANC 2A</display_name>
+      </district>
+      <district>
+        <ident>dist-SMD 06-ANC 2B</ident>
+        <type>SMD</type>
+        <display_name>SMD 06-ANC 2B</display_name>
+      </district>
+      <district>
+        <ident>dist-CITY OF WASHINGTON WARD 2</ident>
+        <type>WARD</type>
+        <display_name>CITY OF WASHINGTON WARD 2</display_name>
+      </district>
+      <district>
+        <ident>dist-DISTRICT OF COLUMBIA</ident>
+        <type>CITYWI</type>
+        <display_name>DISTRICT OF COLUMBIA</display_name>
+      </district>
+      <district>
+        <ident>dist-1ST CONGRESSIONAL DIST-DEM</ident>
+        <type>COND</type>
+        <display_name>1ST CONGRESSIONAL DIST-DEM</display_name>
+      </district>
+      <district>
+        <ident>dist-SMD 02-ANC 2E</ident>
+        <type>SMD</type>
+        <display_name>SMD 02-ANC 2E</display_name>
+      </district>
+      <district>
+        <ident>dist-SMD 05-ANC 2E</ident>
+        <type>SMD</type>
+        <display_name>SMD 05-ANC 2E</display_name>
+      </district>
+      <district>
+        <ident>dist-SMD 06-ANC 2E</ident>
+        <type>SMD</type>
+        <display_name>SMD 06-ANC 2E</display_name>
+      </district>
+      <district>
+        <ident>dist-SMD 07-ANC 2E</ident>
+        <type>SMD</type>
+        <display_name>SMD 07-ANC 2E</display_name>
+      </district>
+      <district_set>
+        <district_set>
+            <district>
+              <district_ident>dist-SMD 01-ANC 6C</district_ident>
+            </district>
+            <district>
+              <district_ident>dist-CITY OF WASHINGTON WARD 6</district_ident>
+            </district>
+            <district>
+              <district_ident>dist-DISTRICT OF COLUMBIA</district_ident>
+            </district>
+            <district>
+              <district_ident>dist-1ST CONGRESSIONAL DIST-DEM</district_ident>
+            </district>
+          <ident>ds-0-dist-SMD 01-ANC 6C</ident>
+        </district_set>
+      </district_set>
+      <district_set>
+        <district_set>
+            <district>
+              <district_ident>dist-SMD 02-ANC 6C</district_ident>
+            </district>
+            <district>
+              <district_ident>dist-CITY OF WASHINGTON WARD 6</district_ident>
+            </district>
+            <district>
+              <district_ident>dist-DISTRICT OF COLUMBIA</district_ident>
+            </district>
+            <district>
+              <district_ident>dist-1ST CONGRESSIONAL DIST-DEM</district_ident>
+            </district>
+          <ident>ds-1-dist-SMD 02-ANC 6C</ident>
+        </district_set>
+      </district_set>
+      <district_set>
+        <district_set>
+            <district>
+              <district_ident>dist-SMD 03-ANC 6C</district_ident>
+            </district>
+            <district>
+              <district_ident>dist-CITY OF WASHINGTON WARD 6</district_ident>
+            </district>
+            <district>
+              <district_ident>dist-DISTRICT OF COLUMBIA</district_ident>
+            </district>
+            <district>
+              <district_ident>dist-1ST CONGRESSIONAL DIST-DEM</district_ident>
+            </district>
+          <ident>ds-2-dist-SMD 03-ANC 6C</ident>
+        </district_set>
+      </district_set>
+      <district_set>
+        <district_set>
+            <district>
+              <district_ident>dist-SMD 09-ANC 6C</district_ident>
+            </district>
+            <district>
+              <district_ident>dist-CITY OF WASHINGTON WARD 6</district_ident>
+            </district>
+            <district>
+              <district_ident>dist-DISTRICT OF COLUMBIA</district_ident>
+            </district>
+            <district>
+              <district_ident>dist-1ST CONGRESSIONAL DIST-DEM</district_ident>
+            </district>
+          <ident>ds-3-dist-SMD 09-ANC 6C</ident>
+        </district_set>
+      </district_set>
+      <district_set>
+        <district_set>
+            <district>
+              <district_ident>dist-SMD 01-ANC 2A</district_ident>
+            </district>
+            <district>
+              <district_ident>dist-CITY OF WASHINGTON WARD 2</district_ident>
+            </district>
+            <district>
+              <district_ident>dist-DISTRICT OF COLUMBIA</district_ident>
+            </district>
+            <district>
+              <district_ident>dist-1ST CONGRESSIONAL DIST-DEM</district_ident>
+            </district>
+          <ident>ds-0-dist-SMD 01-ANC 2A</ident>
+        </district_set>
+      </district_set>
+      <district_set>
+        <district_set>
+            <district>
+              <district_ident>dist-SMD 05-ANC 2A</district_ident>
+            </district>
+            <district>
+              <district_ident>dist-CITY OF WASHINGTON WARD 2</district_ident>
+            </district>
+            <district>
+              <district_ident>dist-DISTRICT OF COLUMBIA</district_ident>
+            </district>
+            <district>
+              <district_ident>dist-1ST CONGRESSIONAL DIST-DEM</district_ident>
+            </district>
+          <ident>ds-1-dist-SMD 05-ANC 2A</ident>
+        </district_set>
+      </district_set>
+      <district_set>
+        <district_set>
+            <district>
+              <district_ident>dist-SMD 06-ANC 2A</district_ident>
+            </district>
+            <district>
+              <district_ident>dist-CITY OF WASHINGTON WARD 2</district_ident>
+            </district>
+            <district>
+              <district_ident>dist-DISTRICT OF COLUMBIA</district_ident>
+            </district>
+            <district>
+              <district_ident>dist-1ST CONGRESSIONAL DIST-DEM</district_ident>
+            </district>
+          <ident>ds-2-dist-SMD 06-ANC 2A</ident>
+        </district_set>
+      </district_set>
+      <district_set>
+        <district_set>
+            <district>
+              <district_ident>dist-SMD 03-ANC 2A</district_ident>
+            </district>
+            <district>
+              <district_ident>dist-CITY OF WASHINGTON WARD 2</district_ident>
+            </district>
+            <district>
+              <district_ident>dist-DISTRICT OF COLUMBIA</district_ident>
+            </district>
+            <district>
+              <district_ident>dist-1ST CONGRESSIONAL DIST-DEM</district_ident>
+            </district>
+          <ident>ds-0-dist-SMD 03-ANC 2A</ident>
+        </district_set>
+      </district_set>
+      <district_set>
+        <district_set>
+            <district>
+              <district_ident>dist-SMD 04-ANC 2A</district_ident>
+            </district>
+            <district>
+              <district_ident>dist-CITY OF WASHINGTON WARD 2</district_ident>
+            </district>
+            <district>
+              <district_ident>dist-DISTRICT OF COLUMBIA</district_ident>
+            </district>
+            <district>
+              <district_ident>dist-1ST CONGRESSIONAL DIST-DEM</district_ident>
+            </district>
+          <ident>ds-1-dist-SMD 04-ANC 2A</ident>
+        </district_set>
+      </district_set>
+      <district_set>
+        <district_set>
+            <district>
+              <district_ident>dist-SMD 05-ANC 2A</district_ident>
+            </district>
+            <district>
+              <district_ident>dist-CITY OF WASHINGTON WARD 2</district_ident>
+            </district>
+            <district>
+              <district_ident>dist-DISTRICT OF COLUMBIA</district_ident>
+            </district>
+            <district>
+              <district_ident>dist-1ST CONGRESSIONAL DIST-DEM</district_ident>
+            </district>
+          <ident>ds-2-dist-SMD 05-ANC 2A</ident>
+        </district_set>
+      </district_set>
+      <district_set>
+        <district_set>
+            <district>
+              <district_ident>dist-SMD 06-ANC 2A</district_ident>
+            </district>
+            <district>
+              <district_ident>dist-CITY OF WASHINGTON WARD 2</district_ident>
+            </district>
+            <district>
+              <district_ident>dist-DISTRICT OF COLUMBIA</district_ident>
+            </district>
+            <district>
+              <district_ident>dist-1ST CONGRESSIONAL DIST-DEM</district_ident>
+            </district>
+          <ident>ds-3-dist-SMD 06-ANC 2A</ident>
+        </district_set>
+      </district_set>
+      <district_set>
+        <district_set>
+            <district>
+              <district_ident>dist-SMD 02-ANC 2A</district_ident>
+            </district>
+            <district>
+              <district_ident>dist-CITY OF WASHINGTON WARD 2</district_ident>
+            </district>
+            <district>
+              <district_ident>dist-DISTRICT OF COLUMBIA</district_ident>
+            </district>
+            <district>
+              <district_ident>dist-1ST CONGRESSIONAL DIST-DEM</district_ident>
+            </district>
+          <ident>ds-0-dist-SMD 02-ANC 2A</ident>
+        </district_set>
+      </district_set>
+      <district_set>
+        <district_set>
+            <district>
+              <district_ident>dist-SMD 03-ANC 2A</district_ident>
+            </district>
+            <district>
+              <district_ident>dist-CITY OF WASHINGTON WARD 2</district_ident>
+            </district>
+            <district>
+              <district_ident>dist-DISTRICT OF COLUMBIA</district_ident>
+            </district>
+            <district>
+              <district_ident>dist-1ST CONGRESSIONAL DIST-DEM</district_ident>
+            </district>
+          <ident>ds-1-dist-SMD 03-ANC 2A</ident>
+        </district_set>
+      </district_set>
+      <district_set>
+        <district_set>
+            <district>
+              <district_ident>dist-SMD 06-ANC 2A</district_ident>
+            </district>
+            <district>
+              <district_ident>dist-CITY OF WASHINGTON WARD 2</district_ident>
+            </district>
+            <district>
+              <district_ident>dist-DISTRICT OF COLUMBIA</district_ident>
+            </district>
+            <district>
+              <district_ident>dist-1ST CONGRESSIONAL DIST-DEM</district_ident>
+            </district>
+          <ident>ds-2-dist-SMD 06-ANC 2A</ident>
+        </district_set>
+      </district_set>
+      <district_set>
+        <district_set>
+            <district>
+              <district_ident>dist-SMD 06-ANC 2B</district_ident>
+            </district>
+            <district>
+              <district_ident>dist-CITY OF WASHINGTON WARD 2</district_ident>
+            </district>
+            <district>
+              <district_ident>dist-DISTRICT OF COLUMBIA</district_ident>
+            </district>
+            <district>
+              <district_ident>dist-1ST CONGRESSIONAL DIST-DEM</district_ident>
+            </district>
+          <ident>ds-3-dist-SMD 06-ANC 2B</ident>
+        </district_set>
+      </district_set>
+      <district_set>
+        <district_set>
+            <district>
+              <district_ident>dist-SMD 02-ANC 2E</district_ident>
+            </district>
+            <district>
+              <district_ident>dist-CITY OF WASHINGTON WARD 2</district_ident>
+            </district>
+            <district>
+              <district_ident>dist-DISTRICT OF COLUMBIA</district_ident>
+            </district>
+            <district>
+              <district_ident>dist-1ST CONGRESSIONAL DIST-DEM</district_ident>
+            </district>
+          <ident>ds-0-dist-SMD 02-ANC 2E</ident>
+        </district_set>
+      </district_set>
+      <district_set>
+        <district_set>
+            <district>
+              <district_ident>dist-SMD 05-ANC 2E</district_ident>
+            </district>
+            <district>
+              <district_ident>dist-CITY OF WASHINGTON WARD 2</district_ident>
+            </district>
+            <district>
+              <district_ident>dist-DISTRICT OF COLUMBIA</district_ident>
+            </district>
+            <district>
+              <district_ident>dist-1ST CONGRESSIONAL DIST-DEM</district_ident>
+            </district>
+          <ident>ds-1-dist-SMD 05-ANC 2E</ident>
+        </district_set>
+      </district_set>
+      <district_set>
+        <district_set>
+            <district>
+              <district_ident>dist-SMD 06-ANC 2E</district_ident>
+            </district>
+            <district>
+              <district_ident>dist-CITY OF WASHINGTON WARD 2</district_ident>
+            </district>
+            <district>
+              <district_ident>dist-DISTRICT OF COLUMBIA</district_ident>
+            </district>
+            <district>
+              <district_ident>dist-1ST CONGRESSIONAL DIST-DEM</district_ident>
+            </district>
+          <ident>ds-2-dist-SMD 06-ANC 2E</ident>
+        </district_set>
+      </district_set>
+      <district_set>
+        <district_set>
+            <district>
+              <district_ident>dist-SMD 07-ANC 2E</district_ident>
+            </district>
+            <district>
+              <district_ident>dist-CITY OF WASHINGTON WARD 2</district_ident>
+            </district>
+            <district>
+              <district_ident>dist-DISTRICT OF COLUMBIA</district_ident>
+            </district>
+            <district>
+              <district_ident>dist-1ST CONGRESSIONAL DIST-DEM</district_ident>
+            </district>
+          <ident>ds-3-dist-SMD 07-ANC 2E</ident>
+        </district_set>
+      </district_set>
+    </district_sets>
+      <precinct>
+        <precinct>
+          <ident>prec-1</ident>
+          <display_name>PRECINCT 1</display_name>
+        </precinct>
+      </precinct>
+      <precinct>
+        <precinct>
+          <ident>prec-2</ident>
+          <display_name>PRECINCT 2</display_name>
+        </precinct>
+      </precinct>
+      <precinct>
+        <precinct>
+          <ident>prec-3</ident>
+          <display_name>PRECINCT 3</display_name>
+        </precinct>
+      </precinct>
+      <precinct>
+        <precinct>
+          <ident>prec-4</ident>
+          <display_name>PRECINCT 4</display_name>
+        </precinct>
+      </precinct>
+      <precinct>
+        <precinct>
+          <ident>prec-5</ident>
+          <display_name>PRECINCT 5</display_name>
+        </precinct>
+      </precinct>
+      <split>
+        <precinct_split>
+          <district_set_ident>ds-0-dist-SMD 01-ANC 6C</district_set_ident>
+          <precinct_ident>prec-1</precinct_ident>
+        </precinct_split>
+      </split>
+      <split>
+        <precinct_split>
+          <district_set_ident>ds-1-dist-SMD 02-ANC 6C</district_set_ident>
+          <precinct_ident>prec-1</precinct_ident>
+        </precinct_split>
+      </split>
+      <split>
+        <precinct_split>
+          <district_set_ident>ds-2-dist-SMD 03-ANC 6C</district_set_ident>
+          <precinct_ident>prec-1</precinct_ident>
+        </precinct_split>
+      </split>
+      <split>
+        <precinct_split>
+          <district_set_ident>ds-3-dist-SMD 09-ANC 6C</district_set_ident>
+          <precinct_ident>prec-1</precinct_ident>
+        </precinct_split>
+      </split>
+      <split>
+        <precinct_split>
+          <district_set_ident>ds-0-dist-SMD 01-ANC 2A</district_set_ident>
+          <precinct_ident>prec-2</precinct_ident>
+        </precinct_split>
+      </split>
+      <split>
+        <precinct_split>
+          <district_set_ident>ds-1-dist-SMD 05-ANC 2A</district_set_ident>
+          <precinct_ident>prec-2</precinct_ident>
+        </precinct_split>
+      </split>
+      <split>
+        <precinct_split>
+          <district_set_ident>ds-2-dist-SMD 06-ANC 2A</district_set_ident>
+          <precinct_ident>prec-2</precinct_ident>
+        </precinct_split>
+      </split>
+      <split>
+        <precinct_split>
+          <district_set_ident>ds-0-dist-SMD 03-ANC 2A</district_set_ident>
+          <precinct_ident>prec-3</precinct_ident>
+        </precinct_split>
+      </split>
+      <split>
+        <precinct_split>
+          <district_set_ident>ds-1-dist-SMD 04-ANC 2A</district_set_ident>
+          <precinct_ident>prec-3</precinct_ident>
+        </precinct_split>
+      </split>
+      <split>
+        <precinct_split>
+          <district_set_ident>ds-2-dist-SMD 05-ANC 2A</district_set_ident>
+          <precinct_ident>prec-3</precinct_ident>
+        </precinct_split>
+      </split>
+      <split>
+        <precinct_split>
+          <district_set_ident>ds-3-dist-SMD 06-ANC 2A</district_set_ident>
+          <precinct_ident>prec-3</precinct_ident>
+        </precinct_split>
+      </split>
+      <split>
+        <precinct_split>
+          <district_set_ident>ds-0-dist-SMD 02-ANC 2A</district_set_ident>
+          <precinct_ident>prec-4</precinct_ident>
+        </precinct_split>
+      </split>
+      <split>
+        <precinct_split>
+          <district_set_ident>ds-1-dist-SMD 03-ANC 2A</district_set_ident>
+          <precinct_ident>prec-4</precinct_ident>
+        </precinct_split>
+      </split>
+      <split>
+        <precinct_split>
+          <district_set_ident>ds-2-dist-SMD 06-ANC 2A</district_set_ident>
+          <precinct_ident>prec-4</precinct_ident>
+        </precinct_split>
+      </split>
+      <split>
+        <precinct_split>
+          <district_set_ident>ds-3-dist-SMD 06-ANC 2B</district_set_ident>
+          <precinct_ident>prec-4</precinct_ident>
+        </precinct_split>
+      </split>
+      <split>
+        <precinct_split>
+          <district_set_ident>ds-0-dist-SMD 02-ANC 2E</district_set_ident>
+          <precinct_ident>prec-5</precinct_ident>
+        </precinct_split>
+      </split>
+      <split>
+        <precinct_split>
+          <district_set_ident>ds-1-dist-SMD 05-ANC 2E</district_set_ident>
+          <precinct_ident>prec-5</precinct_ident>
+        </precinct_split>
+      </split>
+      <split>
+        <precinct_split>
+          <district_set_ident>ds-2-dist-SMD 06-ANC 2E</district_set_ident>
+          <precinct_ident>prec-5</precinct_ident>
+        </precinct_split>
+      </split>
+      <split>
+        <precinct_split>
+          <district_set_ident>ds-3-dist-SMD 07-ANC 2E</district_set_ident>
+          <precinct_ident>prec-5</precinct_ident>
+        </precinct_split>
+      </split>
+    </splits>
+  </body>
+  <audit_header>
+    <schema_version>0.1</schema_version>
+    <operator>Pito Salas</operator>
+    <type>jurisdiction_slate</type>
+    <create_date type="datetime">2010-08-26T21:06:17-04:00</create_date>
+    <software>TTV Election Management System 0.1 JAN-1-2010</software>
+    <hardware>TTV Tabulator TAB02</hardware>
+    <file_id>9F023408009B11DF924800163E3DE33F</file_id>
+  </audit_header>
+</ttv_object>

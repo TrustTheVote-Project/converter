@@ -66,7 +66,7 @@ class DataLayer2
   
   def add_district_set(ident, dists)
     @curr_district_set = {"ident" => ident, "districts" => []}
-    dists.each {|d| @curr_district_set["districts"] << d }
+    dists.each {|d| @curr_district_set["districts"] << {"district_ident" => d} }
     @out_file["district_sets"] << {"district_set" => @curr_district_set}
   end 
     

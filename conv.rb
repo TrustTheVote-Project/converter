@@ -29,8 +29,12 @@ require 'flparser'
 require 'nhparser'
 require 'dcparser'
 require 'xmlparser'
+require 'active_support'
+require 'active_support/xml_mini'
 require 'data_layer'
 require 'data_layer_v2'
+
+
 
 #
 # Main Program: Parse the command line and do the work
@@ -42,32 +46,27 @@ Usage:
 
  Options:
      -h   display help text
-     -f   format code
+     -s   source format code
           NH -> New Hampshire dump
           DC -> DC Dump
-     -o   optional destination folder
+     -o   output destination
 "
 opts = GetoptLong.new(
       ["-h", "--help", GetoptLong::NO_ARGUMENT],
-      ["-f", "--format", GetoptLong::REQUIRED_ARGUMENT],
+      ["-s", "--source", GetoptLong::REQUIRED_ARGUMENT],
       ["-o", "--output", GetoptLong::REQUIRED_ARGUMENT])
-@format = nil
-@dir = Pathname.new(".")
+
+@source_format = nil
+
 opts.each do |opt, arg|
   case opt
     when "-h"
       puts HELPTEXT
       exit 0
-    when "-f"
-      @format = arg
-      break
+    when "-s"
+      @source_format = arg
     when "-o"
-      @dir = Pathname.new(arg)
-      puts "***** #{@dir}"
-      if @dir.exist? && !@dir.directory?
-        puts "#{arg} doesn't seem to be a directory" unless @dir.directory?
-        exit 0
-      end
+      @output_path = Pathname.new(arg)
     end
   end
 
@@ -77,41 +76,49 @@ if ARGV[0].empty?
 end
 
 # command line is parsed. Now lets do the work
-if @format.upcase == "DC"
+if @source_format.upcase == "DC"
   gen = DataLayer2.new
-elsif @format.upcase != "DC"
+elsif @source_format.upcase != "DC"
   gen = DataLayer.new
 else
-  puts "Invalid format: #{@format}"
+  puts "Invalid format: #{@source_format}"
   exit 0
 end
-  
-par = NHParser.new(ARGV[0], gen) if @format.upcase == "NH"
-par = FLParser.new(ARGV[0], gen) if @format.upcase == "FL"
-par = XMLParser.new(ARGV[0], gen) if @format.upcase == "XML"
-par = DCParser.new(ARGV[0], gen) if @format.upcase == "DC"
+
+par = NHParser.new(ARGV[-1], gen) if @source_format.upcase == "NH"
+par = FLParser.new(ARGV[-1], gen) if @source_format.upcase == "FL"
+par = XMLParser.new(ARGV[-1], gen) if @source_format.upcase == "XML"
+par = DCParser.new(ARGV[-1], gen) if @source_format.upcase == "DC"
 
 par.parse_file
 
-@dir.mkdir unless @dir.directory?
-@dir = @dir.realpath
-
-@file = @dir + "file.yml"
-
-if @format.upcase == "DC"
-  @file.open("w") do |file|
+if @source_format.upcase.eql?("DC") && @output_path.extname.eql?(".yml")
+  @output_path.open("w") do |file|
+    puts "writing yaml to #{@output_path}"
     YAML.dump(gen.h_file, file)
-    
-#    YAML.dump(gen.h_file["audit_header"], file)
-#    YAML.dump(gen.h_file["body"]["precincts"], file)
-#    YAML.dump(gen.h_file["body"]["splits"], file)
-#    YAML.dump(gen.h_file["body"]["district_sets"], file)
-#    YAML.dump(gen.h_file["body"]["districts"], file)
+  end
+elsif @source_format.upcase.eql?("DC") && @output_path.extname.eql?(".xml")
+  puts "writing XML to #{@output_path}"
+  @output_path.open("w")  do |file|
+    xml_string = gen.h_file.to_xml({:dasherize=>false, :root => "ttv_object"})
+    # Remove type="array" lines and their closing tags
+    final_xml_string = ""
+    xml_string.each_line { |line|
+      if line.include?('type="array"') || line.include?("</precincts>") || line.include?("</districts>") ||
+         line.include?("</jurisdictions>") || line.include?("</contests>") || line.include?("</candidates>") ||
+         line.include?("</questions>") || line.include?("</elections>")
+         # Do not add
+      else # Add
+        final_xml_string << line
+      end
+    }
+    file.write(final_xml_string)
   end
 else
+  puts "writing YML (DataLayer Version 1) to #{@output_path}"
   gen.h_file.each do |result|
-    @file.open("w") do |file|
+    @output_path.open("w") do |file|
         YAML.dump(result, file)
-      end
     end
+  end
 end

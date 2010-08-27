@@ -5,6 +5,7 @@ require 'rubygems'
 require 'shoulda'
 require 'dcparser'
 require 'data_layer_v2'
+require 'ap'
 
 class DCParserTest < Test::Unit::TestCase
   
@@ -62,9 +63,9 @@ class DCParserTest < Test::Unit::TestCase
       @par.get_row
       the_prec = @par.parse_precinct
       @gen.end_file
-      assert_equal 7, @gen.h_file[0]["districts"].length
-      assert_equal 4, @gen.h_file[0]["splits"].length
-      assert_equal 4, @gen.h_file[0]["district_sets"].length   
+      assert_equal 7, @gen.h_file["body"]["districts"].length
+      assert_equal 4, @gen.h_file["body"]["splits"].length
+      assert_equal 4, @gen.h_file["body"]["district_sets"].length   
     end
     
     should "correctly load 2nd precinct" do
@@ -74,10 +75,9 @@ class DCParserTest < Test::Unit::TestCase
       @gen.begin_file
       the_prec = @par.parse_precinct
       @gen.end_file
-      ap @gen.h_file
-      assert_equal 6, @gen.h_file[0]["districts"].length
-      assert_equal 4, @gen.h_file[0]["splits"].length
-      assert_equal 4, @gen.h_file[0]["district_sets"].length   
+      assert_equal 6, @gen.h_file["body"]["districts"].length, "wrong number of districts"
+      assert_equal 3, @gen.h_file["body"]["splits"].length, "wrong number of splits"
+      assert_equal 3, @gen.h_file["body"]["district_sets"].length, "wrong number of district sets"
     end
   end
 
@@ -109,8 +109,8 @@ class DCParserTest < Test::Unit::TestCase
                District.new("dist 123-2", "dist 123-2", "XXX", "XXX")]
       @par.compute_precinct_splits precinct, dists
       @gen.end_file
-      assert_equal 1, @gen.h_file[0]["district_sets"].length
-      assert_equal "ds-precinct 123", @gen.h_file[0]["district_sets"][0]["district_set"]["ident"]
+      assert_equal 1, @gen.h_file["body"]["district_sets"].length
+      assert_equal "ds-precinct 123", @gen.h_file["body"]["district_sets"][0]["district_set"]["ident"]
     end
     
     should "create a more difficult split" do
@@ -119,9 +119,33 @@ class DCParserTest < Test::Unit::TestCase
                District.new("dist 888-1", "dist 888-1", "XXX", "XXX")]
       @par.compute_precinct_splits precinct, dists
       @gen.end_file
-      assert_equal 1, @gen.h_file[0]["district_sets"].length
-      assert_equal "0-dist 888-S1", @gen.h_file[0]["district_sets"][0]["district_set"]["ident"]
-  end
+      assert_equal 1, @gen.h_file["body"]["district_sets"].length
+      assert_equal "ds-0-dist 888-S1", @gen.h_file["body"]["district_sets"][0]["district_set"]["ident"]
+    end
+    
+    context "more complicated" do
+      setup do 
+        data =[[1, "Prec 1", 20, "Fakish 1", "Test", "ANC"],
+               [1, "Prec 1", 1, "Dist 1", "Test", "XX"],
+               [1, "Prec 1", 10, "Splittish 11", "Test", "SMD"],
+               [1, "Prec 1", 10, "Splittish 12", "Test", "SMD"],
+               [2, "Prec 2", 20, "Fakish 2", "Test", "ANC"],
+               [2, "Prec 2", 1, "Dist 2", "Test", "XX"],
+               [2, "Prec 2", 10, "Splittish 21", "Test", "SMD"],
+               [2, "Prec 2", 10, "Splittish 22", "Test", "SMD"]]
+        @gen = DataLayer2.new
+        @par = DCParser.new data, @gen
+        @gen.begin_file
+        @par.parse_precincts
+        @gen.end_file
+      end
       
+      should "check count of each kind of object" do
+        assert_equal 6, @gen.out_file["districts"].size, "wrong number of districts"
+        assert_equal 4, @gen.out_file["district_sets"].size, "wrong number of district sets"
+        assert_equal 2, @gen.out_file["precincts"].size, "wrong number of precincts"
+        assert_equal 4, @gen.out_file["splits"].size, "wrong number of splits"
+      end
+    end
   end
 end
