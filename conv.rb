@@ -100,13 +100,14 @@ if @source_format.upcase.eql?("DC") && @output_path.extname.eql?(".yml")
 elsif @source_format.upcase.eql?("DC") && @output_path.extname.eql?(".xml")
   puts "writing XML to #{@output_path}"
   @output_path.open("w")  do |file|
-    xml_string = gen.h_file.to_xml({:dasherize=>false, :root => "ttv_object"})
+    xml_string = gen.h_file.to_xml({:dasherize=>false, :root => "ttv_object", :skip_types => true })
     # Remove type="array" lines and their closing tags
     final_xml_string = ""
     xml_string.each_line { |line|
-      if line.include?('type="array"') || line.include?("</precincts>") || line.include?("</districts>") ||
+      if (line.include?('type="array"') || line.include?("</precincts>") || line.include?("</districts>") ||
          line.include?("</jurisdictions>") || line.include?("</contests>") || line.include?("</candidates>") ||
-         line.include?("</questions>") || line.include?("</elections>")
+         line.include?("</questions>") || line.include?("</elections>") || line.include?("</splits>") ||
+         line.include?("</district_list")) && false
          # Do not add
       else # Add
         final_xml_string << line

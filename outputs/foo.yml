@@ -6,9 +6,9 @@ body:
     display_name: CITY OF WASHINGTON WARD 6
   district_sets: 
   - district_set: 
-      districts: 
-      - district_ident: dist-CITY OF WASHINGTON WARD 6
       ident: ds-1
+      district_list: 
+      - district_ident: dist-CITY OF WASHINGTON WARD 6
   precincts: 
   - precinct: 
       ident: prec-1
@@ -21,7 +21,7 @@ audit_header:
   schema_version: "0.1"
   operator: Pito Salas
   type: jurisdiction_slate
-  create_date: 2010-08-26T20:51:18-04:00
+  create_date: 2010-08-27T09:07:17-04:00
   software: TTV Election Management System 0.1 JAN-1-2010
   hardware: TTV Tabulator TAB02
   file_id: 9F023408009B11DF924800163E3DE33F
