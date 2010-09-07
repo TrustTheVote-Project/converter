@@ -55,32 +55,33 @@ class DataLayer2
   end
 
   def add_precinct(prec_num, prec_name)
-    @curr_precinct = {"ident" => prec_num, "display_name" => prec_name}
-    @out_file["precincts"] << {"precinct" => @curr_precinct }
+    @curr_precinct = {"ident" => prec_ident(prec_num), "display_name" => prec_name}
+    @out_file["precincts"] <<  @curr_precinct
   end
   
-  def add_precinct_split(prec_ident, district_set_ident)
-    @curr_precinct_split = {"precinct_ident" => prec_ident, "district_set_ident" => district_set_ident}
-    @out_file["splits"] << {"precinct_split" => @curr_precinct_split}
+  def add_precinct_split(parent_prec, district_set_name)
+    @curr_precinct_split = {"precinct_ident" => prec_ident(parent_prec), 
+                            "district_set_ident" => district_set_ident(district_set_name)}
+    @out_file["splits"] << @curr_precinct_split
   end
   
-  def add_district_set(ident, dists)
-    @curr_district_set = {"ident" => ident, "district_list" => []}
+  def add_district_set(name, dists)
+    @curr_district_set = {"ident" => district_set_ident(name), "district_list" => []}
     dists.each {|d| @curr_district_set["district_list"] << {"district_ident" => d} }
-    @out_file["district_sets"] << {"district_set" => @curr_district_set}
+    @out_file["district_sets"] << @curr_district_set
   end 
     
   def add_district(ident, name, type, abbrev)
     @curr_district = {"ident" => ident, "display_name" => name, "type" => abbrev}
-#    @out_file["districts"] << {"district" => @curr_district }
     @out_file["districts"] << @curr_district
+  end
+  
+  def prec_ident(prec)
+    "prec-#{prec}"
+  end
+  
+  def district_set_ident(dist_set)
+    "ds-#{dist_set}"
+  end
 
-  end
-  
-  # Maintain a list of unique ID numbers for names of things of a type
-  def ident(prefix, type, name)
-    @idents[type][@idents[type].length] = name unless @idents[type].index(name)
-    return prefix + "-" + @idents[type].index(name).to_s
-  end
-  
 end

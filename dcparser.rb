@@ -79,7 +79,7 @@ class DCParser
       get_row 
     end while @row < @csv.length && last_precinct == precinct_number
     compute_precinct_splits last_precinct, all_districts_for_this_precinct
-    @gen.add_precinct("prec-#{last_precinct}", last_precinct_name)
+    @gen.add_precinct(last_precinct, last_precinct_name)
   end
   
   # this method is the only tricky part, that analyzes the districts and computes the splits.
@@ -88,14 +88,14 @@ class DCParser
     reg_districts = dists_for_precinct.reduce([]) {|memo, dist| dist.regular? ? memo | [dist.ident] : memo}
     split_ident_base = 0
     if smd_districts.length == 0
-      split_ident = "ds-#{precinct}"
+      split_ident = precinct
       @gen.add_precinct_split(precinct, split_ident)
       @gen.add_district_set(split_ident, reg_districts)
     else 
       smd_districts.each do
       |a_smd_district|
-        split_ident = "ds-#{split_ident_base.to_s}-#{a_smd_district.ident}"
-        @gen.add_precinct_split("prec-#{precinct}", split_ident)
+        split_ident = "#{split_ident_base.to_s}-#{a_smd_district.ident}"
+        @gen.add_precinct_split(precinct, split_ident)
         @gen.add_district_set(split_ident, [a_smd_district.ident]  | reg_districts)
         split_ident_base += 1
       end    
