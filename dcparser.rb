@@ -53,7 +53,8 @@ class DCParser
   end
 
 # In this input file, each row is a district.
-  def parse_file
+  def parse_file ctype
+    @ctype = ctype
     @gen.begin_file   
     parse_precincts
     @gen.end_file

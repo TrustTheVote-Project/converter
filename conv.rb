@@ -111,7 +111,7 @@ end
 case @source_format
 when "DC"
   gen = DataLayer2.new(@file_type)
-  DCParser.new(ARGV[-1], gen)
+  par = DCParser.new(ARGV[-1], gen)
 when "VA"
   gen = DataLayer2.new(@file_type)
   par = VAParser.new(ARGV[-1], gen) 
@@ -123,7 +123,7 @@ when "FL"
   par = FLParser.new(ARGV[-1], gen)
 when "XML"
   gen = DataLayer2.new(@file_type)
-  XMLParser.new(ARGV[-1], gen)
+  par = XMLParser.new(ARGV[-1], gen)
 end
 
 par.parse_file @file_type
