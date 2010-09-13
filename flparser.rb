@@ -1,3 +1,5 @@
+require "csv"
+require "date"
 #!/usr/bin/env ruby
 =begin
   * Name: conv

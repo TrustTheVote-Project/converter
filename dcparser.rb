@@ -82,22 +82,26 @@ class DCParser
     @gen.add_precinct(last_precinct, last_precinct_name)
   end
   
-  # this method is the only tricky part, that analyzes the districts and computes the splits.
-  def compute_precinct_splits precinct, dists_for_precinct
+# this method is the only tricky part, that analyzes the districts and computes the splits.
+  def compute_precinct_splits precinct_number, dists_for_precinct
     smd_districts = dists_for_precinct.reduce([]) {|memo, dist| dist.smd? ? memo | [dist] : memo}
     reg_districts = dists_for_precinct.reduce([]) {|memo, dist| dist.regular? ? memo | [dist.ident] : memo}
-    split_ident_base = 0
     if smd_districts.length == 0
-      split_ident = precinct
-      @gen.add_precinct_split(precinct, split_ident)
-      @gen.add_district_set(split_ident, reg_districts)
+# PrecinctSplit is named: split-<precinct number>. Ident is the precinct number.
+      precinct_split_name = "split-#{precinct_number}"
+      district_set_ident = "ds-#{precinct_number}"
+      @gen.add_precinct_split(precinct_number, precinct_split_name, precinct_number, district_set_ident)
+# DistrictSet  is named: ds-<precinct number>
+      @gen.add_district_set(district_set_ident, reg_districts)
     else 
       smd_districts.each do
       |a_smd_district|
-        split_ident = "#{split_ident_base.to_s}-#{a_smd_district.ident}"
-        @gen.add_precinct_split(precinct, split_ident)
-        @gen.add_district_set(split_ident, [a_smd_district.ident]  | reg_districts)
-        split_ident_base += 1
+# PrecinctSplit idend is  split-<precinct number>-<smd name>. Ident is the precinct number.
+# DistrictSet  is named: ds-<precinct number>
+        precinct_split_ident = "split-#{precinct_number}-#{a_smd_district.name}"
+        district_set_ident = "ds-#{precinct_number}-#{a_smd_district.name}"
+        @gen.add_precinct_split(precinct_split_ident, precinct_split_ident, precinct_number, district_set_ident)
+        @gen.add_district_set(district_set_ident, [a_smd_district.ident]  | reg_districts)
       end    
     end
   end  

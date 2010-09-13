@@ -1,3 +1,5 @@
+require "date"
+require "yaml"
 #!/usr/bin/env ruby
 =begin
   * Name: conv
@@ -22,16 +24,16 @@
 
 =end
 require 'rubygems'
-require 'pp'
+#require 'pp'
 require 'getoptlong'
 require 'pathname'
-require 'flparser'
-require 'nhparser'
+#require 'flparser'
+#require 'nhparser'
 require 'dcparser'
-require 'xmlparser'
+#require 'xmlparser'
 require 'vaparser'
-require 'active_support'
-require 'active_support/xml_mini'
+#require 'active_support'
+#require 'active_support/xml_mini'
 require 'data_layer'
 require 'data_layer_v2'
 
@@ -50,59 +52,94 @@ Usage:
      -s   source format code
           NH -> New Hampshire dump
           DC -> DC Dump
-          VA -> Virginia VIP feed.
+          VA -> Virginia VIP feed
+     -t   type code
+          jurisdiction - Pull out jurisdictional info (jurisdiction, district, precinct, and split)
+          election - Pull out election info (election, contest)
+          candidate - Pull out candidate info (candidate, ballot and contest)
      -o   output destination
 "
 opts = GetoptLong.new(
                       ["-h", "--help", GetoptLong::NO_ARGUMENT],
-["-s", "--source", GetoptLong::REQUIRED_ARGUMENT],
-["-o", "--output", GetoptLong::REQUIRED_ARGUMENT])
+                      ["-s", "--source", GetoptLong::REQUIRED_ARGUMENT],
+                      ["-t", "--type", GetoptLong::REQUIRED_ARGUMENT], 
+                      ["-o", "--output", GetoptLong::REQUIRED_ARGUMENT])
 
 @source_format = nil
 
 opts.each do |opt, arg|
   case opt
-    when "-h"
-      puts HELPTEXT
+  when "-h"
+    puts HELPTEXT
+    exit 0
+  when "-t"
+    @file_type = case arg.upcase
+    when /JUR*/ then :jurisdiction
+    when /ELE*/ then :election
+    when /CAN*/ then :candidate
+    else puts "Invalid file type: #{arg}"
       exit 0
-    when "-s"
-      @source_format = arg.upcase
-    when "-o"
-      @output_path = Pathname.new(arg)
+    end
+  when "-s"
+    @source_format = case arg.upcase
+    when /NH*/ then "NH"
+    when /VA*/ then "VA"
+    when /DC*/ then "DC"
+    when /FL*/ then "FL"
+    else puts "Invalid file source: #{arg}"
+      exit 0
+    end
+  when "-o"
+    @output_path = Pathname.new(arg)
+  when "-c"
+    @type_code = arg.upcase
   end
 end
 
 if ARGV[0].empty?
   puts "Missing file argument (try --help) #{ARGV[0]}"
   exit 0
-end
-
-# command line is parsed. Now lets do the work
-if @source_format.eql? "DC"
-  gen = DataLayer2.new
-elsif @source_format.eql? "VA"
-  gen = DataLayer2.new
-elsif !@source_format.eql? "DC"
-  gen = DataLayer.new
-else
-  puts "Invalid format: #{@source_format}"
+elsif ARGV.length > 1
+  puts "Unknown parameters. Try --help #{ARGV[0..-1]}"
   exit 0
 end
-  
-par = VAParser.new(ARGV[-1], gen) if @source_format.eql? "VA"
-par = NHParser.new(ARGV[-1], gen) if @source_format.eql?"NH"
-par = FLParser.new(ARGV[-1], gen) if @source_format.eql? "FL"
-par = XMLParser.new(ARGV[-1], gen) if @source_format.eql? "XML"
-par = DCParser.new(ARGV[-1], gen) if @source_format.eql? "DC"
 
-par.parse_file
+#
+# Arguments have all been parsed. Based on the arguments, instantiate a DataLayer and a Parser. The Parser knows all about the input
+# format, the DataLayer knows about the output format. As we create new versions of the data layer formats we might create new DataLayer classes.
+#
+case @source_format
+when "DC"
+  gen = DataLayer2.new(@file_type)
+  DCParser.new(ARGV[-1], gen)
+when "VA"
+  gen = DataLayer2.new(@file_type)
+  par = VAParser.new(ARGV[-1], gen) 
+when "NH"
+  gen = DataLayer.new
+  par = NHParser.new(ARGV[-1], gen)
+when "FL"
+  gen = DataLayer2.new(@file_type)
+  par = FLParser.new(ARGV[-1], gen)
+when "XML"
+  gen = DataLayer2.new(@file_type)
+  XMLParser.new(ARGV[-1], gen)
+end
 
-if (@source_format.eql?("DC") || @source_format.eql?("VA")) && @output_path.extname.eql?(".yml")
+par.parse_file @file_type
+
+case [@source_format, @output_path.extname]
+when ["DC", ".yml"]
   @output_path.open("w") do |file|
     puts "writing yaml to #{@output_path}"
     YAML.dump(gen.h_file, file)
   end
-elsif @source_format.eql?("DC") && @output_path.extname.eql?(".xml")
+when ["VA", ".yml"]
+  @output_path.open("w") do |file|
+    puts "writing yaml to #{@output_path}"
+    YAML.dump(gen.h_file, file)
+  end
+when ["DC", ".xml"]
   puts "writing XML to #{@output_path}"
   @output_path.open("w")  do |file|
     xml_string = gen.h_file.to_xml({:dasherize=>false, :root => "ttv_object", :skip_types => true })
@@ -128,4 +165,3 @@ else
     end
   end
 end
-

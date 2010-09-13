@@ -23,176 +23,408 @@
 =end
 require 'rubygems'
 require 'yaml'
-require 'pp'
+require 'ap'
 require 'getoptlong'
 require 'pathname'
 require 'rexml/document'
-include REXML
+require "rexml/streamlistener"
 
 #
 # Implements a parser for VA formatted election data files
 #
 class VAParser
-
-  attr_reader :file
-
+  include REXML::StreamListener
+  
   def initialize(fname, generator)
     @gen = generator
-    REXML::Document.parse_stream(File.new(fname), self)
+    @file = File.new(fname)
+    @working_on = []
   end
   
-#
-# Following are the callbacks for the REXML Stream Parsing
-#
+  def parse_file ctype
+    @ctype = ctype
+    if @ctype == :candidate
+      # contest_map[ballot_id] = contest_id
+      @contest_map = {}
+      
+      # ballot_map[candidate_id] = ballot_id`
+      @ballot_map = {}
+      
+      # candidate_map[candidate_id] = {:name => name, :party => party}
+      @candidate_map = {}
+    end
+    REXML::Document.parse_stream(@file, self)
 
-  def xmldecl(version, encoding, standalone)
-    puts "XML /#{version}, #{encoding}, #{standalone}/"  
   end
   
-  def text(str)
-    puts "Text: /#{str}/"
+  def file_start attrs
+    tb "file"
+    @gen.begin_file
+  end
+  
+  def file_end
+    te "file"
+    # For candidate file type, all the generation happens here because the structure
+    # of the objects is quite different from the input file.
+    if @ctype == :candidate
+      generate_candidates
+    end
+    @gen.end_file
+  end
+  
+  def generate_candidates
+    @candidate_map.each do
+      |key, value|
+        @gen.add_candidate(key, @contest_map[@ballot_map[key]], value[:name], value[:party])
+    end
+  end
+  
+  def precinct_start args
+    tb "precinct"
+    @id = args["id"]
+  end
+  
+  def precinct_end
+    te "precinct"
+    @gen.add_precinct(@id, @name_tag)
+  end
+  
+  def precinct_split_start attrs
+    tb "precinct split"
+    working_on :precinct_split
+    @precinct_split_id = attrs["id"]
+    @precinct_split_districts = []
+  end
+  
+  def precinct_split_end
+    te "precinct split"
+    @gen.add_district_set(@precinct_split_id, @precinct_split_districts)
+    @gen.add_precinct_split(@precinct_split_id, @name_tag, @precinct_id, @precinct_split_id)
+  end
+  
+  def electoral_district_start args
+    tb "electoral district"
+    @id = args["id"]  
+  end
+  
+  def election_id_start attrs
+    tb "election_id"
+  end
+  
+  def election_id_end
+    te "election_id"
+    @election_id = @text
+  end
+  
+  def electoral_district_end
+    te "electoral_district"
+    @gen.add_district(@id, "#{@name_tag} (#{@id})", @type, "")
+  end
+  
+  def precinct_id_start attr
+    tb "precinct_id"
+  end
+  
+  def precinct_id_end
+    te "precinct_id"
+    @precinct_id = @text
+  end
+  
+  def electoral_district_id_start attr
+    tb "electoral_district_id"
+  end
+  
+  def electoral_district_id_end
+    te "electoral_district_id"
+    if @ctype == :jurisdiction
+      @electoral_district_id = @text
+      @precinct_split_districts << @electoral_district_id
+    end
+  end
+  
+  def source_start attrs
+    tb "source"
+  end
+  
+  def contest_start attrs
+    tb "contest"
+    working_on :contest
+    @contest_id = attrs["id"]
+    @districts = []
+  end
+  
+  def contest_end
+    te "contest"
+    if @ctype == :election
+      @gen.add_contest(@contest_id, @election_id, @electoral_district_id, @office_name, @ballot_placement)
+    end
+  end
+  
+  def ballot_id_start attrs
+    tb "ballot_id"
+  end
+  
+  def ballot_id_end
+    te "ballot_id"
+    @contest_map[@text] = @contest_id
+  end
+  
+  def ballot_start attrs
+    tb "ballot"
+    @ballot_id = attrs["id"]
+  end
+  
+  def ballot_end
+    te "ballot"
+  end
+
+  def candidate_id_start attrs
+    tb "candidate_id"
+  end
+  
+  def candidate_id_end
+    te "candidate_id"
+    @ballot_map[@text] = @ballot_id
+  end
+  
+  def candidate_start attrs
+    tb "candidate"
+    @candidate_id = attrs["id"]
+  end
+  
+  def candidate_end
+    te "candidate"
+    @candidate_map[@candidate_id] = {:name => @name_tag, :party => @candidate_party}
+  end
+  
+  def party_start attrs
+    tb "party"
+  end
+  
+  def party_end
+    te "party"
+    @candidate_party = @text.gsub(/\s/, "")
+
+  end
+  
+  def source_end
+    te "source"
+  end
+  
+  def office_start attrs
+    tb "office"
+  end
+  
+  def office_end
+    te "office"
+    @office_name = @text
+  end
+  
+  
+  def election_start args
+    @election_ident = args["id"]
+  end
+  
+  
+  def election_end
+    te "election"
+    @gen.add_election(@election_ident, @date_tag, @election_type)
+  end
+  
+  def locality_id_start arg
+    tb "locality_id"
+  end
+  
+  def locality_id_end
+    te "locality_id"
+    @locality_id = @text
+  end
+  
+  def contest_begin attrs
+    @contest_ident = attrs["id"]
+    @districts = []
+  end
+  
+  def type_start args    
+    tb "type"
+  end
+  
+  def type_end
+    te "type"
+    @type = @text_found
+  end
+  
+  def name_start args  
+    tb "name"
+  end
+  
+  def electoral_district_id_start attrs
+    tb "electoral_district_id"
+  end
+  
+  def electoral_district_id
+    @electoral_district_id = @text
+  end
+  
+  def ballot_placement_start attrs
+    tb "ballot_placement"
+  end
+  
+  def ballot_placement_end
+    te "ballot_placement"
+    @ballot_placement = @text
+  end
+  
+  def name_end
+    te "name"
+    @name_tag = @text
+  end
+  
+  def date_start args
+    te "date"
+  end
+  
+  def date_end
+    te "date"
+    @date_tag = @text
+  end
+  
+  def election_type_start args
+    tb "election_type"
+  end
+  
+  def election_type_end
+    @election_type = @text
+  end
+  
+  def date_end
+    te "date"
+    @date_tag = @text
+  end
+  
+  def working_on new_state
+    @working_on << new_state
+  end
+  
+  def tb string
+    # puts "< begin #{string}"
+  end
+  
+  def te string
+    # puts "> end #{string}"
+  end
+  
+  #
+  # Following are the Callbacks for the REXML Stream Parsing
+  #
+  
+  # Plain text found. Ignore white space
+  def text text_found
+    return if text_found.strip.empty?
+    @text = text_found.lstrip.rstrip
   end
   
   def tag_start(name, attrs)
-    puts "Tag Start /#{name} / #{attrs}/"
     case name
+      
+    when "source"
+      source_start attrs
+    when "election"
+      election_start attrs
+    when "election_type"
+      election_type_start attrs
+    when "election_id"
+      election_id_start attrs
     when "electoral_district_id"
-      puts "district"
-    when "precinct_split"
-      puts "precinct split"
+      electoral_district_id_start attrs
+    when "office"
+      office_start attrs
+    when "ballot_placement"
+      ballot_placement_start attrs
+    when "date"
+      date_start attrs
+    when "contest"
+      contest_start attrs
+    when "candidate"
+      candidate_start attrs
     when "precinct"
-      puts "precinct"
+      precinct_start attrs
+    when "electoral_district"
+      electoral_district_start attrs
+    when "precinct_split"
+      precinct_split_start attrs
+    when "precinct_id"
+      precinct_id_start attrs
+    when "vip_object"
+      file_start attrs
+    when "name"
+      name_start attrs
+    when "locality_id"
+      locality_id_start attrs
+    when "electoral_district_id"
+      electoral_district_id_start attrs
+    when "type"
+      type_start attrs
+    when "ballot"
+      ballot_start attrs
+    when "candidate_id"
+      candidate_id_start attrs
+    when "party"
+      party_start attrs
+    when "ballot_id"
+      ballot_id_start attrs
     end
   end
   
   def tag_end(name)
-    puts "Tag End /#{name}/"
-  end
-
-
-#
-# Folowing are the handlers which are called as for us
-
-  def parse_file
-    @gen.begin_file
-
-    @gen.end_file
-  end
-  
-  def start_election
-    @gen.start_ballot(@file.elements["EDX/County/Election"].attributes["name"])
-  end
-  
-  def parse_district_names
-    @file.elements.each("EDX/County/Election/Districts/District") { |district|
-      @districts[district.attributes["id"]] = district.attributes["name"]
-    }
-  end
-  
-  # Generate a hash table of election/district mappings
-  def parse_contest_district
-    @file.elements.each("EDX/County/Election/DistrictContests/DistrictContest") { |dc|
-      @contests[dc.attributes["contest"]] = dc.attributes["district"]
-    }
-  end
-  
-  # Convert district ID to district name
-  def district_name(district)
-    @districts[district.to_s]
-  end
-  
-  # Convert contest ID to district 
-  # Should be seeded by running parse_contest_district 
-  def contest_district(contest)
-    @contests[contest]
-  end
-
-  def parse_precincts
-    @file.elements.each("EDX/County/Election/Precincts/Precinct") { |precinct|
-      parse_splits(precinct)
-    }
-  end
-  
-  def parse_splits(precinct)
-    if precinct.elements["Splits/Split"].nil?
-      if precinct.attributes["displayOrder"].nil?
-        @gen.start_precinct(precinct.attributes["name"])
-      else
-        @gen.start_precinct(precinct.attributes["name"], precinct.attributes["displayOrder"].to_i)
-      end
-      parse_districts(precinct)
-      @gen.end_precinct
-    else
-      precinct.elements.each("Splits/Split") { |split|
-        if split.attributes["displayOrder"].nil?
-          @gen.start_precinct(precinct.attributes["name"] + "." + 
-                              split.attributes["name"])
-        else
-          @gen.start_precinct(precinct.attributes["name"] + "." + 
-                              split.attributes["name"],
-                              split.attributes["displayOrder"].to_i)
-        end
-        parse_districts(split)
-        @gen.end_precinct
-      }
-    end
-    
-  end
-  
-  def parse_districts(split)
-    split.elements.each("DistrictPrecinctSplits/DistrictPrecinctSplit") { |district|
-      @gen.add_district(district_name(district.attributes["district"]))
-    }
-  end
-  
-  def parse_contests
-    @file.elements.each("EDX/County/Election/Contests/Contest") { |contest|
-      if contest.attributes["type"] == "MS"
-        parse_question(contest)
-      else
-        parse_contest(contest)  
-      end
-    }
-  end
-  
-  def parse_question(question)
-    if question.attributes["displayOrder"].nil?
-      @gen.start_question(question.attributes["name"])
-    else
-      @gen.start_question(question.attributes["name"], question.attributes["displayOrder"].to_i)
-    end
-    
-    question.elements.each("MeasureText") { |text|
-      @gen.question_text(text.text)
-    }
-    
-    @gen.question_district(district_name(contest_district(question.attributes["id"])))
-    @gen.end_question
-  end
-  
-  def parse_contest(contest)
-    if contest.attributes["displayOrder"].nil?
-      @gen.start_contest(contest.attributes["name"])
-    else
-      @gen.start_contest(contest.attributes["name"], contest.attributes["displayOrder"].to_i)
-    end
+    case name
       
-    # Send district for contest
-    @gen.contest_district(district_name(contest_district(contest.attributes["id"])))
-    
-    parse_candidates(contest)
-    @gen.end_contest
+    when "source"
+      source_end
+    when "contest"
+      contest_end
+    when "electoral_district_id"
+      electoral_district_id_end
+    when "office"
+      office_end
+    when "ballot_placement"
+      ballot_placement_end
+    when "election_id"
+      election_id_end
+    when "election"
+      election_end
+    when "candidate"
+      candidate_end
+    when "election_type"
+      election_type_end
+    when "date"
+      date_end
+    when "precinct"
+      precinct_end
+    when "electoral_district"
+      electoral_district_end
+    when "precinct_split"
+      precinct_split_end
+    when "precinct_id"
+      precinct_id_end
+    when "vip_object"
+      file_end
+    when "name"
+      name_end
+    when "locality_id"
+      locality_id_end
+    when "electoral_district_id"
+      electoral_district_id_end
+    when "type"
+      type_end
+    when "ballot"
+      ballot_end
+    when "candidate_id"
+      candidate_id_end
+    when "party"
+      party_end
+    when "ballot_id"
+      ballot_id_end
+    end
   end
-  
-  def parse_candidates(contest)
-    contest.elements.each("Choice") { |candidate|
-      if candidate.attributes["displayOrder"].nil?
-        @gen.add_candidate(candidate.attributes["name"], "Nonpartisan")
-      else
-        @gen.add_candidate(candidate.attributes["name"], "Nonpartisan",
-                           candidate.attributes["displayOrder"].to_i)
-      end
-    }
-  end
-  
-end
+end 
