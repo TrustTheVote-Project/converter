@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ttv_object>
+  <body>
+    <districts>
+      <district>
+        <ident>dist-CITY OF WASHINGTON WARD 6</ident>
+        <type>WARD</type>
+        <display_name>CITY OF WASHINGTON WARD 6</display_name>
+      </district>
+    </districts>
+    <district_sets>
+      <district_set>
+        <district_set>
+          <ident>ds-1</ident>
+          <district_list>
+            <district_list>
+              <district_ident>dist-CITY OF WASHINGTON WARD 6</district_ident>
+            </district_list>
+          </district_list>
+        </district_set>
+      </district_set>
+    </district_sets>
+    <precincts>
+      <precinct>
+        <precinct>
+          <ident>prec-1</ident>
+          <display_name>PRECINCT 1</display_name>
+        </precinct>
+      </precinct>
+    </precincts>
+    <splits>
+      <split>
+        <precinct_split>
+          <district_set_ident>ds-1</district_set_ident>
+          <precinct_ident>1</precinct_ident>
+        </precinct_split>
+      </split>
+    </splits>
+  </body>
+  <audit_header>
+    <schema_version>0.1</schema_version>
+    <operator>Pito Salas</operator>
+    <type>jurisdiction_slate</type>
+    <create_date>2010-08-27T09:14:25-04:00</create_date>
+    <software>TTV Election Management System 0.1 JAN-1-2010</software>
+    <hardware>TTV Tabulator TAB02</hardware>
+    <file_id>9F023408009B11DF924800163E3DE33F</file_id>
+  </audit_header>
+</ttv_object>

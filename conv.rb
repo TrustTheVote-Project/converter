@@ -1,3 +1,5 @@
+require "date"
+require "yaml"
 #!/usr/bin/env ruby
 =begin
   * Name: conv
@@ -18,198 +20,24 @@
   GNU General Public License for more details.
 
   You should have received a copy of the GNU General Public License
-  along with Ballot-Analizer.  If not, see <http://www.gnu.org/licenses/>.
+  along with Ballot-Analyzer.  If not, see <http://www.gnu.org/licenses/>.
 
 =end
 require 'rubygems'
-require 'yaml'
-require 'pp'
+#require 'pp'
 require 'getoptlong'
 require 'pathname'
+#require 'flparser'
+#require 'nhparser'
+require 'dcparser'
+#require 'xmlparser'
+require 'vaparser'
+#require 'active_support'
+#require 'active_support/xml_mini'
+require 'data_layer'
+require 'data_layer_v2'
 
-#
-# Implements a simple top-down parser for the New Hampshire formatted input file.  @line is the current line, and @lookahead is the next line.
-# Some of the syntax requires us to know what the next line looks like. At interesting points in the parsing, we call Generator who then 
-# uses what the parser knows to build up what is to be written out.
-class Parser
-  
-  def initialize(fname, generator)
-    @file = File.open(fname)
-    @lookahead = ""
-    @line = ""
-    @gen = generator
-  end
-  
-  def get_line
-    @line = @lookahead
-    if !@file.eof?
-      @lookahead = @file.readline.chomp
-    else
-      @lookahead = ""
-    end
-  end
-  
-  #
-  # Parse the whole file. A file consists of a series of ballots. The two get_lines prime the two key
-  # parser variables, @line and @lookahead.
-  #
-  def parse_file()
-    @gen.begin_file
-    get_line
-    get_line
-    if @lookahead != ""
-      parse_ballots()
-    end
-    @gen.end_file
-  end
-  
-  #
-  # Parse a series of ballots. The last ballot occurs when we see the end-of-file.
-  # 
-  def parse_ballots
-    while !@file.eof?
-      parse_ballot
-    end
-  end
-  
-  #
-  # Parse a single ballot. Always start with the string "General Election Ballot". The first line after that is 
-  # the town name. Skip a line and then we expect a series of contests.
-  #
-  def parse_ballot
-    raise "unexpected start of section" unless @line == "General Election Ballot"
-    get_line
-    town = @line
-    puts "parsed town: #{town}"
-    get_line
-    get_line
-    @gen.start_ballot(town)
-    parse_contests
-    @gen.end_ballot
-  end
-  
-  #
-  # Contests are one after the other, until we hit the start of the next ballot.
-  #
-  def parse_contests
-    while @line != "General Election Ballot" && !@file.eof?
-      @contest = @line.chomp
-      get_line
-      @rule = @line.chop.lstrip
-      get_line
-      @gen.start_contest(@contest, @rule)
-      parse_candidates()
-      @gen.end_contest
-    end
-  end
-  
-  #
-  # Parse one or more candidates for this contest. Next contest starts when non-indented line is seen.
-  #
-  def parse_candidates()
-    while line_indented?
-      parse_candidate
-    end
-  end
-  
-  def line_indented?
-    @line[0] == 32
-  end
-  
-  def parse_candidate
-    name = @line.chomp.lstrip
-    get_line
-    party = @line.chomp.lstrip
-    get_line
-    @gen.add_candidate(name, party)
-  end
-end
 
-class Generator
-  attr_reader :h_file
-  
-  def initialize
-    @rules = {}
-    @candidates = {}
-    @parties = {}
-    @precincts = {}
-    @cont_count = 0
-    @prec_count = 0
-    @ballot_count = 0
-  end
-  
-  def begin_file
-    @h_file = []
-    
-  end
-  
-  def end_file
-    #    pp @h_file
-  end
-  
-  def start_ballot(town)
-    puts "new ballot: #{town}"
-    @ballot_count += 1
-    @prec_id = "prec-#{@precincts.length}"
-    @precincts = {town => @prec_id}
-    @h_ballot = {"display_name" => "General Election"}
-    @h_ballot["contest_list"] = []
-  end
-  
-  def end_ballot
-    gen_precinct_list
-    @h_ballot["precinct_list"] = @h_precincts
-    @h_ballot["jurisdiction_display_name"] = "middleworld"
-    @h_ballot["type"] = "jurisdiction_slate"
-    @h_file << @h_ballot
-  end
-  
-  def gen_precinct_list
-    @h_precincts = []
-    @precincts.each do |key, value|
-      @h_precincts << 
-      { "voting_places" =>
-        [{ "ballot_counters" => 2,
-              "ident" => "vplace-xxx"}
-        ],
-          "display_name" => key,
-          "ident" => value,
-          "district_list" =>
-        [{ "ident" => value,
-               "display_name" => key}
-        ]
-      }
-    end
-  end
-  
-  def start_contest(name, rule)
-    @h_contest = {"display_name" => name}
-    @h_contest["district_ident"] = @prec_id
-    @h_contest["ident"] = "cont-xx"
-    @h_contest["candidates"] = []
-    add_rule(rule)
-  end
-  
-  def end_contest
-    @h_ballot["contest_list"] << @h_contest
-  end
-  
-  def add_rule(rule)
-    @rules[rule] = 1
-  end
-  
-  def add_candidate(name, party)
-    @parties[party] = "party-#{@parties.length}"
-    @candidates[name] = "cand-#{@candidates.length}"
-    
-    @h_contest["candidates"] << 
-    {"party_ident" => @parties[party], 
-       "ident" => @candidates[name],
-       "display_name" => name}
-    @parties[party] = party
-    @candidates[name] = party
-  end
-end
 
 #
 # Main Program: Parse the command line and do the work
@@ -221,54 +49,119 @@ Usage:
 
  Options:
      -h   display help text
-     -f   format code. -fNH - New Hampshire Ballot.txt
-     -o    optional destination folder
+     -s   source format code
+          NH -> New Hampshire dump
+          DC -> DC Dump
+          VA -> Virginia VIP feed
+     -t   type code
+          jurisdiction - Pull out jurisdictional info (jurisdiction, district, precinct, and split)
+          election - Pull out election info (election, contest)
+          candidate - Pull out candidate info (candidate, ballot and contest)
+     -o   output destination
 "
 opts = GetoptLong.new(
-      ["-h", "--help", GetoptLong::NO_ARGUMENT],
-      ["-f", "--format", GetoptLong::REQUIRED_ARGUMENT],
-      ["-o", "--output", GetoptLong::REQUIRED_ARGUMENT])
-@format = nil
-@dir = Pathname.new(".")
+                      ["-h", "--help", GetoptLong::NO_ARGUMENT],
+                      ["-s", "--source", GetoptLong::REQUIRED_ARGUMENT],
+                      ["-t", "--type", GetoptLong::REQUIRED_ARGUMENT], 
+                      ["-o", "--output", GetoptLong::REQUIRED_ARGUMENT])
+
+@source_format = nil
+
 opts.each do |opt, arg|
   case opt
-    when "-h"
-      puts HELPTEXT
+  when "-h"
+    puts HELPTEXT
+    exit 0
+  when "-t"
+    @file_type = case arg.upcase
+    when /JUR*/ then :jurisdiction
+    when /ELE*/ then :election
+    when /CAN*/ then :candidate
+    else puts "Invalid file type: #{arg}"
       exit 0
-    when "-f"
-      @format = arg
-      break
-    when "-o"
-      @dir = Pathname.new(arg)
-      if @dir.exist? && !@dir.directory?
-        puts "#{arg} doesn't seem to be a directory" unless @dir.directory?
-        exit 0
     end
+  when "-s"
+    @source_format = case arg.upcase
+    when /NH*/ then "NH"
+    when /VA*/ then "VA"
+    when /DC*/ then "DC"
+    when /FL*/ then "FL"
+    else puts "Invalid file source: #{arg}"
+      exit 0
+    end
+  when "-o"
+    @output_path = Pathname.new(arg)
+  when "-c"
+    @type_code = arg.upcase
   end
 end
 
-if ARGV.length != 1
-  puts "Missing file argument (try --help)"
+if ARGV[0].empty?
+  puts "Missing file argument (try --help) #{ARGV[0]}"
+  exit 0
+elsif ARGV.length > 1
+  puts "Unknown parameters. Try --help #{ARGV[0..-1]}"
   exit 0
 end
 
-# command line is parsed. Now lets do the work
-
-gen = Generator.new
-par = Parser.new(ARGV[0], gen)
-par.parse_file
-
-@dir.mkdir unless @dir.directory?
-@dir = @dir.realpath
-i = 0
-gen.h_file.each do |ballot|
-  i += 1
-  puts "ballot #{i}: #{ballot["precinct_list"][0]["display_name"]}"
+#
+# Arguments have all been parsed. Based on the arguments, instantiate a DataLayer and a Parser. The Parser knows all about the input
+# format, the DataLayer knows about the output format. As we create new versions of the data layer formats we might create new DataLayer classes.
+#
+case @source_format
+when "DC"
+  gen = DataLayer2.new(@file_type)
+  DCParser.new(ARGV[-1], gen)
+when "VA"
+  gen = DataLayer2.new(@file_type)
+  par = VAParser.new(ARGV[-1], gen) 
+when "NH"
+  gen = DataLayer.new
+  par = NHParser.new(ARGV[-1], gen)
+when "FL"
+  gen = DataLayer2.new(@file_type)
+  par = FLParser.new(ARGV[-1], gen)
+when "XML"
+  gen = DataLayer2.new(@file_type)
+  XMLParser.new(ARGV[-1], gen)
 end
-gen.h_file.each do |ballot|
-  @file = @dir + "#{ballot["precinct_list"][0]["display_name"]}.yml"
-  puts "writing file #{@file}"
-  @file.open("w") do |file| 
-    YAML.dump(ballot, file)
+
+par.parse_file @file_type
+
+case [@source_format, @output_path.extname]
+when ["DC", ".yml"]
+  @output_path.open("w") do |file|
+    puts "writing yaml to #{@output_path}"
+    YAML.dump(gen.h_file, file)
+  end
+when ["VA", ".yml"]
+  @output_path.open("w") do |file|
+    puts "writing yaml to #{@output_path}"
+    YAML.dump(gen.h_file, file)
+  end
+when ["DC", ".xml"]
+  puts "writing XML to #{@output_path}"
+  @output_path.open("w")  do |file|
+    xml_string = gen.h_file.to_xml({:dasherize=>false, :root => "ttv_object", :skip_types => true })
+    # Remove type="array" lines and their closing tags
+    final_xml_string = ""
+    xml_string.each_line { |line|
+      if (line.include?('type="array"') || line.include?("</precincts>") || line.include?("</districts>") ||
+        line.include?("</jurisdictions>") || line.include?("</contests>") || line.include?("</candidates>") ||
+        line.include?("</questions>") || line.include?("</elections>") || line.include?("</splits>") ||
+        line.include?("</district_list")) && false
+        # Do not add
+      else # Add
+        final_xml_string << line
+      end
+    }
+    file.write(final_xml_string)
+  end
+else
+  puts "writing YML (DataLayer Version 1) to #{@output_path}"
+  gen.h_file.each do |result|
+    @output_path.open("w") do |file|
+      YAML.dump(result, file)
+    end
   end
 end

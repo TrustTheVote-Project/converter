@@ -1,0 +1,41 @@
+<?xml version="1.0" standalone="yes"?>
+<vip_object schemaVersion="2.1">
+	<precinct id="502452">
+		<name>702 - MIDWAY</name>
+		<locality_id>51083</locality_id>
+	</precinct>
+	<electoral_district id="500675">
+		<name>House of Delegates 060</name>
+		<type>House of Delegates</type>
+	</electoral_district>
+	<electoral_district id="501568">
+		<name>State Senate 015</name>
+		<type>State Senate</type>
+	</electoral_district>
+	<electoral_district id="501612">
+		<name>Congressional 05</name>
+		<type>Congressional</type>
+	</electoral_district>
+	<electoral_district id="500886">
+		<name>Election DISTRICT 7</name>
+		<type>Election</type>
+	</electoral_district>
+	<electoral_district id="501650">
+		<name>HALIFAX COUNTY</name>
+		<type>LOCALITY</type>
+	</electoral_district>
+	<electoral_district id="501621">
+		<name>STATEWIDE</name>
+		<type>STATEWIDE</type>
+	</electoral_district>
+	<precinct_split id="504377">
+		<name>702 - MIDWAY-0000</name>
+		<precinct_id>502452</precinct_id>
+		<electoral_district_id>500675</electoral_district_id>
+		<electoral_district_id>501568</electoral_district_id>
+		<electoral_district_id>501612</electoral_district_id>
+		<electoral_district_id>500886</electoral_district_id>
+		<electoral_district_id>501650</electoral_district_id>
+		<electoral_district_id>501621</electoral_district_id>
+	</precinct_split>
+</vip_object>

@@ -1,0 +1,12 @@
+Converter is a set of tools for converting various formatted election data
+to TrustTheVote ElectionManager's standard YML format.
+
+ElectionManager: http://github.com/trustthevote/ElectionManager
+
+Converting a few files:
+ruby conv.rb -fFL inputs/panddsplitlist.csv
+ruby conv.rb -fNH inputs/mediumballot.txt
+ruby conv.rb -fXML inputs/mason.xml
+
+Display conv.rb help:
+ruby conv.rb -h

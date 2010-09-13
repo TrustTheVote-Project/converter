@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<ttv_object version="0.1">
+	<audit-header>
+		<file_id> 9F023408009B11DF924800163E3DE33F</file_id>
+		<create_date> 2010-01-13 23:30:23 -0700</create_date>
+		<type>jurisdiction_slate</type>
+		<operator>Pito Salas</operator>
+		<hardware>TTV Tabulator TAB02</hardware>
+		<software>TTV Tabulator 0.1 JUL-1-2008</software>
+		<schema_version>0.1</schema_version>
+	</audit-header>
+	<body>
+		<precinct>
+			<name>PRECINCT 1</name>
+			<ident>1</ident>
+		</precinct>
+		<precinct_split>
+			<precinct_ident>1</precinct_ident>
+			<district_list_ident>123</district_list_ident>
+		</precinct_split>
+		<precinct_split>
+			<precinct_ident>1</precinct_ident>
+			<district_set_ident>124</district_set_ident>
+		</precinct_split>
+		<district_set>
+			<ident>123</ident>
+			<district_ident>SMD 01-ANC 6C-30</district_ident>
+			<district_ident>10</district_ident>
+			<district_ident>2</district_ident>
+			<district_ident>1</district_ident>
+		</district_set>
+		<district_set>
+			<ident>124</ident>
+			<district_ident>SMD 02-ANC 6C-30</district_ident>
+			<district_ident>10</district_ident>
+			<district_ident>2</district_ident>
+			<district_ident>1</district_ident>
+		</district_set>
+		<district>
+			<display_ame>SMD 02-ANC 6C</display_ame>
+			<ident>SMD 02-ANC 6C-30</ident>
+			<type>Single Member District</type>
+		</district>
+		<district>
+			<display_name>SMD 01-ANC 6C</display_name>
+			<ident>SMD 01-ANC 6C-30</ident>
+			<type>Single Member District</type>
+		</district>
+		<district>
+			<display_name>1st Congressional District-Dem</display_name>
+			<ident>1</ident>
+			<type>Congressional District</type>
+		</district>
+		<district>
+			<display_name>ANC 6C SMD 1-9</display_name>
+			<ident>20</ident>
+			<type>Advisory Neighborhood Comm</type>
+		</district>
+		<district>
+			<display_name>City of Washington Ward 6</display_name>
+			<ident>10</ident>
+			<type>City Ward</type>
+		</district>
+		<district>
+			<display_name>District of Columbia</display_name>
+			<ident>2</ident>
+			<type>Citywide District</type>
+		</district>
+	</body>
+</ttv_object>
