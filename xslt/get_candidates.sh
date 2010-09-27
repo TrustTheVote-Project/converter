@@ -1,1 +1,1 @@
-xsltproc vip_get_candidates.xslt vipFeed-51-2010-08-13-street-info-removed > vip-2010-08-13-candidate-info.xml
+xsltproc vip_get_candidates.xslt VA_vipfeed-09222010.xml > va-09222010-candidates-info.xml

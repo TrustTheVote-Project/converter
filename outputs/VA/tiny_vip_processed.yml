@@ -2,23 +2,23 @@
 body: 
   districts: 
   - ident: "500675"
-    type: abbreviation
-    display_name: House of Delegates 060
+    type: ""
+    display_name: House of Delegates 060 (500675)
   - ident: "501568"
-    type: abbreviation
-    display_name: State Senate 015
+    type: ""
+    display_name: State Senate 015 (501568)
   - ident: "501612"
-    type: abbreviation
-    display_name: Congressional 05
+    type: ""
+    display_name: Congressional 05 (501612)
   - ident: "500886"
-    type: abbreviation
-    display_name: Election DISTRICT 7
+    type: ""
+    display_name: Election DISTRICT 7 (500886)
   - ident: "501650"
-    type: abbreviation
-    display_name: HALIFAX COUNTY
+    type: ""
+    display_name: HALIFAX COUNTY (501650)
   - ident: "501621"
-    type: abbreviation
-    display_name: STATEWIDE
+    type: ""
+    display_name: STATEWIDE (501621)
   district_sets: 
   - ident: "504377"
     district_list: 
@@ -37,10 +37,10 @@ body:
     precinct_ident: "502452"
     display_name: 702 - MIDWAY-0000
 audit_header: 
-  schema_version: "0.1"
+  schema_version: "0.2"
   operator: Pito Salas
-  type: jurisdiction_slate
-  create_date: 2010-09-08T11:15:57-04:00
+  type: jurisdiction
+  create_date: 2010-09-27T15:31:35-04:00
   software: TTV Election Management System 0.1 JAN-1-2010
-  hardware: TTV Tabulator TAB02
+  hardware: n/a
   file_id: 9F023408009B11DF924800163E3DE33F

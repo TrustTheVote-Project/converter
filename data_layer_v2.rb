@@ -37,7 +37,7 @@ class DataLayer2
     @audit_header_hash = {
         "file_id" => "9F023408009B11DF924800163E3DE33F",
         "create_date" => DateTime.now,
-        "type" => "jurisdiction_slate",
+        "type" => "tbd",
         "operator" => "Pito Salas",
         "hardware" => "n/a",
         "software" => "TTV Election Management System 0.1 JAN-1-2010",
@@ -54,11 +54,11 @@ class DataLayer2
       @out_file["precincts"] = []
       @out_file["splits"] = []
       @out_file["district_sets"] = []
-      @audit_header["type"] = "jurisdiction"
+      @audit_header_hash["type"] = "jurisdiction"
     when :election
       @out_file["elections"] = []
       @out_file["contests"] = []
-      @audit_header["type"] = "elections" 
+      @audit_header_hash["type"] = "elections" 
     when :candidate
       @out_file["candidates"] = []
       @audit_header_hash["type"] = "candidates"
