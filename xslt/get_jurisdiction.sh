@@ -1,1 +1,1 @@
-xsltproc vip_get_jurisdiction.xslt vipFeed-51-2010-08-13-street-info-removed > vip-2010-08-13-jurisdiction-info.xml
+xsltproc vip_get_jurisdiction.xslt vipFeed-sept-22-2010.xml > vipFeed-sept-22-2010.xml-jurisdiction-info.xml

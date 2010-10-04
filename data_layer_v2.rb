@@ -46,8 +46,9 @@ class DataLayer2
   end
   
   # Initialize an output array to later store ballots in
-  def begin_file
+  def begin_file fname
     @out_file = {}
+    @audit_header_hash["based_on"] = fname
     case @ftype
     when :jurisdiction
       @out_file["districts"] = []
@@ -92,7 +93,7 @@ class DataLayer2
   end 
     
   def add_district(ident, name, type, abbrev)
-    @curr_district = {"ident" => ident, "display_name" => name, "type" => abbrev}
+    @curr_district = {"ident" => ident, "display_name" => name, "type" => type}
     @out_file["districts"] << @curr_district
   end
   

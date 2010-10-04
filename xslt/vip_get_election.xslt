@@ -6,7 +6,7 @@
 		<xsl:copy-of select="/vip_object/source"/>
 		<xsl:copy-of select="/vip_object/election"/>
 		<xsl:copy-of select="/vip_object/contest"/>
-		<xsl:copy-of select="/vip_object/election"/>
+		<xsl:copy-of select="/vip_object/question"/>
 	</vip_object>
 	</xsl:template>
 </xsl:stylesheet>

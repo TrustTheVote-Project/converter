@@ -37,6 +37,7 @@ class VAParser
   
   def initialize(fname, generator)
     @gen = generator
+    @file_name = fname
     @file = File.new(fname)
     @working_on = []
   end
@@ -52,6 +53,10 @@ class VAParser
       
       # candidate_map[candidate_id] = {:name => name, :party => party}
       @candidate_map = {}
+    elsif @ctype == :jurisdiction
+      @locality_map = []
+    elsif @ctype == :election
+      @contest_map = {}
     end
     REXML::Document.parse_stream(@file, self)
 
@@ -59,7 +64,7 @@ class VAParser
   
   def file_start attrs
     tb "file"
-    @gen.begin_file
+    @gen.begin_file @file_name
   end
   
   def file_end
@@ -99,12 +104,21 @@ class VAParser
   def precinct_split_end
     te "precinct split"
     @gen.add_district_set(@precinct_split_id, @precinct_split_districts)
-    @gen.add_precinct_split(@precinct_split_id, @name_tag, @precinct_id, @precinct_split_id)
+    @gen.add_precinct_split(@precinct_split_id, @precinct_split_locality + "-" +  @name_tag, @precinct_id, @precinct_split_id)
   end
   
   def electoral_district_start args
     tb "electoral district"
     @id = args["id"]  
+  end
+  
+  def electoral_district_end
+    te "electoral_district: #{@id}, #{@type}"
+    @gen.add_district(@id, "#{@name_tag} (#{@id})", @type, "")
+# We also collect the id's of all districts that are type==locality so that later we can add locality to a precinct-split name.
+    if @type.eql? "LOCALITY"
+      @locality_map << @id 
+   end
   end
   
   def election_id_start attrs
@@ -114,11 +128,6 @@ class VAParser
   def election_id_end
     te "election_id"
     @election_id = @text
-  end
-  
-  def electoral_district_end
-    te "electoral_district"
-    @gen.add_district(@id, "#{@name_tag} (#{@id})", @type, "")
   end
   
   def precinct_id_start attr
@@ -133,12 +142,14 @@ class VAParser
   def electoral_district_id_start attr
     tb "electoral_district_id"
   end
-  
+
   def electoral_district_id_end
     te "electoral_district_id"
+    @electoral_district_id = @text
+# <electoral_district_id> tag inside <precinct_split> 
     if @ctype == :jurisdiction
-      @electoral_district_id = @text
       @precinct_split_districts << @electoral_district_id
+      @precinct_split_locality = @electoral_district_id if @locality_map.include? @electoral_district_id
     end
   end
   
@@ -251,11 +262,16 @@ class VAParser
   
   def type_end
     te "type"
-    @type = @text_found
+    @type = @text
   end
   
   def name_start args  
     tb "name"
+  end
+  
+  def name_end
+    te "name"
+    @name_tag = @text
   end
   
   def electoral_district_id_start attrs
@@ -274,11 +290,7 @@ class VAParser
     te "ballot_placement"
     @ballot_placement = @text
   end
-  
-  def name_end
-    te "name"
-    @name_tag = @text
-  end
+
   
   def date_start args
     te "date"
@@ -307,11 +319,11 @@ class VAParser
   end
   
   def tb string
-    # puts "< begin #{string}"
+     #puts "< begin #{string}"
   end
   
   def te string
-    # puts "> end #{string}"
+     #puts "> end #{string}"
   end
   
   #
