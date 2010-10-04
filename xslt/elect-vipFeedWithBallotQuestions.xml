@@ -1,0 +1,1590 @@
+<?xml version="1.0" standalone="yes"?>
+<vip_object schemaVersion="2.1">
+	<source id="0">
+		<name>State of Virginia</name>
+		<vip_id>51</vip_id>
+		<datetime>2010-09-22T16:21:22.910</datetime>
+		<description>The state of Virginia is the official source of election information in Virginia. This feed provides information on election dates, offices, candidates, and precinct boundaries.</description>
+		<organization_url>www.sbe.virginia.gov/</organization_url>
+	</source>
+	<election id="14">
+		<date>2010-11-02</date>
+		<statewide>YES</statewide>
+		<state_id>51</state_id>
+		<election_type>FEDERAL</election_type>
+	</election>
+	<contest id="500000">
+		<election_id>14</election_id>
+		<type>General</type>
+		<electoral_district_id>501769</electoral_district_id>
+		<partisan>No</partisan>
+		<primary_party/>
+		<office>Member School Board - Bayside</office>
+		<ballot_id>500301</ballot_id>
+		<ballot_placement>28</ballot_placement>
+	</contest>
+	<contest id="500001">
+		<election_id>14</election_id>
+		<type>General</type>
+		<electoral_district_id>501222</electoral_district_id>
+		<partisan>No</partisan>
+		<primary_party/>
+		<office>Member City Council</office>
+		<ballot_id>500346</ballot_id>
+		<ballot_placement>23</ballot_placement>
+	</contest>
+	<contest id="500002">
+		<election_id>14</election_id>
+		<type>General</type>
+		<electoral_district_id>501004</electoral_district_id>
+		<partisan>No</partisan>
+		<primary_party/>
+		<office>Member City Council</office>
+		<ballot_id>500344</ballot_id>
+		<ballot_placement>23</ballot_placement>
+	</contest>
+	<contest id="500003">
+		<election_id>14</election_id>
+		<type>General</type>
+		<electoral_district_id>501176</electoral_district_id>
+		<partisan>No</partisan>
+		<primary_party/>
+		<office>Member School Board</office>
+		<ballot_id>500209</ballot_id>
+		<ballot_placement>28</ballot_placement>
+	</contest>
+	<contest id="500004">
+		<election_id>14</election_id>
+		<type>General</type>
+		<electoral_district_id>501802</electoral_district_id>
+		<partisan>No</partisan>
+		<primary_party/>
+		<office>Clerk of Court</office>
+		<ballot_id>500246</ballot_id>
+		<ballot_placement>9</ballot_placement>
+	</contest>
+	<contest id="500005">
+		<election_id>14</election_id>
+		<type>General</type>
+		<electoral_district_id>500862</electoral_district_id>
+		<partisan>No</partisan>
+		<primary_party/>
+		<office>Member Board of Supervisors</office>
+		<ballot_id>500291</ballot_id>
+		<ballot_placement>18</ballot_placement>
+	</contest>
+	<contest id="500006">
+		<election_id>14</election_id>
+		<type>General</type>
+		<electoral_district_id>501677</electoral_district_id>
+		<partisan>No</partisan>
+		<primary_party/>
+		<office>Member House of Representatives - 5th District</office>
+		<ballot_id>500203</ballot_id>
+		<ballot_placement>3</ballot_placement>
+	</contest>
+	<contest id="500008">
+		<election_id>14</election_id>
+		<type>General</type>
+		<electoral_district_id>501577</electoral_district_id>
+		<partisan>No</partisan>
+		<primary_party/>
+		<office>Member Town Council - Glasgow</office>
+		<ballot_id>500284</ballot_id>
+		<ballot_placement>30</ballot_placement>
+	</contest>
+	<contest id="500009">
+		<election_id>14</election_id>
+		<type>General</type>
+		<electoral_district_id>501576</electoral_district_id>
+		<partisan>No</partisan>
+		<primary_party/>
+		<office>Member Town Council - Brookneal</office>
+		<ballot_id>500297</ballot_id>
+		<ballot_placement>30</ballot_placement>
+	</contest>
+	<contest id="500010">
+		<election_id>14</election_id>
+		<type>General</type>
+		<electoral_district_id>501789</electoral_district_id>
+		<partisan>No</partisan>
+		<primary_party/>
+		<office>Member County Board</office>
+		<ballot_id>500241</ballot_id>
+		<ballot_placement>16</ballot_placement>
+	</contest>
+	<contest id="500011">
+		<election_id>14</election_id>
+		<type>General</type>
+		<electoral_district_id>501593</electoral_district_id>
+		<partisan>No</partisan>
+		<primary_party/>
+		<office>Member Town Council - Special</office>
+		<ballot_id>500299</ballot_id>
+		<ballot_placement>30</ballot_placement>
+	</contest>
+	<contest id="500012">
+		<election_id>14</election_id>
+		<type>General</type>
+		<electoral_district_id>501199</electoral_district_id>
+		<partisan>No</partisan>
+		<primary_party/>
+		<office>Member Board of Supervisors</office>
+		<ballot_id>500228</ballot_id>
+		<ballot_placement>18</ballot_placement>
+	</contest>
+	<contest id="500013">
+		<election_id>14</election_id>
+		<type>General</type>
+		<electoral_district_id>501017</electoral_district_id>
+		<partisan>No</partisan>
+		<primary_party/>
+		<office>Member City Council</office>
+		<ballot_id>500217</ballot_id>
+		<ballot_placement>23</ballot_placement>
+	</contest>
+	<contest id="500014">
+		<election_id>14</election_id>
+		<type>General</type>
+		<electoral_district_id>501604</electoral_district_id>
+		<partisan>No</partisan>
+		<primary_party/>
+		<office>Member Town Council - Special</office>
+		<ballot_id>500313</ballot_id>
+		<ballot_placement>30</ballot_placement>
+	</contest>
+	<contest id="500015">
+		<election_id>14</election_id>
+		<type>General</type>
+		<electoral_district_id>501474</electoral_district_id>
+		<partisan>No</partisan>
+		<primary_party/>
+		<office>Member Town Council - Clifton Forge</office>
+		<ballot_id>500211</ballot_id>
+		<ballot_placement>30</ballot_placement>
+	</contest>
+	<contest id="500016">
+		<election_id>14</election_id>
+		<type>General</type>
+		<electoral_district_id>501629</electoral_district_id>
+		<partisan>No</partisan>
+		<primary_party/>
+		<office>Mayor - Chatham</office>
+		<ballot_id>500327</ballot_id>
+		<ballot_placement>29</ballot_placement>
+	</contest>
+	<contest id="500017">
+		<election_id>14</election_id>
+		<type>General</type>
+		<electoral_district_id>501546</electoral_district_id>
+		<partisan>No</partisan>
+		<primary_party/>
+		<office>Member Troutville Town Council</office>
+		<ballot_id>500224</ballot_id>
+		<ballot_placement>30</ballot_placement>
+	</contest>
+	<contest id="500018">
+		<election_id>14</election_id>
+		<type>General</type>
+		<electoral_district_id>501596</electoral_district_id>
+		<partisan>No</partisan>
+		<primary_party/>
+		<office>Mayor - Bridgewater</office>
+		<ballot_id>500311</ballot_id>
+		<ballot_placement>29</ballot_placement>
+	</contest>
+	<contest id="500019">
+		<election_id>14</election_id>
+		<type>General</type>
+		<electoral_district_id>501772</electoral_district_id>
+		<partisan>No</partisan>
+		<primary_party/>
+		<office>Member School Board - West District</office>
+		<ballot_id>500317</ballot_id>
+		<ballot_placement>28</ballot_placement>
+	</contest>
+	<contest id="500020">
+		<election_id>14</election_id>
+		<type>General</type>
+		<electoral_district_id>501282</electoral_district_id>
+		<partisan>No</partisan>
+		<primary_party/>
+		<office>Member City Council</office>
+		<ballot_id>500279</ballot_id>
+		<ballot_placement>23</ballot_placement>
+	</contest>
+	<contest id="500021">
+		<election_id>14</election_id>
+		<type>General</type>
+		<electoral_district_id>501678</electoral_district_id>
+		<partisan>No</partisan>
+		<primary_party/>
+		<office>Member House of Representatives - 8th District</office>
+		<ballot_id>500294</ballot_id>
+		<ballot_placement>3</ballot_placement>
+	</contest>
+	<contest id="500022">
+		<election_id>14</election_id>
+		<type>General</type>
+		<electoral_district_id>501750</electoral_district_id>
+		<partisan>No</partisan>
+		<primary_party/>
+		<office>Clerk of Court</office>
+		<ballot_id>500207</ballot_id>
+		<ballot_placement>9</ballot_placement>
+	</contest>
+	<contest id="500023">
+		<election_id>14</election_id>
+		<type>General</type>
+		<electoral_district_id>501459</electoral_district_id>
+		<partisan>No</partisan>
+		<primary_party/>
+		<office>Member Town Council - Altavista</office>
+		<ballot_id>500321</ballot_id>
+		<ballot_placement>30</ballot_placement>
+	</contest>
+	<contest id="500024">
+		<election_id>14</election_id>
+		<type>General</type>
+		<electoral_district_id>501736</electoral_district_id>
+		<partisan>No</partisan>
+		<primary_party/>
+		<office>Member City Council</office>
+		<ballot_id>500266</ballot_id>
+		<ballot_placement>20</ballot_placement>
+	</contest>
+	<contest id="500025">
+		<election_id>14</election_id>
+		<type>General</type>
+		<electoral_district_id>501128</electoral_district_id>
+		<partisan>No</partisan>
+		<primary_party/>
+		<office>Member City Council</office>
+		<ballot_id>500268</ballot_id>
+		<ballot_placement>23</ballot_placement>
+	</contest>
+	<contest id="500026">
+		<election_id>14</election_id>
+		<type>General</type>
+		<electoral_district_id>501629</electoral_district_id>
+		<partisan>No</partisan>
+		<primary_party/>
+		<office>Member Town Council - Chatham</office>
+		<ballot_id>500227</ballot_id>
+		<ballot_placement>30</ballot_placement>
+	</contest>
+	<contest id="500027">
+		<election_id>14</election_id>
+		<type>General</type>
+		<electoral_district_id>500921</electoral_district_id>
+		<partisan>No</partisan>
+		<primary_party/>
+		<office>Member City Council</office>
+		<ballot_id>500332</ballot_id>
+		<ballot_placement>23</ballot_placement>
+	</contest>
+	<contest id="500028">
+		<election_id>14</election_id>
+		<type>General</type>
+		<electoral_district_id>501769</electoral_district_id>
+		<partisan>No</partisan>
+		<primary_party/>
+		<office>Member School Board - Beach</office>
+		<ballot_id>500230</ballot_id>
+		<ballot_placement>28</ballot_placement>
+	</contest>
+	<contest id="500029">
+		<election_id>14</election_id>
+		<type>General</type>
+		<electoral_district_id>501574</electoral_district_id>
+		<partisan>No</partisan>
+		<primary_party/>
+		<office>Mayor - Dayton</office>
+		<ballot_id>500244</ballot_id>
+		<ballot_placement>29</ballot_placement>
+	</contest>
+	<contest id="500030">
+		<election_id>14</election_id>
+		<type>General</type>
+		<electoral_district_id>501155</electoral_district_id>
+		<partisan>No</partisan>
+		<primary_party/>
+		<office>Member City Council</office>
+		<ballot_id>500319</ballot_id>
+		<ballot_placement>23</ballot_placement>
+	</contest>
+	<contest id="500031">
+		<election_id>14</election_id>
+		<type>General</type>
+		<electoral_district_id>501705</electoral_district_id>
+		<partisan>No</partisan>
+		<primary_party/>
+		<office>Sheriff</office>
+		<ballot_id>500208</ballot_id>
+		<ballot_placement>11</ballot_placement>
+	</contest>
+	<contest id="500032">
+		<election_id>14</election_id>
+		<type>General</type>
+		<electoral_district_id>501682</electoral_district_id>
+		<partisan>No</partisan>
+		<primary_party/>
+		<office>Member House of Representatives - 6th District</office>
+		<ballot_id>500240</ballot_id>
+		<ballot_placement>3</ballot_placement>
+	</contest>
+	<contest id="500033">
+		<election_id>14</election_id>
+		<type>General</type>
+		<electoral_district_id>501681</electoral_district_id>
+		<partisan>No</partisan>
+		<primary_party/>
+		<office>Member House of Representatives - 4th District</office>
+		<ballot_id>500338</ballot_id>
+		<ballot_placement>3</ballot_placement>
+	</contest>
+	<contest id="500034">
+		<election_id>14</election_id>
+		<type>General</type>
+		<electoral_district_id>501440</electoral_district_id>
+		<partisan>No</partisan>
+		<primary_party/>
+		<office>Member Town Council</office>
+		<ballot_id>500215</ballot_id>
+		<ballot_placement>30</ballot_placement>
+	</contest>
+	<contest id="500035">
+		<election_id>14</election_id>
+		<type>General</type>
+		<electoral_district_id>501470</electoral_district_id>
+		<partisan>No</partisan>
+		<primary_party/>
+		<office>Member Town Council - Alberta</office>
+		<ballot_id>500256</ballot_id>
+		<ballot_placement>30</ballot_placement>
+	</contest>
+	<contest id="500036">
+		<election_id>14</election_id>
+		<type>General</type>
+		<electoral_district_id>501433</electoral_district_id>
+		<partisan>No</partisan>
+		<primary_party/>
+		<office>Member City Council</office>
+		<ballot_id>500288</ballot_id>
+		<ballot_placement>23</ballot_placement>
+	</contest>
+	<contest id="500037">
+		<election_id>14</election_id>
+		<type>General</type>
+		<electoral_district_id>501448</electoral_district_id>
+		<partisan>No</partisan>
+		<primary_party/>
+		<office>Mayor - Gretna</office>
+		<ballot_id>500336</ballot_id>
+		<ballot_placement>29</ballot_placement>
+	</contest>
+	<contest id="500038">
+		<election_id>14</election_id>
+		<type>General</type>
+		<electoral_district_id>501542</electoral_district_id>
+		<partisan>No</partisan>
+		<primary_party/>
+		<office>Mayor - Elkton</office>
+		<ballot_id>500213</ballot_id>
+		<ballot_placement>29</ballot_placement>
+	</contest>
+	<contest id="500039">
+		<election_id>14</election_id>
+		<type>General</type>
+		<electoral_district_id>501769</electoral_district_id>
+		<partisan>No</partisan>
+		<primary_party/>
+		<office>Member City Council - Lynnhaven</office>
+		<ballot_id>500315</ballot_id>
+		<ballot_placement>23</ballot_placement>
+	</contest>
+	<contest id="500040">
+		<election_id>14</election_id>
+		<type>General</type>
+		<electoral_district_id>501701</electoral_district_id>
+		<partisan>No</partisan>
+		<primary_party/>
+		<office>Commissioner of Revenue</office>
+		<ballot_id>500248</ballot_id>
+		<ballot_placement>12</ballot_placement>
+	</contest>
+	<contest id="500041">
+		<election_id>14</election_id>
+		<type>General</type>
+		<electoral_district_id>501768</electoral_district_id>
+		<partisan>No</partisan>
+		<primary_party/>
+		<office>Mayor</office>
+		<ballot_id>500253</ballot_id>
+		<ballot_placement>19</ballot_placement>
+	</contest>
+	<contest id="500042">
+		<election_id>14</election_id>
+		<type>General</type>
+		<electoral_district_id>501628</electoral_district_id>
+		<partisan>No</partisan>
+		<primary_party/>
+		<office>Member Town Council - Craigsville</office>
+		<ballot_id>500289</ballot_id>
+		<ballot_placement>30</ballot_placement>
+	</contest>
+	<contest id="500043">
+		<election_id>14</election_id>
+		<type>General</type>
+		<electoral_district_id>501769</electoral_district_id>
+		<partisan>No</partisan>
+		<primary_party/>
+		<office>Member City Council - Princess Anne</office>
+		<ballot_id>500235</ballot_id>
+		<ballot_placement>23</ballot_placement>
+	</contest>
+	<contest id="500044">
+		<election_id>14</election_id>
+		<type>General</type>
+		<electoral_district_id>501596</electoral_district_id>
+		<partisan>No</partisan>
+		<primary_party/>
+		<office>Member Town Council - Bridgewater</office>
+		<ballot_id>500252</ballot_id>
+		<ballot_placement>30</ballot_placement>
+	</contest>
+	<contest id="500045">
+		<election_id>14</election_id>
+		<type>General</type>
+		<electoral_district_id>501229</electoral_district_id>
+		<partisan>No</partisan>
+		<primary_party/>
+		<office>Member City Council</office>
+		<ballot_id>500273</ballot_id>
+		<ballot_placement>23</ballot_placement>
+	</contest>
+	<contest id="500046">
+		<election_id>14</election_id>
+		<type>General</type>
+		<electoral_district_id>501440</electoral_district_id>
+		<partisan>No</partisan>
+		<primary_party/>
+		<office>Mayor</office>
+		<ballot_id>500335</ballot_id>
+		<ballot_placement>29</ballot_placement>
+	</contest>
+	<contest id="500047">
+		<election_id>14</election_id>
+		<type>General</type>
+		<electoral_district_id>501465</electoral_district_id>
+		<partisan>No</partisan>
+		<primary_party/>
+		<office>Member Town Council - Gordonsville</office>
+		<ballot_id>500282</ballot_id>
+		<ballot_placement>30</ballot_placement>
+	</contest>
+	<contest id="500048">
+		<election_id>14</election_id>
+		<type>General</type>
+		<electoral_district_id>501464</electoral_district_id>
+		<partisan>No</partisan>
+		<primary_party/>
+		<office>Mayor -Timberville</office>
+		<ballot_id>500280</ballot_id>
+		<ballot_placement>29</ballot_placement>
+	</contest>
+	<contest id="500049">
+		<election_id>14</election_id>
+		<type>General</type>
+		<electoral_district_id>501769</electoral_district_id>
+		<partisan>No</partisan>
+		<primary_party/>
+		<office>Member School Board - Princess Anne</office>
+		<ballot_id>500304</ballot_id>
+		<ballot_placement>28</ballot_placement>
+	</contest>
+	<contest id="500050">
+		<election_id>14</election_id>
+		<type>General</type>
+		<electoral_district_id>501117</electoral_district_id>
+		<partisan>No</partisan>
+		<primary_party/>
+		<office>Member City Council</office>
+		<ballot_id>500219</ballot_id>
+		<ballot_placement>23</ballot_placement>
+	</contest>
+	<contest id="500051">
+		<election_id>14</election_id>
+		<type>General</type>
+		<electoral_district_id>501793</electoral_district_id>
+		<partisan>No</partisan>
+		<primary_party/>
+		<office>Member School Board</office>
+		<ballot_id>500220</ballot_id>
+		<ballot_placement>25</ballot_placement>
+	</contest>
+	<contest id="500052">
+		<election_id>14</election_id>
+		<type>General</type>
+		<electoral_district_id>501769</electoral_district_id>
+		<partisan>No</partisan>
+		<primary_party/>
+		<office>Member City Council - Beach </office>
+		<ballot_id>500331</ballot_id>
+		<ballot_placement>23</ballot_placement>
+	</contest>
+	<contest id="500053">
+		<election_id>14</election_id>
+		<type>General</type>
+		<electoral_district_id>501779</electoral_district_id>
+		<partisan>No</partisan>
+		<primary_party/>
+		<office>Sheriff</office>
+		<ballot_id>500254</ballot_id>
+		<ballot_placement>11</ballot_placement>
+	</contest>
+	<contest id="500054">
+		<election_id>14</election_id>
+		<type>General</type>
+		<electoral_district_id>501574</electoral_district_id>
+		<partisan>No</partisan>
+		<primary_party/>
+		<office>Member Town Council - Dayton</office>
+		<ballot_id>500210</ballot_id>
+		<ballot_placement>30</ballot_placement>
+	</contest>
+	<contest id="500055">
+		<election_id>14</election_id>
+		<type>General</type>
+		<electoral_district_id>501448</electoral_district_id>
+		<partisan>No</partisan>
+		<primary_party/>
+		<office>Member Town Council - Gretna</office>
+		<ballot_id>500264</ballot_id>
+		<ballot_placement>30</ballot_placement>
+	</contest>
+	<contest id="500056">
+		<election_id>14</election_id>
+		<type>General</type>
+		<electoral_district_id>501533</electoral_district_id>
+		<partisan>No</partisan>
+		<primary_party/>
+		<office>Mayor</office>
+		<ballot_id>500202</ballot_id>
+		<ballot_placement>29</ballot_placement>
+	</contest>
+	<contest id="500057">
+		<election_id>14</election_id>
+		<type>General</type>
+		<electoral_district_id>501336</electoral_district_id>
+		<partisan>No</partisan>
+		<primary_party/>
+		<office>Member School Board</office>
+		<ballot_id>500300</ballot_id>
+		<ballot_placement>28</ballot_placement>
+	</contest>
+	<contest id="500058">
+		<election_id>14</election_id>
+		<type>General</type>
+		<electoral_district_id>501674</electoral_district_id>
+		<partisan>No</partisan>
+		<primary_party/>
+		<office>Member House of Representatives - 2nd District</office>
+		<ballot_id>500287</ballot_id>
+		<ballot_placement>3</ballot_placement>
+	</contest>
+	<contest id="500060">
+		<election_id>14</election_id>
+		<type>General</type>
+		<electoral_district_id>501533</electoral_district_id>
+		<partisan>No</partisan>
+		<primary_party/>
+		<office>Member Town Council</office>
+		<ballot_id>500298</ballot_id>
+		<ballot_placement>30</ballot_placement>
+	</contest>
+	<contest id="500061">
+		<election_id>14</election_id>
+		<type>General</type>
+		<electoral_district_id>501697</electoral_district_id>
+		<partisan>No</partisan>
+		<primary_party/>
+		<office>Treasurer</office>
+		<ballot_id>500283</ballot_id>
+		<ballot_placement>13</ballot_placement>
+	</contest>
+	<contest id="500062">
+		<election_id>14</election_id>
+		<type>General</type>
+		<electoral_district_id>501695</electoral_district_id>
+		<partisan>No</partisan>
+		<primary_party/>
+		<office>Member City Council</office>
+		<ballot_id>500233</ballot_id>
+		<ballot_placement>20</ballot_placement>
+	</contest>
+	<contest id="500063">
+		<election_id>14</election_id>
+		<type>General</type>
+		<electoral_district_id>500869</electoral_district_id>
+		<partisan>No</partisan>
+		<primary_party/>
+		<office>Member Board of Supervisors</office>
+		<ballot_id>500310</ballot_id>
+		<ballot_placement>18</ballot_placement>
+	</contest>
+	<contest id="500064">
+		<election_id>14</election_id>
+		<type>General</type>
+		<electoral_district_id>501481</electoral_district_id>
+		<partisan>No</partisan>
+		<primary_party/>
+		<office>Member Town Council - Special</office>
+		<ballot_id>500221</ballot_id>
+		<ballot_placement>30</ballot_placement>
+	</contest>
+	<contest id="500065">
+		<election_id>14</election_id>
+		<type>General</type>
+		<electoral_district_id>501470</electoral_district_id>
+		<partisan>No</partisan>
+		<primary_party/>
+		<office>Mayor - Alberta</office>
+		<ballot_id>500322</ballot_id>
+		<ballot_placement>29</ballot_placement>
+	</contest>
+	<contest id="500067">
+		<election_id>14</election_id>
+		<type>General</type>
+		<electoral_district_id>501719</electoral_district_id>
+		<partisan>No</partisan>
+		<primary_party/>
+		<office>Clerk of Court</office>
+		<ballot_id>500229</ballot_id>
+		<ballot_placement>9</ballot_placement>
+	</contest>
+	<contest id="500068">
+		<election_id>14</election_id>
+		<type>General</type>
+		<electoral_district_id>500830</electoral_district_id>
+		<partisan>No</partisan>
+		<primary_party/>
+		<office>Member Board of Supervisors</office>
+		<ballot_id>500308</ballot_id>
+		<ballot_placement>18</ballot_placement>
+	</contest>
+	<contest id="500069">
+		<election_id>14</election_id>
+		<type>General</type>
+		<electoral_district_id>501789</electoral_district_id>
+		<partisan>No</partisan>
+		<primary_party/>
+		<office>Member School Board</office>
+		<ballot_id>500222</ballot_id>
+		<ballot_placement>25</ballot_placement>
+	</contest>
+	<contest id="500070">
+		<election_id>14</election_id>
+		<type>General</type>
+		<electoral_district_id>501155</electoral_district_id>
+		<partisan>No</partisan>
+		<primary_party/>
+		<office>Member School Board</office>
+		<ballot_id>500295</ballot_id>
+		<ballot_placement>28</ballot_placement>
+	</contest>
+	<contest id="500071">
+		<election_id>14</election_id>
+		<type>General</type>
+		<electoral_district_id>501446</electoral_district_id>
+		<partisan>No</partisan>
+		<primary_party/>
+		<office>Mayor - Goshen</office>
+		<ballot_id>500342</ballot_id>
+		<ballot_placement>29</ballot_placement>
+	</contest>
+	<contest id="500072">
+		<election_id>14</election_id>
+		<type>General</type>
+		<electoral_district_id>501813</electoral_district_id>
+		<partisan>No</partisan>
+		<primary_party/>
+		<office>Treasurer</office>
+		<ballot_id>500276</ballot_id>
+		<ballot_placement>13</ballot_placement>
+	</contest>
+	<contest id="500073">
+		<election_id>14</election_id>
+		<type>General</type>
+		<electoral_district_id>500977</electoral_district_id>
+		<partisan>No</partisan>
+		<primary_party/>
+		<office>Member School Board </office>
+		<ballot_id>500343</ballot_id>
+		<ballot_placement>28</ballot_placement>
+	</contest>
+	<contest id="500074">
+		<election_id>14</election_id>
+		<type>General</type>
+		<electoral_district_id>501769</electoral_district_id>
+		<partisan>No</partisan>
+		<primary_party/>
+		<office>Member City Council - At Large</office>
+		<ballot_id>500302</ballot_id>
+		<ballot_placement>21</ballot_placement>
+	</contest>
+	<contest id="500075">
+		<election_id>14</election_id>
+		<type>General</type>
+		<electoral_district_id>501718</electoral_district_id>
+		<partisan>No</partisan>
+		<primary_party/>
+		<office>Member City Council - Central</office>
+		<ballot_id>500281</ballot_id>
+		<ballot_placement>23</ballot_placement>
+	</contest>
+	<contest id="500076">
+		<election_id>14</election_id>
+		<type>General</type>
+		<electoral_district_id>501763</electoral_district_id>
+		<partisan>No</partisan>
+		<primary_party/>
+		<office>Treasurer</office>
+		<ballot_id>500226</ballot_id>
+		<ballot_placement>13</ballot_placement>
+	</contest>
+	<contest id="500077">
+		<election_id>14</election_id>
+		<type>General</type>
+		<electoral_district_id>501083</electoral_district_id>
+		<partisan>No</partisan>
+		<primary_party/>
+		<office>Member School Board</office>
+		<ballot_id>500249</ballot_id>
+		<ballot_placement>28</ballot_placement>
+	</contest>
+	<contest id="500078">
+		<election_id>14</election_id>
+		<type>General</type>
+		<electoral_district_id>501689</electoral_district_id>
+		<partisan>No</partisan>
+		<primary_party/>
+		<office>Clerk of Court</office>
+		<ballot_id>500347</ballot_id>
+		<ballot_placement>9</ballot_placement>
+	</contest>
+	<contest id="500079">
+		<election_id>14</election_id>
+		<type>General</type>
+		<electoral_district_id>501595</electoral_district_id>
+		<partisan>No</partisan>
+		<primary_party/>
+		<office>Mayor</office>
+		<ballot_id>500345</ballot_id>
+		<ballot_placement>29</ballot_placement>
+	</contest>
+	<contest id="500080">
+		<election_id>14</election_id>
+		<type>General</type>
+		<electoral_district_id>503896</electoral_district_id>
+		<partisan>No</partisan>
+		<primary_party/>
+		<office>Member Town Council - Courtland, Ward C Special</office>
+		<ballot_id>500285</ballot_id>
+		<ballot_placement>30</ballot_placement>
+	</contest>
+	<contest id="500081">
+		<election_id>14</election_id>
+		<type>General</type>
+		<electoral_district_id>501772</electoral_district_id>
+		<partisan>No</partisan>
+		<primary_party/>
+		<office>Member School Board - East District</office>
+		<ballot_id>500247</ballot_id>
+		<ballot_placement>28</ballot_placement>
+	</contest>
+	<contest id="500082">
+		<election_id>14</election_id>
+		<type>General</type>
+		<electoral_district_id>501248</electoral_district_id>
+		<partisan>No</partisan>
+		<primary_party/>
+		<office>Member Board of Supervisors</office>
+		<ballot_id>500305</ballot_id>
+		<ballot_placement>18</ballot_placement>
+	</contest>
+	<contest id="500083">
+		<election_id>14</election_id>
+		<type>General</type>
+		<electoral_district_id>501471</electoral_district_id>
+		<partisan>No</partisan>
+		<primary_party/>
+		<office>Member Town Council - Special</office>
+		<ballot_id>500326</ballot_id>
+		<ballot_placement>30</ballot_placement>
+	</contest>
+	<contest id="500084">
+		<election_id>14</election_id>
+		<type>General</type>
+		<electoral_district_id>501718</electoral_district_id>
+		<partisan>No</partisan>
+		<primary_party/>
+		<office>Member City Council - Western</office>
+		<ballot_id>500236</ballot_id>
+		<ballot_placement>23</ballot_placement>
+	</contest>
+	<contest id="500085">
+		<election_id>14</election_id>
+		<type>General</type>
+		<electoral_district_id>501128</electoral_district_id>
+		<partisan>No</partisan>
+		<primary_party/>
+		<office>Member School Board</office>
+		<ballot_id>500206</ballot_id>
+		<ballot_placement>28</ballot_placement>
+	</contest>
+	<contest id="500086">
+		<election_id>14</election_id>
+		<type>General</type>
+		<electoral_district_id>501698</electoral_district_id>
+		<partisan>No</partisan>
+		<primary_party/>
+		<office>Member City Council</office>
+		<ballot_id>500278</ballot_id>
+		<ballot_placement>20</ballot_placement>
+	</contest>
+	<contest id="500087">
+		<election_id>14</election_id>
+		<type>General</type>
+		<electoral_district_id>501718</electoral_district_id>
+		<partisan>No</partisan>
+		<primary_party/>
+		<office>Member City Council - Eastern</office>
+		<ballot_id>500272</ballot_id>
+		<ballot_placement>23</ballot_placement>
+	</contest>
+	<contest id="500088">
+		<election_id>14</election_id>
+		<type>General</type>
+		<electoral_district_id>501679</electoral_district_id>
+		<partisan>No</partisan>
+		<primary_party/>
+		<office>Member House of Representatives - 9th District</office>
+		<ballot_id>500312</ballot_id>
+		<ballot_placement>3</ballot_placement>
+	</contest>
+	<contest id="500089">
+		<election_id>14</election_id>
+		<type>General</type>
+		<electoral_district_id>501024</electoral_district_id>
+		<partisan>No</partisan>
+		<primary_party/>
+		<office>Member School Board</office>
+		<ballot_id>500214</ballot_id>
+		<ballot_placement>28</ballot_placement>
+	</contest>
+	<contest id="500090">
+		<election_id>14</election_id>
+		<type>General</type>
+		<electoral_district_id>501720</electoral_district_id>
+		<partisan>No</partisan>
+		<primary_party/>
+		<office>Sheriff</office>
+		<ballot_id>500337</ballot_id>
+		<ballot_placement>11</ballot_placement>
+	</contest>
+	<contest id="500091">
+		<election_id>14</election_id>
+		<type>General</type>
+		<electoral_district_id>501491</electoral_district_id>
+		<partisan>No</partisan>
+		<primary_party/>
+		<office>Mayor - Amherst</office>
+		<ballot_id>500334</ballot_id>
+		<ballot_placement>29</ballot_placement>
+	</contest>
+	<contest id="500092">
+		<election_id>14</election_id>
+		<type>General</type>
+		<electoral_district_id>501769</electoral_district_id>
+		<partisan>No</partisan>
+		<primary_party/>
+		<office>Member City Council - Bayside</office>
+		<ballot_id>500333</ballot_id>
+		<ballot_placement>23</ballot_placement>
+	</contest>
+	<contest id="500093">
+		<election_id>14</election_id>
+		<type>General</type>
+		<electoral_district_id>501576</electoral_district_id>
+		<partisan>No</partisan>
+		<primary_party/>
+		<office>Mayor - Brookneal</office>
+		<ballot_id>500216</ballot_id>
+		<ballot_placement>29</ballot_placement>
+	</contest>
+	<contest id="500094">
+		<election_id>14</election_id>
+		<type>General</type>
+		<electoral_district_id>501675</electoral_district_id>
+		<partisan>No</partisan>
+		<primary_party/>
+		<office>Member House of Representatives - 10th District</office>
+		<ballot_id>500242</ballot_id>
+		<ballot_placement>3</ballot_placement>
+	</contest>
+	<contest id="500095">
+		<election_id>14</election_id>
+		<type>General</type>
+		<electoral_district_id>501803</electoral_district_id>
+		<partisan>No</partisan>
+		<primary_party/>
+		<office>Member City Council</office>
+		<ballot_id>500309</ballot_id>
+		<ballot_placement>20</ballot_placement>
+	</contest>
+	<contest id="500096">
+		<election_id>14</election_id>
+		<type>General</type>
+		<electoral_district_id>501680</electoral_district_id>
+		<partisan>No</partisan>
+		<primary_party/>
+		<office>Member House of Representatives - 1st District</office>
+		<ballot_id>500261</ballot_id>
+		<ballot_placement>3</ballot_placement>
+	</contest>
+	<contest id="500097">
+		<election_id>14</election_id>
+		<type>General</type>
+		<electoral_district_id>501769</electoral_district_id>
+		<partisan>No</partisan>
+		<primary_party/>
+		<office>Member School Board - Lynnhaven</office>
+		<ballot_id>500251</ballot_id>
+		<ballot_placement>28</ballot_placement>
+	</contest>
+	<contest id="500098">
+		<election_id>14</election_id>
+		<type>General</type>
+		<electoral_district_id>501595</electoral_district_id>
+		<partisan>No</partisan>
+		<primary_party/>
+		<office>Member Town Council</office>
+		<ballot_id>500218</ballot_id>
+		<ballot_placement>30</ballot_placement>
+	</contest>
+	<contest id="500099">
+		<election_id>14</election_id>
+		<type>General</type>
+		<electoral_district_id>501769</electoral_district_id>
+		<partisan>No</partisan>
+		<primary_party/>
+		<office>Member School Board - At Large Special</office>
+		<ballot_id>500237</ballot_id>
+		<ballot_placement>26</ballot_placement>
+	</contest>
+	<contest id="500100">
+		<election_id>14</election_id>
+		<type>General</type>
+		<electoral_district_id>501683</electoral_district_id>
+		<partisan>No</partisan>
+		<primary_party/>
+		<office>Member House of Representatives - 11th District</office>
+		<ballot_id>500320</ballot_id>
+		<ballot_placement>3</ballot_placement>
+	</contest>
+	<contest id="500101">
+		<election_id>14</election_id>
+		<type>General</type>
+		<electoral_district_id>501375</electoral_district_id>
+		<partisan>No</partisan>
+		<primary_party/>
+		<office>Member City Council</office>
+		<ballot_id>500231</ballot_id>
+		<ballot_placement>23</ballot_placement>
+	</contest>
+	<contest id="500102">
+		<election_id>14</election_id>
+		<type>General</type>
+		<electoral_district_id>501685</electoral_district_id>
+		<partisan>No</partisan>
+		<primary_party/>
+		<office>Member City Council - Superward</office>
+		<ballot_id>500316</ballot_id>
+		<ballot_placement>22</ballot_placement>
+	</contest>
+	<contest id="500103">
+		<election_id>14</election_id>
+		<type>General</type>
+		<electoral_district_id>501772</electoral_district_id>
+		<partisan>No</partisan>
+		<primary_party/>
+		<office>Member City Council</office>
+		<ballot_id>500255</ballot_id>
+		<ballot_placement>20</ballot_placement>
+	</contest>
+	<contest id="500104">
+		<election_id>14</election_id>
+		<type>General</type>
+		<electoral_district_id>501245</electoral_district_id>
+		<partisan>No</partisan>
+		<primary_party/>
+		<office>Member School Board</office>
+		<ballot_id>500290</ballot_id>
+		<ballot_placement>28</ballot_placement>
+	</contest>
+	<contest id="500105">
+		<election_id>14</election_id>
+		<type>General</type>
+		<electoral_district_id>501464</electoral_district_id>
+		<partisan>No</partisan>
+		<primary_party/>
+		<office>Member Town Council - Timberville</office>
+		<ballot_id>500341</ballot_id>
+		<ballot_placement>30</ballot_placement>
+	</contest>
+	<contest id="500106">
+		<election_id>14</election_id>
+		<type>General</type>
+		<electoral_district_id>501618</electoral_district_id>
+		<partisan>No</partisan>
+		<primary_party/>
+		<office>Mayor - Grottoes</office>
+		<ballot_id>500329</ballot_id>
+		<ballot_placement>29</ballot_placement>
+	</contest>
+	<contest id="500107">
+		<election_id>14</election_id>
+		<type>General</type>
+		<electoral_district_id>500972</electoral_district_id>
+		<partisan>No</partisan>
+		<primary_party/>
+		<office>Member School Board</office>
+		<ballot_id>500245</ballot_id>
+		<ballot_placement>28</ballot_placement>
+	</contest>
+	<contest id="500108">
+		<election_id>14</election_id>
+		<type>General</type>
+		<electoral_district_id>501620</electoral_district_id>
+		<partisan>No</partisan>
+		<primary_party/>
+		<office> Member Town Council - Stanley</office>
+		<ballot_id>500324</ballot_id>
+		<ballot_placement>30</ballot_placement>
+	</contest>
+	<contest id="500109">
+		<election_id>14</election_id>
+		<type>General</type>
+		<electoral_district_id>501573</electoral_district_id>
+		<partisan>No</partisan>
+		<primary_party/>
+		<office>Mayor</office>
+		<ballot_id>500307</ballot_id>
+		<ballot_placement>29</ballot_placement>
+	</contest>
+	<contest id="500110">
+		<election_id>14</election_id>
+		<type>General</type>
+		<electoral_district_id>501152</electoral_district_id>
+		<partisan>No</partisan>
+		<primary_party/>
+		<office>Member School Board - Special</office>
+		<ballot_id>500339</ballot_id>
+		<ballot_placement>28</ballot_placement>
+	</contest>
+	<contest id="500111">
+		<election_id>14</election_id>
+		<type>General</type>
+		<electoral_district_id>501000</electoral_district_id>
+		<partisan>No</partisan>
+		<primary_party/>
+		<office>Member School Board</office>
+		<ballot_id>500323</ballot_id>
+		<ballot_placement>28</ballot_placement>
+	</contest>
+	<contest id="500112">
+		<election_id>14</election_id>
+		<type>General</type>
+		<electoral_district_id>501542</electoral_district_id>
+		<partisan>No</partisan>
+		<primary_party/>
+		<office>Member Town Council - Elkton</office>
+		<ballot_id>500306</ballot_id>
+		<ballot_placement>30</ballot_placement>
+	</contest>
+	<contest id="500113">
+		<election_id>14</election_id>
+		<type>General</type>
+		<electoral_district_id>501245</electoral_district_id>
+		<partisan>No</partisan>
+		<primary_party/>
+		<office>Member City Council</office>
+		<ballot_id>500275</ballot_id>
+		<ballot_placement>23</ballot_placement>
+	</contest>
+	<contest id="500114">
+		<election_id>14</election_id>
+		<type>General</type>
+		<electoral_district_id>501179</electoral_district_id>
+		<partisan>No</partisan>
+		<primary_party/>
+		<office>Member School Board </office>
+		<ballot_id>500292</ballot_id>
+		<ballot_placement>28</ballot_placement>
+	</contest>
+	<contest id="500115">
+		<election_id>14</election_id>
+		<type>General</type>
+		<electoral_district_id>501550</electoral_district_id>
+		<partisan>No</partisan>
+		<primary_party/>
+		<office>Mayor - Mt Crawford</office>
+		<ballot_id>500340</ballot_id>
+		<ballot_placement>29</ballot_placement>
+	</contest>
+	<contest id="500116">
+		<election_id>14</election_id>
+		<type>General</type>
+		<electoral_district_id>501673</electoral_district_id>
+		<partisan>No</partisan>
+		<primary_party/>
+		<office>Member House of Representatives - 7th District</office>
+		<ballot_id>500225</ballot_id>
+		<ballot_placement>3</ballot_placement>
+	</contest>
+	<contest id="500117">
+		<election_id>14</election_id>
+		<type>General</type>
+		<electoral_district_id>501576</electoral_district_id>
+		<partisan>No</partisan>
+		<primary_party/>
+		<office>Member Town Council - Special</office>
+		<ballot_id>500296</ballot_id>
+		<ballot_placement>30</ballot_placement>
+	</contest>
+	<contest id="500118">
+		<election_id>14</election_id>
+		<type>General</type>
+		<electoral_district_id>501074</electoral_district_id>
+		<partisan>No</partisan>
+		<primary_party/>
+		<office>Member City Council</office>
+		<ballot_id>500328</ballot_id>
+		<ballot_placement>23</ballot_placement>
+	</contest>
+	<contest id="500119">
+		<election_id>14</election_id>
+		<type>General</type>
+		<electoral_district_id>501359</electoral_district_id>
+		<partisan>No</partisan>
+		<primary_party/>
+		<office>Member Board of Supervisors</office>
+		<ballot_id>500277</ballot_id>
+		<ballot_placement>18</ballot_placement>
+	</contest>
+	<contest id="500120">
+		<election_id>14</election_id>
+		<type>General</type>
+		<electoral_district_id>501588</electoral_district_id>
+		<partisan>No</partisan>
+		<primary_party/>
+		<office>Member Town Council - Special</office>
+		<ballot_id>500262</ballot_id>
+		<ballot_placement>30</ballot_placement>
+	</contest>
+	<contest id="500121">
+		<election_id>14</election_id>
+		<type>General</type>
+		<electoral_district_id>501703</electoral_district_id>
+		<partisan>No</partisan>
+		<primary_party/>
+		<office>Clerk of Court</office>
+		<ballot_id>500250</ballot_id>
+		<ballot_placement>9</ballot_placement>
+	</contest>
+	<contest id="500122">
+		<election_id>14</election_id>
+		<type>General</type>
+		<electoral_district_id>501632</electoral_district_id>
+		<partisan>No</partisan>
+		<primary_party/>
+		<office>Member Town Council</office>
+		<ballot_id>500269</ballot_id>
+		<ballot_placement>30</ballot_placement>
+	</contest>
+	<contest id="500123">
+		<election_id>14</election_id>
+		<type>General</type>
+		<electoral_district_id>501179</electoral_district_id>
+		<partisan>No</partisan>
+		<primary_party/>
+		<office>Member City Council</office>
+		<ballot_id>500265</ballot_id>
+		<ballot_placement>23</ballot_placement>
+	</contest>
+	<contest id="500124">
+		<election_id>14</election_id>
+		<type>General</type>
+		<electoral_district_id>501546</electoral_district_id>
+		<partisan>No</partisan>
+		<primary_party/>
+		<office>Mayor, Town of Troutville</office>
+		<ballot_id>500257</ballot_id>
+		<ballot_placement>29</ballot_placement>
+	</contest>
+	<contest id="500125">
+		<election_id>14</election_id>
+		<type>General</type>
+		<electoral_district_id>501769</electoral_district_id>
+		<partisan>No</partisan>
+		<primary_party/>
+		<office>Member School Board - At Large</office>
+		<ballot_id>500303</ballot_id>
+		<ballot_placement>26</ballot_placement>
+	</contest>
+	<contest id="500126">
+		<election_id>14</election_id>
+		<type>General</type>
+		<electoral_district_id>501618</electoral_district_id>
+		<partisan>No</partisan>
+		<primary_party/>
+		<office>Member Town Council - Grottoes</office>
+		<ballot_id>500239</ballot_id>
+		<ballot_placement>30</ballot_placement>
+	</contest>
+	<contest id="500127">
+		<election_id>14</election_id>
+		<type>General</type>
+		<electoral_district_id>501191</electoral_district_id>
+		<partisan>No</partisan>
+		<primary_party/>
+		<office>Member School Board</office>
+		<ballot_id>500238</ballot_id>
+		<ballot_placement>28</ballot_placement>
+	</contest>
+	<contest id="500128">
+		<election_id>14</election_id>
+		<type>General</type>
+		<electoral_district_id>501117</electoral_district_id>
+		<partisan>No</partisan>
+		<primary_party/>
+		<office>Member School Board </office>
+		<ballot_id>500314</ballot_id>
+		<ballot_placement>28</ballot_placement>
+	</contest>
+	<contest id="500129">
+		<election_id>14</election_id>
+		<type>General</type>
+		<electoral_district_id>501330</electoral_district_id>
+		<partisan>No</partisan>
+		<primary_party/>
+		<office>Member City Council</office>
+		<ballot_id>500270</ballot_id>
+		<ballot_placement>23</ballot_placement>
+	</contest>
+	<contest id="500130">
+		<election_id>14</election_id>
+		<type>General</type>
+		<electoral_district_id>501491</electoral_district_id>
+		<partisan>No</partisan>
+		<primary_party/>
+		<office>Member Town Council - Amherst</office>
+		<ballot_id>500243</ballot_id>
+		<ballot_placement>30</ballot_placement>
+	</contest>
+	<contest id="500131">
+		<election_id>14</election_id>
+		<type>General</type>
+		<electoral_district_id>501074</electoral_district_id>
+		<partisan>No</partisan>
+		<primary_party/>
+		<office>Member School Board</office>
+		<ballot_id>500258</ballot_id>
+		<ballot_placement>28</ballot_placement>
+	</contest>
+	<contest id="500132">
+		<election_id>14</election_id>
+		<type>General</type>
+		<electoral_district_id>501531</electoral_district_id>
+		<partisan>No</partisan>
+		<primary_party/>
+		<office>Member Town Council - Special</office>
+		<ballot_id>500293</ballot_id>
+		<ballot_placement>30</ballot_placement>
+	</contest>
+	<contest id="500133">
+		<election_id>14</election_id>
+		<type>General</type>
+		<electoral_district_id>501676</electoral_district_id>
+		<partisan>No</partisan>
+		<primary_party/>
+		<office>Member House of Representatives - 3rd District</office>
+		<ballot_id>500286</ballot_id>
+		<ballot_placement>3</ballot_placement>
+	</contest>
+	<contest id="500134">
+		<election_id>14</election_id>
+		<type>General</type>
+		<electoral_district_id>501617</electoral_district_id>
+		<partisan>No</partisan>
+		<primary_party/>
+		<office>Member, Town Council - Hurt</office>
+		<ballot_id>500234</ballot_id>
+		<ballot_placement>30</ballot_placement>
+	</contest>
+	<contest id="500135">
+		<election_id>14</election_id>
+		<type>General</type>
+		<electoral_district_id>501550</electoral_district_id>
+		<partisan>No</partisan>
+		<primary_party/>
+		<office>Member Town Council - Mt Crawford</office>
+		<ballot_id>500212</ballot_id>
+		<ballot_placement>30</ballot_placement>
+	</contest>
+	<contest id="500136">
+		<election_id>14</election_id>
+		<type>General</type>
+		<electoral_district_id>501545</electoral_district_id>
+		<partisan>No</partisan>
+		<primary_party/>
+		<office>Member Town Council</office>
+		<ballot_id>500325</ballot_id>
+		<ballot_placement>30</ballot_placement>
+	</contest>
+	<contest id="500137">
+		<election_id>14</election_id>
+		<type>General</type>
+		<electoral_district_id>501695</electoral_district_id>
+		<partisan>No</partisan>
+		<primary_party/>
+		<office>Member, School Board</office>
+		<ballot_id>500271</ballot_id>
+		<ballot_placement>25</ballot_placement>
+	</contest>
+	<contest id="500138">
+		<election_id>14</election_id>
+		<type>General</type>
+		<electoral_district_id>500977</electoral_district_id>
+		<partisan>No</partisan>
+		<primary_party/>
+		<office>Member City Council</office>
+		<ballot_id>500223</ballot_id>
+		<ballot_placement>23</ballot_placement>
+	</contest>
+	<contest id="500139">
+		<election_id>14</election_id>
+		<type>General</type>
+		<electoral_district_id>501793</electoral_district_id>
+		<partisan>No</partisan>
+		<primary_party/>
+		<office>Member City Council</office>
+		<ballot_id>500274</ballot_id>
+		<ballot_placement>20</ballot_placement>
+	</contest>
+	<contest id="500140">
+		<election_id>14</election_id>
+		<type>General</type>
+		<electoral_district_id>501698</electoral_district_id>
+		<partisan>No</partisan>
+		<primary_party/>
+		<office>Member City Council - Special</office>
+		<ballot_id>500259</ballot_id>
+		<ballot_placement>20</ballot_placement>
+	</contest>
+	<contest id="500141">
+		<election_id>14</election_id>
+		<type>General</type>
+		<electoral_district_id>501446</electoral_district_id>
+		<partisan>No</partisan>
+		<primary_party/>
+		<office>Member Town Council - Goshen</office>
+		<ballot_id>500330</ballot_id>
+		<ballot_placement>30</ballot_placement>
+	</contest>
+	<contest id="500142">
+		<election_id>14</election_id>
+		<type>General</type>
+		<electoral_district_id>501229</electoral_district_id>
+		<partisan>No</partisan>
+		<primary_party/>
+		<office>Member School Board </office>
+		<ballot_id>500232</ballot_id>
+		<ballot_placement>28</ballot_placement>
+	</contest>
+	<contest id="500143">
+		<election_id>14</election_id>
+		<type>General</type>
+		<electoral_district_id>501545</electoral_district_id>
+		<partisan>No</partisan>
+		<primary_party/>
+		<office>Mayor, Town of Fincastle</office>
+		<ballot_id>500204</ballot_id>
+		<ballot_placement>29</ballot_placement>
+	</contest>
+	<contest id="500145">
+		<election_id>14</election_id>
+		<type>General</type>
+		<electoral_district_id>501297</electoral_district_id>
+		<partisan>No</partisan>
+		<primary_party/>
+		<office>Member Board of Supervisors</office>
+		<ballot_id>500201</ballot_id>
+		<ballot_placement>18</ballot_placement>
+	</contest>
+	<contest id="500146">
+		<election_id>14</election_id>
+		<type>General</type>
+		<electoral_district_id>501573</electoral_district_id>
+		<partisan>No</partisan>
+		<primary_party/>
+		<office>Member Town Council</office>
+		<ballot_id>500267</ballot_id>
+		<ballot_placement>30</ballot_placement>
+	</contest>
+	<contest id="500147">
+		<election_id>14</election_id>
+		<type>REFERENDUM</type>
+		<electoral_district_id>501686</electoral_district_id>
+		<partisan>No</partisan>
+		<ballot_id>500165</ballot_id>
+		<ballot_placement>1</ballot_placement>
+	</contest>
+	<contest id="500148">
+		<election_id>14</election_id>
+		<type>REFERENDUM</type>
+		<electoral_district_id>501765</electoral_district_id>
+		<partisan>No</partisan>
+		<ballot_id>500166</ballot_id>
+		<ballot_placement>5</ballot_placement>
+	</contest>
+	<contest id="500149">
+		<election_id>14</election_id>
+		<type>REFERENDUM</type>
+		<electoral_district_id>501789</electoral_district_id>
+		<partisan>No</partisan>
+		<ballot_id>500167</ballot_id>
+		<ballot_placement>5</ballot_placement>
+	</contest>
+	<contest id="500150">
+		<election_id>14</election_id>
+		<type>REFERENDUM</type>
+		<electoral_district_id>501789</electoral_district_id>
+		<partisan>No</partisan>
+		<ballot_id>500168</ballot_id>
+		<ballot_placement>5</ballot_placement>
+	</contest>
+	<contest id="500151">
+		<election_id>14</election_id>
+		<type>REFERENDUM</type>
+		<electoral_district_id>501780</electoral_district_id>
+		<partisan>No</partisan>
+		<ballot_id>500169</ballot_id>
+		<ballot_placement>5</ballot_placement>
+	</contest>
+	<contest id="500152">
+		<election_id>14</election_id>
+		<type>REFERENDUM</type>
+		<electoral_district_id>501686</electoral_district_id>
+		<partisan>No</partisan>
+		<ballot_id>500170</ballot_id>
+		<ballot_placement>1</ballot_placement>
+	</contest>
+	<contest id="500153">
+		<election_id>14</election_id>
+		<type>REFERENDUM</type>
+		<electoral_district_id>501436</electoral_district_id>
+		<partisan>No</partisan>
+		<ballot_id>500171</ballot_id>
+		<ballot_placement>7</ballot_placement>
+	</contest>
+	<contest id="500154">
+		<election_id>14</election_id>
+		<type>REFERENDUM</type>
+		<electoral_district_id>501794</electoral_district_id>
+		<partisan>No</partisan>
+		<ballot_id>500172</ballot_id>
+		<ballot_placement>5</ballot_placement>
+	</contest>
+	<contest id="500155">
+		<election_id>14</election_id>
+		<type>REFERENDUM</type>
+		<electoral_district_id>501576</electoral_district_id>
+		<partisan>No</partisan>
+		<ballot_id>500173</ballot_id>
+		<ballot_placement>8</ballot_placement>
+	</contest>
+	<contest id="500156">
+		<election_id>14</election_id>
+		<type>REFERENDUM</type>
+		<electoral_district_id>502906</electoral_district_id>
+		<partisan>No</partisan>
+		<ballot_id>500174</ballot_id>
+		<ballot_placement>7</ballot_placement>
+	</contest>
+	<contest id="500157">
+		<election_id>14</election_id>
+		<type>REFERENDUM</type>
+		<electoral_district_id>501693</electoral_district_id>
+		<partisan>No</partisan>
+		<ballot_id>500175</ballot_id>
+		<ballot_placement>5</ballot_placement>
+	</contest>
+	<contest id="500158">
+		<election_id>14</election_id>
+		<type>REFERENDUM</type>
+		<electoral_district_id>501764</electoral_district_id>
+		<partisan>No</partisan>
+		<ballot_id>500176</ballot_id>
+		<ballot_placement>5</ballot_placement>
+	</contest>
+	<contest id="500159">
+		<election_id>14</election_id>
+		<type>REFERENDUM</type>
+		<electoral_district_id>501697</electoral_district_id>
+		<partisan>No</partisan>
+		<ballot_id>500177</ballot_id>
+		<ballot_placement>7</ballot_placement>
+	</contest>
+	<contest id="500160">
+		<election_id>14</election_id>
+		<type>REFERENDUM</type>
+		<electoral_district_id>501686</electoral_district_id>
+		<partisan>No</partisan>
+		<ballot_id>500178</ballot_id>
+		<ballot_placement>1</ballot_placement>
+	</contest>
+	<contest id="500161">
+		<election_id>14</election_id>
+		<type>REFERENDUM</type>
+		<electoral_district_id>501789</electoral_district_id>
+		<partisan>No</partisan>
+		<ballot_id>500179</ballot_id>
+		<ballot_placement>5</ballot_placement>
+	</contest>
+	<contest id="500162">
+		<election_id>14</election_id>
+		<type>REFERENDUM</type>
+		<electoral_district_id>501708</electoral_district_id>
+		<partisan>No</partisan>
+		<ballot_id>500180</ballot_id>
+		<ballot_placement>5</ballot_placement>
+	</contest>
+	<contest id="500163">
+		<election_id>14</election_id>
+		<type>REFERENDUM</type>
+		<electoral_district_id>501775</electoral_district_id>
+		<partisan>No</partisan>
+		<ballot_id>500181</ballot_id>
+		<ballot_placement>5</ballot_placement>
+	</contest>
+	<contest id="500164">
+		<election_id>14</election_id>
+		<type>REFERENDUM</type>
+		<electoral_district_id>501789</electoral_district_id>
+		<partisan>No</partisan>
+		<ballot_id>500182</ballot_id>
+		<ballot_placement>5</ballot_placement>
+	</contest>
+</vip_object>
