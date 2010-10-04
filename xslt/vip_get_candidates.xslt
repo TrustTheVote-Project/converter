@@ -6,6 +6,7 @@
 		<xsl:copy-of select="/vip_object/ballot"/>
 		<xsl:copy-of select="/vip_object/candidate"/>
 		<xsl:copy-of select="/vip_object/contest"/>
+		<xsl:copy-of select="/vip_object/referendum"/>
 	</vip_object>
 	</xsl:template>
 </xsl:stylesheet>

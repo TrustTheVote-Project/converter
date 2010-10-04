@@ -1,1 +1,1 @@
-xsltproc vip_get_candidates.xslt vipFeed-sept-22-2010.xml > vipFeed-sept-22-2010-candidate-info.xml
+xsltproc vip_get_candidates.xslt vipFeedWithBallotQuestions.xml > cand-vipFeedWithBallotQuestions.xml
