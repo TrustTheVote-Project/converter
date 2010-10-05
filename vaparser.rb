@@ -165,8 +165,8 @@ class VAParser
   end
   
   def contest_end
-    te "contest"
-    if @ctype == :election
+    te "contest, type:#{@type}"
+    if @ctype == :election && !@type.eql?("REFERENDUM")
       @gen.add_contest(@contest_id, @election_id, @electoral_district_id, @office_name, @ballot_placement)
     end
   end
@@ -319,11 +319,11 @@ class VAParser
   end
   
   def tb string
-     #puts "< begin #{string}"
+     puts "< begin #{string}"
   end
   
   def te string
-     #puts "> end #{string}"
+     puts "> end #{string}"
   end
   
   #
